@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/ATuan/AtuanScene.unity
+=======
+- path: Assets/SteamVR/Simple Sample.unity
+>>>>>>> 32c5dcba11d2fdde0bdc4567de1723a16c5cc1be
   isLoaded: 1
   isActive: 1
