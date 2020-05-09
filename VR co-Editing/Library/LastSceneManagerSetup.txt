@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/ATuan/ATuanScene.unity
-  isLoaded: 1
-  isActive: 1
