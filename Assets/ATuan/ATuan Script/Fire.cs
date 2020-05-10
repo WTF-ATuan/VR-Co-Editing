@@ -70,7 +70,9 @@ public class Fire : MonoBehaviour {
     }
     void OpenFIre() {
         Debug.Log("Fireing");
-        Rigidbody bulletRb = Instantiate(Magazine[IndexOfBullet].gameObject, BarrelPivot.position, Quaternion.identity).GetComponent<Rigidbody>();
+        GameObject BulletFromNow = Instantiate(Magazine[IndexOfBullet].gameObject, BarrelPivot.position, Quaternion.identity);
+        Rigidbody bulletRb = BulletFromNow.GetComponent<Rigidbody>();
+        BulletFromNow.name = Magazine[IndexOfBullet].Name;
         bulletRb.velocity = BarrelPivot.forward * BulletSpeed;
         MuzzlerLash.SetActive(true);
         IndexOfBullet++;
