@@ -222,8 +222,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boat: {fileID: 1926489233}
+  BoatPosition: {fileID: 0}
   BoatRig: {fileID: 1926489234}
   Speed: 2
+  MaxDistance: 0
 --- !u!54 &14823944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -352,7 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41955c46440177d4e98f216d553ffd68, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -38
+      value: -36.99
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41955c46440177d4e98f216d553ffd68, type: 3}
       propertyPath: m_LocalRotation.x
@@ -810,7 +812,7 @@ GameObject:
   - component: {fileID: 627088982}
   m_Layer: 0
   m_Name: TriggerOFWord
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1563,6 +1565,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554760258}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1784100385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1784100386}
+  m_Layer: 0
+  m_Name: BoatPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1784100386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784100385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -510, y: 235, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1926489238}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1926489233 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 41955c46440177d4e98f216d553ffd68,
@@ -1583,8 +1615,31 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 54
   m_CollisionDetection: 0
+--- !u!114 &1926489235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926489233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6051f200e5984734581beef5ca7d3e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Boat: {fileID: 1926489233}
+  BoatPosition: {fileID: 1784100386}
+  BoatRig: {fileID: 1926489234}
+  Speed: 15
+  MaxDistance: 3
+--- !u!4 &1926489238 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 41955c46440177d4e98f216d553ffd68,
+    type: 3}
+  m_PrefabInstance: {fileID: 226369530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1926489239
 BoxCollider:
   m_ObjectHideFlags: 0

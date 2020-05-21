@@ -29,7 +29,7 @@ public class Fire : MonoBehaviour {
     void Update() {
 
         InputOFComputer();
-        InputOfVRSet();      
+        InputOfVRSet();
     }
     public void InputOFComputer() {
         if (Input.GetMouseButtonDown(0)) {
@@ -68,8 +68,9 @@ public class Fire : MonoBehaviour {
         return Magazine;
 
     }
-    void OpenFIre() {
+    public void OpenFIre() {
         Debug.Log("Fireing");
+        animator.SetTrigger("OpenFire");
         GameObject BulletFromNow = Instantiate(Magazine[IndexOfBullet].gameObject, BarrelPivot.position, Quaternion.identity);
         Rigidbody bulletRb = BulletFromNow.GetComponent<Rigidbody>();
         BulletFromNow.name = Magazine[IndexOfBullet].Name;
@@ -79,7 +80,6 @@ public class Fire : MonoBehaviour {
         if (IndexOfBullet >= Magazine.Count) {
             IndexOfBullet = 0;
         }
-
     }
 
 }
