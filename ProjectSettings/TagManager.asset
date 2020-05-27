@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Trigger
+  - WalkWay
   layers:
   - Default
   - TransparentFX
