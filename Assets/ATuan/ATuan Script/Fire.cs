@@ -5,7 +5,11 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class Fire : MonoBehaviour {
-    public SteamVR_Action_Boolean FireAction;
+    public static Fire fireManager;
+    public void Awake()
+    {
+        fireManager = this;
+    }
     public GameObject Bullet;
     public float BulletSpeed;
     public Transform BarrelPivot;
@@ -18,18 +22,24 @@ public class Fire : MonoBehaviour {
     private int IndexOfBullet = 0;
     private string[] BullectName = new string[6];
     private Animator animator;
-    private Interactable interactable;
     void Start() {
         animator = GetComponent<Animator>();
         MuzzlerLash.SetActive(false);
-        //interactable.GetComponent<Interactable>();
         SetBullet();
     }
-
-    void Update() {
-
-        InputOFComputer();
-        InputOfVRSet();
+    public void ChangeBullectPlus() {
+        IndexOfBullet++;
+        if (IndexOfBullet >= Magazine.Count)
+        {
+            IndexOfBullet = 0;
+        }
+    }
+    public void ChangeBullectMinus() {
+        IndexOfBullet--;
+        if (IndexOfBullet >= Magazine.Count || IndexOfBullet < 0)
+        {
+            IndexOfBullet = 0;
+        }
     }
     public void InputOFComputer() {
         if (Input.GetMouseButtonDown(0)) {
@@ -47,17 +57,6 @@ public class Fire : MonoBehaviour {
                 IndexOfBullet = 0;
             }
         }
-    }
-    public void InputOfVRSet() {
-        //if (interactable.attachedToHand != null) {
-
-        //    SteamVR_Input_Sources source = interactable.attachedToHand.handType;
-
-        //    if (FireAction[source].stateDown) {
-        //        OpenFIre();
-        //    }
-
-        //}
     }
     public List<Bullet> SetBullet() {
         Magazine = new List<Bullet>();
