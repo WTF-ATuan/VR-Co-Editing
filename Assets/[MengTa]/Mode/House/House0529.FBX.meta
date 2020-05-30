@@ -1,0 +1,306 @@
+fileFormatVersion: 2
+guid: 9b37dd0ec20729c43a1f47fdcab57bbc
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 2F
+    100002: Box001
+    100004: Box002
+    100006: Box003
+    100008: Box004
+    100010: Box005
+    100012: Box009
+    100014: Box011
+    100016: Box013
+    100018: Box017
+    100020: Box019
+    100022: Box020
+    100024: Box021
+    100026: Box022
+    100028: Box023
+    100030: Box024
+    100032: Box025
+    100034: Cylinder001
+    100036: Cylinder006
+    100038: Cylinder007
+    100040: Cylinder009
+    100042: //RootNode
+    100044: Iron sheet
+    100046: Iron sheet 1
+    100048: Object002
+    100050: Object004
+    100052: Object005
+    100054: Object006
+    100056: Object007
+    100058: Object008
+    100060: Object009
+    100062: Object010
+    100064: Object011
+    100066: Object012
+    100068: Object013
+    100070: Plane002
+    100072: Plane003
+    100074: Plane004
+    100076: Plane005
+    100078: Roof
+    100080: Sphere001
+    100082: Water tower
+    400000: 2F
+    400002: Box001
+    400004: Box002
+    400006: Box003
+    400008: Box004
+    400010: Box005
+    400012: Box009
+    400014: Box011
+    400016: Box013
+    400018: Box017
+    400020: Box019
+    400022: Box020
+    400024: Box021
+    400026: Box022
+    400028: Box023
+    400030: Box024
+    400032: Box025
+    400034: Cylinder001
+    400036: Cylinder006
+    400038: Cylinder007
+    400040: Cylinder009
+    400042: //RootNode
+    400044: Iron sheet
+    400046: Iron sheet 1
+    400048: Object002
+    400050: Object004
+    400052: Object005
+    400054: Object006
+    400056: Object007
+    400058: Object008
+    400060: Object009
+    400062: Object010
+    400064: Object011
+    400066: Object012
+    400068: Object013
+    400070: Plane002
+    400072: Plane003
+    400074: Plane004
+    400076: Plane005
+    400078: Roof
+    400080: Sphere001
+    400082: Water tower
+    2100000: Mat_1_Main
+    2100002: 14 - Default
+    2100004: 07 - Default
+    2100006: No Name
+    2100008: Mat_2_Main
+    2100010: Mat_2_Sup
+    2100012: 13 - Default
+    2100014: 'Material #70'
+    2100016: 09 - Default
+    2300000: 2F
+    2300002: Box001
+    2300004: Box002
+    2300006: Box003
+    2300008: Box004
+    2300010: Box005
+    2300012: Box009
+    2300014: Box011
+    2300016: Box013
+    2300018: Box017
+    2300020: Box019
+    2300022: Box020
+    2300024: Box021
+    2300026: Box022
+    2300028: Box023
+    2300030: Box024
+    2300032: Box025
+    2300034: Cylinder001
+    2300036: Cylinder006
+    2300038: Cylinder007
+    2300040: Cylinder009
+    2300042: Iron sheet
+    2300044: Iron sheet 1
+    2300046: Object002
+    2300048: Object004
+    2300050: Object005
+    2300052: Object007
+    2300054: Object008
+    2300056: Object009
+    2300058: Object010
+    2300060: Object011
+    2300062: Object012
+    2300064: Object013
+    2300066: Plane002
+    2300068: Plane003
+    2300070: Plane004
+    2300072: Plane005
+    2300074: Roof
+    2300076: Sphere001
+    2300078: Water tower
+    3300000: 2F
+    3300002: Box001
+    3300004: Box002
+    3300006: Box003
+    3300008: Box004
+    3300010: Box005
+    3300012: Box009
+    3300014: Box011
+    3300016: Box013
+    3300018: Box017
+    3300020: Box019
+    3300022: Box020
+    3300024: Box021
+    3300026: Box022
+    3300028: Box023
+    3300030: Box024
+    3300032: Box025
+    3300034: Cylinder001
+    3300036: Cylinder006
+    3300038: Cylinder007
+    3300040: Cylinder009
+    3300042: Iron sheet
+    3300044: Iron sheet 1
+    3300046: Object002
+    3300048: Object004
+    3300050: Object005
+    3300052: Object007
+    3300054: Object008
+    3300056: Object009
+    3300058: Object010
+    3300060: Object011
+    3300062: Object012
+    3300064: Object013
+    3300066: Plane002
+    3300068: Plane003
+    3300070: Plane004
+    3300072: Plane005
+    3300074: Roof
+    3300076: Sphere001
+    3300078: Water tower
+    4300000: Box001
+    4300002: Box002
+    4300004: Box004
+    4300006: Box009
+    4300008: Box011
+    4300010: Box013
+    4300012: Iron sheet
+    4300014: Plane002
+    4300016: 2F
+    4300018: Roof
+    4300020: Box017
+    4300022: Object002
+    4300024: Iron sheet
+    4300026: Plane003
+    4300028: Box019
+    4300030: Box005
+    4300032: Box003
+    4300034: Cylinder001
+    4300036: Cylinder006
+    4300038: Box020
+    4300040: Cylinder007
+    4300042: Water tower
+    4300044: Box021
+    4300046: Sphere001
+    4300048: Box022
+    4300050: Object004
+    4300052: Box023
+    4300054: Cylinder009
+    4300056: Plane004
+    4300058: Object005
+    4300060: Box024
+    4300062: Box025
+    4300064: Object007
+    4300066: Plane005
+    4300068: Object008
+    4300070: Object009
+    4300072: Object010
+    4300074: Object011
+    4300076: Object012
+    4300078: Object013
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
