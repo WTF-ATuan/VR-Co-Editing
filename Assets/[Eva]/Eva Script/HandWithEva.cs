@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class Hand : MonoBehaviour
+public class HandWithEva : MonoBehaviour
 {
     public SteamVR_Action_Boolean m_GrabAction = null;
 

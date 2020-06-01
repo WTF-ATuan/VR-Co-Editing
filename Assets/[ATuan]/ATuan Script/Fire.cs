@@ -5,23 +5,20 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class Fire : MonoBehaviour {
-    public static Fire fireManager;
-    public void Awake()
-    {
-        fireManager = this;
-    }
+    [SerializeField] private GameObject[] BubbleObj = new GameObject[6];
+    [SerializeField] private string[] BulletName = new string[6];
+    [SerializeField] private GameObject MuzzlerLash;
+
     public GameObject Bullet;
     public float BulletSpeed;
     public Transform BarrelPivot;
-    public GameObject MuzzlerLash;
+   
     public List<Bullet> Magazine;
-    public int FullOfMagazine;
-    public GameObject[] PrefabJapan = new GameObject[6];
+    public int IndexOfBullet = 0;
+   
 
-    private Bullet WordBullet;
-    private int IndexOfBullet = 0;
-    private string[] BullectName = new string[6];
     private Animator animator;
+    private Bullet WordBullet;
     void Start() {
         animator = GetComponent<Animator>();
         MuzzlerLash.SetActive(false);
@@ -60,8 +57,8 @@ public class Fire : MonoBehaviour {
     }
     public List<Bullet> SetBullet() {
         Magazine = new List<Bullet>();
-        for (int index = 0; index < PrefabJapan.Length; index++) {
-            WordBullet = new Bullet(false, PrefabJapan[index].name, PrefabJapan[index]);
+        for (int index = 0; index < BubbleObj.Length; index++) {
+            WordBullet = new Bullet(false, BubbleObj[index].name, BubbleObj[index]);
             Magazine.Add(WordBullet);
         }
         return Magazine;
