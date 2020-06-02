@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SetTrigger : MonoBehaviour {
+    [SerializeField] private Fire fire;
 
     public string AnserOfStr;
     public GameObject AnserOfObj;
@@ -10,18 +11,21 @@ public class SetTrigger : MonoBehaviour {
         if (other.gameObject != null) {
             Debug.Log(other.gameObject.name);
             if (other.gameObject.name == AnserOfStr || other.gameObject.name == AnserOfObj.name) {
-                IsPassing();
+                GameObject Obj = other.gameObject;
+                IsPassing(Obj);
             } else {
                 IsFall();
             }
             Destroy(other.gameObject);
         }
     }
-    private void IsPassing() {
+    public void IsPassing(GameObject Obj) {
+        fire.Magazine.RemoveAt(fire.IndexOfBullet);
         Debug.Log("Good Job");
+        Destroy(this.gameObject);
     
     }
-    private void IsFall() {
+    public void IsFall() {
         Debug.Log("Not the Same Obj");
           
     }

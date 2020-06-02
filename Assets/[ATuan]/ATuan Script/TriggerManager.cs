@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerManager : MonoBehaviour
-{
-    public static TriggerManager triggerManager;
-
-    private void Awake() {
-        triggerManager = this;
+public class TriggerManager : MonoBehaviour {
+    [SerializeField]private SetTrigger SetTrigger;
+    private void Update() {
 
     }
-   
+
 }
