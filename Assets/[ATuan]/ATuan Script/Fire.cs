@@ -22,7 +22,7 @@ public class Fire : MonoBehaviour {
     void Start() {
         animator = GetComponent<Animator>();
         MuzzlerLash.SetActive(false);
-        SetBullet();
+        SetBullet(BubbleObj);
     }
     public void ChangeBullectPlus() {
         IndexOfBullet++;
@@ -55,10 +55,10 @@ public class Fire : MonoBehaviour {
             }
         }
     }
-    public List<Bullet> SetBullet() {
+    public List<Bullet> SetBullet(GameObject[] Bubble) {
         Magazine = new List<Bullet>();
-        for (int index = 0; index < BubbleObj.Length; index++) {
-            WordBullet = new Bullet(false, BubbleObj[index].name, BubbleObj[index]);
+        for (int index = 0; index < Bubble.Length; index++) {
+            WordBullet = new Bullet(false, Bubble[index].name, Bubble[index]);
             Magazine.Add(WordBullet);
         }
         return Magazine;
