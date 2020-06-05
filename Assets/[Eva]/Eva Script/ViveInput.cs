@@ -9,7 +9,7 @@ using Valve.VR.InteractionSystem;
 
 public class ViveInput : MonoBehaviour {
 
-    [SerializeField] private Fire fire;
+    [SerializeField] public Fire fire;
     [SerializeField] private Hand RightHand;
     [SerializeField] private Hand LeftHand;
     private bool IsGraping;

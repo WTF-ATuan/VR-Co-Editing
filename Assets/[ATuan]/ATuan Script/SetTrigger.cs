@@ -19,10 +19,11 @@ public class SetTrigger : MonoBehaviour {
             Destroy(other.gameObject);
         }
     }
-    public void IsPassing(GameObject Obj) {
+    public bool IsPassing(GameObject Obj) {
         fire.Magazine.RemoveAt(fire.IndexOfBullet);
         Debug.Log("Good Job");
         Destroy(this.gameObject);
+        return true;
     
     }
     public void IsFall() {
