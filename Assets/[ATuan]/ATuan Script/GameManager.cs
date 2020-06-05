@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : SingletonMonoBehavior<GameManager> {
-    
-    
-    [SerializeField] private ViveInput inputManager;
-    
+public class GameManager : SingletonMonoBehavior<GameManager>
+{
 
+    [SerializeField] private ViveInput inputManager;
+    [SerializeField] private BoatSet boatSetting;
     [Header("Level Manager")]
     [SerializeField] private bool TeachStage = false;
     [SerializeField] private bool FirstStage = false;
@@ -27,16 +26,22 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
     [SerializeField] private List<SetTrigger> StageTwoTrigger = new List<SetTrigger>();
     [SerializeField] private List<SetTrigger> StageThreeTrigger = new List<SetTrigger>();
 
-
-
+    public int TeachTriggerCount, StageOneTriggerCount, StageTwoTriggerCount, StageThreeTriggerCount;
 
     private Stage stage;
 
-    public void Start() {
+    public void Start()
+    {
         stage = Stage.TeachStage;
+        TeachTriggerCount = TeachTrigger.Count;
+        StageOneTriggerCount = StageOneTrigger.Count;
+        StageTwoTriggerCount = StageTwoTrigger.Count;
+        StageThreeTriggerCount = StageThreeTrigger.Count;
     }
-    public void Update() {
-        switch (stage) {
+    public void Update()
+    {
+        switch (stage)
+        {
             case Stage.TeachStage:
                 StageTeach();
                 break;
@@ -50,33 +55,58 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
                 StageThree();
                 break;
             default:
+                EndingStage();
                 break;
         }
 
     }
     #region Stage
-    public void StageThree() {
-    
-    }
-    public void StageTwo() {
-    
-    }
-    public void StageOne() {
+    public void EndingStage()
+    {
 
-        
     }
-    public void StageTeach() {
+    public void StageThree()
+    {
+        if (ThirdStage)
+        {
+            stage += 1;
+        }
+    }
+    public void StageTwo()
+    {
+        if (SceondStage)
+        {
+            stage += 1;
+        }
+
+    }
+    public void StageOne()
+    {
+        if (FirstStage)
+        {
+            stage += 1;
+        }
+
+    }
+    public void StageTeach()
+    {
+        //set trigger  要把set trigger的gameobject生出來 , 加上新的compoet  (可以做成方法 , 會需要一個gameobject的List)
 
         if (TeachStage)
+        {
             stage += 1;
+        }
+
     }
     #endregion
 
-    public void TriggerPass() {
-    
+    public void TriggerPass()
+    {
+
     }
 
-    public enum Stage {
+    public enum Stage
+    {
         TeachStage,
         FirstStage,
         SceondStage,

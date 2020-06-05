@@ -12,6 +12,7 @@ public class SetTrigger : MonoBehaviour {
             Debug.Log(other.gameObject.name);
             if (other.gameObject.name == AnserOfStr || other.gameObject.name == AnserOfObj.name) {
                 GameObject Obj = other.gameObject;
+                ChangeImage(Obj);
                 IsPassing(Obj);
             } else {
                 IsFall();
@@ -19,10 +20,16 @@ public class SetTrigger : MonoBehaviour {
             Destroy(other.gameObject);
         }
     }
+    public void ChangeImage(GameObject Obj) {
+        // 被射到的時候 要change gameobject 的貼圖 ;
+
+
+    }
     public bool IsPassing(GameObject Obj) {
         fire.Magazine.RemoveAt(fire.IndexOfBullet);
         Debug.Log("Good Job");
         Destroy(this.gameObject);
+        GameManager.instance.TeachTriggerCount -= 1 ;
         return true;
     
     }

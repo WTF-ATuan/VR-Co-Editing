@@ -1,14 +1,36 @@
 fileFormatVersion: 2
-guid: cba52f5ffa2d7814a9b39937da4e2b9c
+guid: 1da92ff19df2475439e0a299cd18c816
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: bottom wall
+    100002: Box005
+    100004: conveyor
+    100006: //RootNode
+    100008: huge light
+    100010: stand
+    400000: bottom wall
+    400002: Box005
+    400004: conveyor
+    400006: //RootNode
+    400008: huge light
+    400010: stand
     2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box001
+    2300000: bottom wall
+    2300002: Box005
+    2300004: conveyor
+    2300006: huge light
+    2300008: stand
+    3300000: bottom wall
+    3300002: Box005
+    3300004: conveyor
+    3300006: huge light
+    3300008: stand
+    4300000: bottom wall
+    4300002: stand
+    4300004: huge light
+    4300006: conveyor
+    4300008: Box005
   externalObjects: {}
   materials:
     importMaterials: 1
