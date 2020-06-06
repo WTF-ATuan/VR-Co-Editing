@@ -487,7 +487,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.9708928, b: 0.8915094, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -3079,6 +3079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 14823941}
+  boatSetting: {fileID: 0}
   TeachStage: 0
   FirstStage: 0
   SceondStage: 0
@@ -3091,6 +3092,10 @@ MonoBehaviour:
   StageOneTrigger: []
   StageTwoTrigger: []
   StageThreeTrigger: []
+  TeachTriggerCount: 0
+  StageOneTriggerCount: 0
+  StageTwoTriggerCount: 0
+  StageThreeTriggerCount: 0
 --- !u!4 &1490223884
 Transform:
   m_ObjectHideFlags: 0
@@ -6449,11 +6454,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6051f200e5984734581beef5ca7d3e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boat: {fileID: 1926489233}
-  BoatPosition: {fileID: 1784100386}
-  BoatRig: {fileID: 1926489234}
   Speed: 15
   MaxDistance: 3
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!64 &1926489236
 MeshCollider:
   m_ObjectHideFlags: 0
