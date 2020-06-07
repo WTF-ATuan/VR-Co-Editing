@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SetTrigger : MonoBehaviour {
-    [SerializeField] private Fire fire;
 
+    public GameObject PassObjcet = null;
+    public bool Pass = false;
     public string AnserOfStr;
     public GameObject AnserOfObj;
     private void OnTriggerEnter(Collider other) {
@@ -12,7 +13,6 @@ public class SetTrigger : MonoBehaviour {
             Debug.Log(other.gameObject.name);
             if (other.gameObject.name == AnserOfStr || other.gameObject.name == AnserOfObj.name) {
                 GameObject Obj = other.gameObject;
-                ChangeImage(Obj);
                 IsPassing(Obj);
             } else {
                 IsFall();
@@ -25,13 +25,11 @@ public class SetTrigger : MonoBehaviour {
 
 
     }
-    public bool IsPassing(GameObject Obj) {
-        fire.Magazine.RemoveAt(fire.IndexOfBullet);
+    public void IsPassing(GameObject Obj) {
         Debug.Log("Good Job");
-        Destroy(this.gameObject);
-        GameManager.instance.TeachTriggerCount -= 1 ;
-        return true;
-    
+        ChangeImage(Obj);
+        Pass = true;
+        PassObjcet = Obj;
     }
     public void IsFall() {
         Debug.Log("Not the Same Obj");
