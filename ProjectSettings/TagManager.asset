@@ -7,6 +7,7 @@ TagManager:
   - Interactable
   - Trigger
   - WalkWay
+  - LoudGun
   layers:
   - Default
   - TransparentFX
