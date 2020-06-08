@@ -9,7 +9,6 @@ using Valve.VR;
 public class ViveInput : MonoBehaviour
 {
     private Interactable interactable;
-    private Valve.VR.InteractionSystem.Hand hand;
 
     public SteamVR_Action_Boolean GripFireAction;
     public SteamVR_Action_Boolean GrapPinchAction;
@@ -21,7 +20,6 @@ public class ViveInput : MonoBehaviour
     private void Awake()
     {
         interactable = GetComponent<Interactable>();
-        hand = new Valve.VR.InteractionSystem.Hand();
     }
 
     private void FixedUpdate()
@@ -32,7 +30,7 @@ public class ViveInput : MonoBehaviour
     public void InputOfVRSet()
     {
         //開槍Input
-        if (GripFireAction.GetLastStateDown(SteamVR_Input_Sources.RightHand)/* && hand.currentAttachedObject.name == "Loud_public" */) //讀取FireActicon GrapGrip值  
+        if (GripFireAction.GetLastStateDown(SteamVR_Input_Sources.RightHand)) //讀取FireActicon GrapGrip值  
         {
             //OpenFIre();
             Debug.Log("OpenFIreVRInput");
