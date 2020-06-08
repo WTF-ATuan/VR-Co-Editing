@@ -17,28 +17,36 @@ ModelImporter:
     100022: Box025
     100024: Cylinder007
     100026: Cylinder009
-    100028: //RootNode
-    100030: Iron sheet
-    100032: Iron sheet 1
-    100034: Object002
-    100036: Object004
-    100038: Object005
-    100040: Object006
-    100042: Object007
-    100044: Object008
-    100046: Object009
-    100048: Object011
-    100050: Object012
-    100052: Object014
-    100054: Object015
-    100056: Object016
-    100058: Object017
-    100060: Plane002
-    100062: Plane003
-    100064: Plane004
-    100066: Plane005
-    100068: Roof
-    100070: Water tower
+    100028: Cylinder010
+    100030: Cylinder011
+    100032: //RootNode
+    100034: Iron sheet
+    100036: Iron sheet 1
+    100038: Object002
+    100040: Object004
+    100042: Object005
+    100044: Object006
+    100046: Object007
+    100048: Object008
+    100050: Object009
+    100052: Object011
+    100054: Object012
+    100056: Object014
+    100058: Object015
+    100060: Object016
+    100062: Object017
+    100064: Object018
+    100066: Object019
+    100068: Object020
+    100070: Object021
+    100072: Object022
+    100074: Object023
+    100076: Object024
+    100078: Plane002
+    100080: Plane003
+    100082: Plane004
+    100084: Plane005
+    100086: Roof
     400000: 2F
     400002: Box001
     400004: Box004
@@ -53,30 +61,39 @@ ModelImporter:
     400022: Box025
     400024: Cylinder007
     400026: Cylinder009
-    400028: //RootNode
-    400030: Iron sheet
-    400032: Iron sheet 1
-    400034: Object002
-    400036: Object004
-    400038: Object005
-    400040: Object006
-    400042: Object007
-    400044: Object008
-    400046: Object009
-    400048: Object011
-    400050: Object012
-    400052: Object014
-    400054: Object015
-    400056: Object016
-    400058: Object017
-    400060: Plane002
-    400062: Plane003
-    400064: Plane004
-    400066: Plane005
-    400068: Roof
-    400070: Water tower
+    400028: Cylinder010
+    400030: Cylinder011
+    400032: //RootNode
+    400034: Iron sheet
+    400036: Iron sheet 1
+    400038: Object002
+    400040: Object004
+    400042: Object005
+    400044: Object006
+    400046: Object007
+    400048: Object008
+    400050: Object009
+    400052: Object011
+    400054: Object012
+    400056: Object014
+    400058: Object015
+    400060: Object016
+    400062: Object017
+    400064: Object018
+    400066: Object019
+    400068: Object020
+    400070: Object021
+    400072: Object022
+    400074: Object023
+    400076: Object024
+    400078: Plane002
+    400080: Plane003
+    400082: Plane004
+    400084: Plane005
+    400086: Roof
     2100000: 04 - Default
     2100002: Mat_Cover
+    2100004: 'Material #86'
     2300000: 2F
     2300002: Box001
     2300004: Box004
@@ -91,26 +108,34 @@ ModelImporter:
     2300022: Box025
     2300024: Cylinder007
     2300026: Cylinder009
-    2300028: Iron sheet
-    2300030: Iron sheet 1
-    2300032: Object002
-    2300034: Object004
-    2300036: Object005
-    2300038: Object007
-    2300040: Object008
-    2300042: Object009
-    2300044: Object011
-    2300046: Object012
-    2300048: Object014
-    2300050: Object015
-    2300052: Object016
-    2300054: Object017
-    2300056: Plane002
-    2300058: Plane003
-    2300060: Plane004
-    2300062: Plane005
-    2300064: Roof
-    2300066: Water tower
+    2300028: Cylinder010
+    2300030: Cylinder011
+    2300032: Iron sheet
+    2300034: Iron sheet 1
+    2300036: Object002
+    2300038: Object004
+    2300040: Object005
+    2300042: Object007
+    2300044: Object008
+    2300046: Object009
+    2300048: Object011
+    2300050: Object012
+    2300052: Object014
+    2300054: Object015
+    2300056: Object016
+    2300058: Object017
+    2300060: Object018
+    2300062: Object019
+    2300064: Object020
+    2300066: Object021
+    2300068: Object022
+    2300070: Object023
+    2300072: Object024
+    2300074: Plane002
+    2300076: Plane003
+    2300078: Plane004
+    2300080: Plane005
+    2300082: Roof
     3300000: 2F
     3300002: Box001
     3300004: Box004
@@ -125,26 +150,34 @@ ModelImporter:
     3300022: Box025
     3300024: Cylinder007
     3300026: Cylinder009
-    3300028: Iron sheet
-    3300030: Iron sheet 1
-    3300032: Object002
-    3300034: Object004
-    3300036: Object005
-    3300038: Object007
-    3300040: Object008
-    3300042: Object009
-    3300044: Object011
-    3300046: Object012
-    3300048: Object014
-    3300050: Object015
-    3300052: Object016
-    3300054: Object017
-    3300056: Plane002
-    3300058: Plane003
-    3300060: Plane004
-    3300062: Plane005
-    3300064: Roof
-    3300066: Water tower
+    3300028: Cylinder010
+    3300030: Cylinder011
+    3300032: Iron sheet
+    3300034: Iron sheet 1
+    3300036: Object002
+    3300038: Object004
+    3300040: Object005
+    3300042: Object007
+    3300044: Object008
+    3300046: Object009
+    3300048: Object011
+    3300050: Object012
+    3300052: Object014
+    3300054: Object015
+    3300056: Object016
+    3300058: Object017
+    3300060: Object018
+    3300062: Object019
+    3300064: Object020
+    3300066: Object021
+    3300068: Object022
+    3300070: Object023
+    3300072: Object024
+    3300074: Plane002
+    3300076: Plane003
+    3300078: Plane004
+    3300080: Plane005
+    3300082: Roof
     4300000: Box001
     4300002: Box004
     4300004: Box009
@@ -159,26 +192,34 @@ ModelImporter:
     4300022: Plane003
     4300024: Box019
     4300026: Cylinder007
-    4300028: Water tower
-    4300030: Box021
-    4300032: Box022
-    4300034: Object004
-    4300036: Box023
-    4300038: Cylinder009
-    4300040: Plane004
-    4300042: Object005
-    4300044: Box024
-    4300046: Box025
-    4300048: Object007
-    4300050: Plane005
-    4300052: Object008
-    4300054: Object009
-    4300056: Object011
-    4300058: Object012
-    4300060: Object014
-    4300062: Object015
-    4300064: Object016
-    4300066: Object017
+    4300028: Box021
+    4300030: Box022
+    4300032: Object004
+    4300034: Box023
+    4300036: Cylinder009
+    4300038: Plane004
+    4300040: Object005
+    4300042: Box024
+    4300044: Box025
+    4300046: Object007
+    4300048: Plane005
+    4300050: Object008
+    4300052: Object009
+    4300054: Object011
+    4300056: Object012
+    4300058: Object014
+    4300060: Object015
+    4300062: Object016
+    4300064: Object017
+    4300066: Cylinder010
+    4300068: Object018
+    4300070: Cylinder011
+    4300072: Object019
+    4300074: Object020
+    4300076: Object021
+    4300078: Object022
+    4300080: Object023
+    4300082: Object024
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
