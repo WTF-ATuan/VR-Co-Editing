@@ -5,36 +5,36 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class Fire : MonoBehaviour {
-    [SerializeField] private GameObject[] BubbleObj = new GameObject[6];
-    [SerializeField] private string[] BulletName = new string[6];
     [SerializeField] private GameObject MuzzlerLash;
-
-    public GameObject Bullet;
-    public float BulletSpeed;
+    [SerializeField] private float BulletSpeed;
     public Transform BarrelPivot;
-   
     public List<Bullet> Magazine;
-    public int IndexOfBullet = 0;
-   
+    public int IndexOfBullet;
 
     private Animator animator;
     private Bullet WordBullet;
     void Start() {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         MuzzlerLash.SetActive(false);
-        SetBullet(BubbleObj);
+    }
+    public void RemoveBullet(GameObject Bullet) {
+        for (int i = 0; i < Magazine.Count; i++) {
+            if (Magazine[i].gameObject == Bullet) {
+                Magazine.Remove(Magazine[i]);
+                Debug.Log("Remove" + Magazine[i].gameObject);
+            }
+        }
+
     }
     public void ChangeBullectPlus() {
         IndexOfBullet++;
-        if (IndexOfBullet >= Magazine.Count)
-        {
+        if (IndexOfBullet >= Magazine.Count) {
             IndexOfBullet = 0;
         }
     }
     public void ChangeBullectMinus() {
         IndexOfBullet--;
-        if (IndexOfBullet >= Magazine.Count || IndexOfBullet < 0)
-        {
+        if (IndexOfBullet >= Magazine.Count || IndexOfBullet < 0) {
             IndexOfBullet = 0;
         }
     }
@@ -55,18 +55,17 @@ public class Fire : MonoBehaviour {
             }
         }
     }
-    public List<Bullet> SetBullet(GameObject[] Bubble) {
+    public void SetBullet(GameObject[] Bubble) {
         Magazine = new List<Bullet>();
         for (int index = 0; index < Bubble.Length; index++) {
             WordBullet = new Bullet(false, Bubble[index].name, Bubble[index]);
             Magazine.Add(WordBullet);
         }
-        return Magazine;
 
     }
     public void OpenFIre() {
         Debug.Log("Fireing");
-        animator.SetTrigger("OpenFire");
+        //animator.SetTrigger("OpenFire");
         GameObject BulletFromNow = Instantiate(Magazine[IndexOfBullet].gameObject, BarrelPivot.position, Quaternion.identity);
         Rigidbody bulletRb = BulletFromNow.GetComponent<Rigidbody>();
         BulletFromNow.name = Magazine[IndexOfBullet].Name;
