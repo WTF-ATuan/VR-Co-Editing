@@ -11,16 +11,18 @@ public class Fire : MonoBehaviour {
     public List<Bullet> Magazine;
     public int IndexOfBullet;
 
-    private Animator animator;
+    [SerializeField]private Animator animator;
     private Bullet WordBullet;
+    public  float Timer = 0;
+    private float ColdDownTime = 1.5f;
     void Start() {
         //animator = GetComponent<Animator>();
         MuzzlerLash.SetActive(false);
     }
-    public void RemoveBullet(GameObject Bullet) {
+    public void RemoveBullet(string BulletName) {
         for (int i = 0; i < Magazine.Count; i++) {
-            if (Magazine[i].gameObject == Bullet) {
-                Magazine.Remove(Magazine[i]);
+            if (Magazine[i].Name == BulletName) {
+                Magazine.RemoveAt(i);
                 Debug.Log("Remove" + Magazine[i].gameObject);
             }
         }
@@ -56,16 +58,16 @@ public class Fire : MonoBehaviour {
         }
     }
     public void SetBullet(GameObject[] Bubble) {
+        Magazine = null;
         Magazine = new List<Bullet>();
         for (int index = 0; index < Bubble.Length; index++) {
             WordBullet = new Bullet(false, Bubble[index].name, Bubble[index]);
             Magazine.Add(WordBullet);
         }
-
     }
     public void OpenFIre() {
-        Debug.Log("Fireing");
-        //animator.SetTrigger("OpenFire");
+        animator.SetTrigger("OpenFire");
+        Timer = ColdDownTime;
         GameObject BulletFromNow = Instantiate(Magazine[IndexOfBullet].gameObject, BarrelPivot.position, Quaternion.identity);
         Rigidbody bulletRb = BulletFromNow.GetComponent<Rigidbody>();
         BulletFromNow.name = Magazine[IndexOfBullet].Name;
