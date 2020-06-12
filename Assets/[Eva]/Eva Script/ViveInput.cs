@@ -42,7 +42,7 @@ public class ViveInput : MonoBehaviour {
         }
         //拿取物件Input
         if (RightHand.currentAttachedObject == null && StartGrab != GrabTypes.None) {
-            if (GrapPinchAction.GetLastStateDown(SteamVR_Input_Sources.Any)) //讀取GrapPinchAction GrapPinch值  
+            if (GrapPinchAction.GetLastStateDown(SteamVR_Input_Sources.Any)|| GripFireAction.GetLastStateDown(SteamVR_Input_Sources.RightHand)) //讀取GrapPinchAction GrapPinch值  
             {
                 Debug.Log("GrapPinchActionVRInput");
                 if (RightHand.IsStillHovering(InteractableOfGun)) {

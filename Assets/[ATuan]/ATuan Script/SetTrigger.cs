@@ -21,8 +21,7 @@ public class SetTrigger : MonoBehaviour {
     public void ChangeImage() {
         // 被射到的時候 要change gameobject 的貼圖 ;
         MeshRenderer mesh = GetComponent<MeshRenderer>();
-        mesh.material.SetColor("REDDDD",Color.red);
-
+        
     }
     public void IsPassing(GameObject Obj) {
         Debug.Log("Good Job");

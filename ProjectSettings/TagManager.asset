@@ -8,6 +8,9 @@ TagManager:
   - Trigger
   - WalkWay
   - LoudGun
+  - projectile
+  - FxTemporaire
+  - Magzine
   layers:
   - Default
   - TransparentFX

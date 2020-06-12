@@ -25,10 +25,12 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
     [Header("BoatPosition")]
 
     [SerializeField] private BoatSet boatSetting;
-    [SerializeField] private List<Vector3> BoatPosition = new List<Vector3>();
+    [SerializeField] private List<Transform> BoatPosition = new List<Transform>();
 
     [Header("TranslateAnser")]
     [SerializeField] private GameObject AnserOne, AnserTwo, AnserThree;
+    [Header("Question")]
+    [SerializeField] private GameObject QuestionOne, QuestionTwo, QuestionThree;
 
     [Header("UIManager")]
     [SerializeField] UIManager uIManager;
@@ -106,7 +108,8 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
             }
         }
         if (StageOneTriggerCount <= 0 || inputManager.fire.Magazine.Count <= 0) {
-            FirstStage = true;
+            SetTranslateOff(QuestionOne, FirstStage);
+            AnserOne.SetActive(true);
             Debug.Log("Passing FirstStage");
         }
 
@@ -116,9 +119,10 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
 
     }
     #endregion
-    IEnumerator SetTranslateOff(GameObject obj) {
+    IEnumerator SetTranslateOff(GameObject obj , bool Stage) {
         yield return new WaitForSeconds(2f);
         obj.SetActive(false);
+        Stage = true;
     }
 
     public enum Stage {
