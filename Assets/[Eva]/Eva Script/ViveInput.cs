@@ -17,9 +17,6 @@ public class ViveInput : MonoBehaviour {
     [SerializeField] private Hand RightHand;
     [SerializeField] private Hand LeftHand;
 
-    [Header("PlayerTeleport")]
-    public bool TeleportFuntion = true;
-    [SerializeField] public Teleport teleportManager;
     [Header("PlayerHandInput")]
     public SteamVR_Action_Boolean GripFireAction;
     public SteamVR_Action_Boolean GrapPinchAction;
@@ -28,24 +25,10 @@ public class ViveInput : MonoBehaviour {
     private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
     public bool LockingGun = true;
 
+
     private void FixedUpdate() {
         InputOfVRSet();
-    }
-    private bool Timer() {
-        if (!Timer()) {
-            float sum = 0.5f;
-            sum -= Time.deltaTime;
-            if (sum < 0)
-                return true;
-        }
-        if (Timer()) {
-            float sum = 0.5f;
-            sum -= Time.deltaTime;
-            if (sum < 0)
-                return false;
-        }
-        return Timer();
-           
+        fire.Timer -= Time.deltaTime;
     }
 
     public void InputOfVRSet() {
@@ -53,10 +36,9 @@ public class ViveInput : MonoBehaviour {
         //開槍Input
         if (GripFireAction.GetLastStateDown(SteamVR_Input_Sources.RightHand)) //讀取FireActicon GrapGrip值  
         {
-            Debug.Log("OpenFIreVRInput");
-            if (RightHand.currentAttachedObject != null && RightHand.currentAttachedObject == LoudPublic && Timer())
+            //Debug.Log("OpenFIreVRInput");
+            if (RightHand.currentAttachedObject != null && RightHand.currentAttachedObject == LoudPublic && fire.Timer < 0 )
                 fire.OpenFIre();
-
         }
         //拿取物件Input
         if (RightHand.currentAttachedObject == null && StartGrab != GrabTypes.None) {

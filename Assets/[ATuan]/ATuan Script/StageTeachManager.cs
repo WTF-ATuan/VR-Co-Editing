@@ -33,12 +33,12 @@ public class StageTeachManager : MonoBehaviour
         if (!IsOnLoad) {
             PlayerInput.fire.SetBullet(TeachStageBubble);
             IsOnLoad = true;
-            PlayerInput.fire.IndexOfBullet = TeachStageBubble.Length;
+            PlayerInput.fire.IndexOfBullet = UnityEngine.Random.Range(0, TeachStageBubble.Length - 1);
         }
         //判定子彈是否射到
         for (int i = 0; i < TeachTrigger.Count; i++) {
             if (TeachTrigger[i].Pass) {
-                PlayerInput.fire.RemoveBullet(TeachTrigger[i].PassObjcet);
+                PlayerInput.fire.RemoveBullet(TeachTrigger[i].AnserObject.name);
                 TeachTriggerCount -= 1;
                 if (TeachTriggerCount <= 0 || PlayerInput.fire.Magazine.Count <= 0) {
                     PassingTeachStage = true;
