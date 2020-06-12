@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/[ATuan]/FirstScence(White).unity
     guid: 717c39c77176f074da7991d032cfc5d6
   - enabled: 1
+    path: Assets/[ATuan]/MoveScence.unity
+    guid: f5a8407f01f9e1a49bf13663bb7f4ae0
+  - enabled: 1
     path: Assets/[ATuan]/ATuanScene.unity
     guid: b5b96b819d4e9b64eb6350c8a6b7501a
   m_configObjects: {}

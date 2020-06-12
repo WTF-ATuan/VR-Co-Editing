@@ -14,6 +14,10 @@ public class StageTeachManager : MonoBehaviour
 
     [SerializeField] private List<SetTrigger> TeachTrigger = new List<SetTrigger>();
 
+    [SerializeField] private GameObject AnserOfTech;
+
+    [SerializeField] private GameObject[] TechStageUI;
+ 
     private int TeachTriggerCount;
     private bool IsOnLoad = false;
     public bool PassingTeachStage = false;

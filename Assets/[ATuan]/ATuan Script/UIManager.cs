@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    
-    void Start(GameObject WitchStage)
+    GameObject WitchStage;
+    void Start()
     {
         WitchStage.SetActive(true);
     }
