@@ -12,15 +12,16 @@ public class SetTrigger : MonoBehaviour {
             Debug.Log(other.gameObject.name);
             if (other.gameObject.name == PassObjcet.name) {
                 GameObject Obj = other.gameObject;
+                ChangeImage(Obj);
                 IsPassing(Obj);
             } else {
                 IsFall();
             }
         }
     }
-    public void ChangeImage() {
-        // 被射到的時候 要change gameobject 的貼圖 ;
-        MeshRenderer mesh = GetComponent<MeshRenderer>();
+    public void ChangeImage(GameObject obj) {
+        // 被射到的時候 要直接生一顆子彈在上面;
+        Instantiate(obj, transform.position, obj.transform.rotation);
         
     }
     public void IsPassing(GameObject Obj) {

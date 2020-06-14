@@ -1316,7 +1316,7 @@ MonoBehaviour:
   OnchangeUIGameObject: {fileID: 1722622591}
   Canvas: {fileID: 397066946}
   video: {fileID: 397066945}
-  PassingTeachStage: 0
+  PassingTeachStage: 1
 --- !u!4 &770468538
 Transform:
   m_ObjectHideFlags: 0
@@ -4658,7 +4658,7 @@ PrefabInstance:
     - target: {fileID: 470171971155060555, guid: 8a991690e0ca7ed4bbf3f80c458aa38f,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 470171971155060555, guid: 8a991690e0ca7ed4bbf3f80c458aa38f,
         type: 3}
@@ -4668,7 +4668,7 @@ PrefabInstance:
     - target: {fileID: 470171971368566865, guid: 8a991690e0ca7ed4bbf3f80c458aa38f,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 470171971368566865, guid: 8a991690e0ca7ed4bbf3f80c458aa38f,
         type: 3}
@@ -4678,7 +4678,7 @@ PrefabInstance:
     - target: {fileID: 470171971816847354, guid: 8a991690e0ca7ed4bbf3f80c458aa38f,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 470171971816847354, guid: 8a991690e0ca7ed4bbf3f80c458aa38f,
         type: 3}
@@ -4688,7 +4688,7 @@ PrefabInstance:
     - target: {fileID: 470171972154863857, guid: 8a991690e0ca7ed4bbf3f80c458aa38f,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 470171972154863857, guid: 8a991690e0ca7ed4bbf3f80c458aa38f,
         type: 3}
@@ -5507,6 +5507,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 81379674}
     m_Modifications:
+    - target: {fileID: 3984384703488875874, guid: 95f67219f9ac3d649b3434f29fabb1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3984384704926753092, guid: 95f67219f9ac3d649b3434f29fabb1bf,
         type: 3}
       propertyPath: m_Name

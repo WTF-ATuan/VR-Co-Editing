@@ -101,9 +101,8 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
             if (StageOneTrigger[i].Pass) {
                 Debug.Log(StageOneTrigger[i] + "Ispass");
                 inputManager.fire.RemoveBullet(StageOneTrigger[i].AnserObject.name);
-                StageOneTrigger[i].ChangeImage();
                 StageOneTriggerCount -= 1;
-                BoxCollider collider = StageOneTrigger[i].GetComponent<BoxCollider>();
+                BoxCollider collider = StageOneTrigger[i].gameObject.GetComponent<BoxCollider>();
                 collider.enabled = false;
             }
         }

@@ -68,7 +68,7 @@ public class Fire : MonoBehaviour {
     public void OpenFIre() {
         animator.SetTrigger("OpenFire");
         Timer = ColdDownTime;
-        GameObject BulletFromNow = Instantiate(Magazine[IndexOfBullet].gameObject, BarrelPivot.position,transform.rotation);
+        GameObject BulletFromNow = Instantiate(Magazine[IndexOfBullet].gameObject, BarrelPivot.position, Magazine[IndexOfBullet].gameObject.transform.rotation);
         Rigidbody bulletRb = BulletFromNow.GetComponent<Rigidbody>();
         BulletFromNow.name = Magazine[IndexOfBullet].Name;
         bulletRb.velocity = BarrelPivot.forward * BulletSpeed;

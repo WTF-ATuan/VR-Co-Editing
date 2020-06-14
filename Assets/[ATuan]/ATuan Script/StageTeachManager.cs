@@ -24,7 +24,7 @@ public class StageTeachManager : MonoBehaviour {
 
     [SerializeField] private GameObject OnchangeUIGameObject;
 
-    private MeshRenderer UIMesh;
+    private Renderer UIRenderer;
 
     [Header("VideoSetting")]
     [SerializeField] GameObject Canvas;
@@ -37,7 +37,7 @@ public class StageTeachManager : MonoBehaviour {
     private void Start() {
         TeachTriggerCount = TeachTrigger.Count;
         FullTimeOfVideo = video.clip.length - 0.7;
-        UIMesh = OnchangeUIGameObject.GetComponent<MeshRenderer>();
+        UIRenderer = OnchangeUIGameObject.GetComponent<Renderer>();
     }
     private void Update() {
         StageTeach();
@@ -60,9 +60,8 @@ public class StageTeachManager : MonoBehaviour {
         for (int i = 0; i < TeachTrigger.Count; i++) {
             if (TeachTrigger[i].Pass) {
                 PlayerInput.fire.RemoveBullet(TeachTrigger[i].AnserObject.name);
-                TeachTrigger[i].ChangeImage();
                 TeachTriggerCount -= 1;
-                BoxCollider collider = TeachTrigger[i].GetComponent<BoxCollider>();
+                BoxCollider collider = TeachTrigger[i].gameObject.GetComponent<BoxCollider>();
                 collider.enabled = false;
             }
         }
@@ -74,18 +73,16 @@ public class StageTeachManager : MonoBehaviour {
             }
         }
 
-        if (PassingTeachStage)
-            PassTeachStage();
-
-
-        IEnumerator PassTeachStage() {
-            yield return new WaitForSeconds(2f);
-            SceneManager.LoadScene(1);
+        if (PassingTeachStage) {
+            Invoke("PassTeachStage", 2f);
         }
 
     }
+    public void PassTeachStage() {
+        SceneManager.LoadScene(1);
+    }
     public void MaterialChange() {
-        UIMesh.material = UIMaterials[PlayerInput.fire.IndexOfBullet];
+        UIRenderer.material = UIMaterials[PlayerInput.fire.IndexOfBullet];
     }
     public void MovieController() {
         TimerOfVideo = video.time;
