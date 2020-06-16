@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/[ATuan]/FirstScence(White).unity
-    guid: 717c39c77176f074da7991d032cfc5d6
+    path: Assets/[MengTa]/Art_First.unity
+    guid: f7a2ba53eaaaac0438e2db4f053cb714
   - enabled: 1
-    path: Assets/[ATuan]/ATuanScene.unity
-    guid: b5b96b819d4e9b64eb6350c8a6b7501a
+    path: Assets/[MengTa]/Art_Sence.unity
+    guid: 2970593816be5cb4faeb3b0140f0dc7f
   m_configObjects: {}

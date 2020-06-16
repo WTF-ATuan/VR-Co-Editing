@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
-using UnityEngine.SceneManagement;
+using Valve.VR;
 using UnityEngine.Video;
 
 public class StageTeachManager : MonoBehaviour {
@@ -18,6 +17,10 @@ public class StageTeachManager : MonoBehaviour {
 
     [SerializeField] private GameObject FirstWall;
 
+    [SerializeField] private SteamVR_LoadLevel ScenceChanger;
+    private int TeachTriggerCount;
+    private bool IsOnLoad = false;
+
     [Header("UISetting")]
 
     [SerializeField] private Material[] UIMaterials;
@@ -31,10 +34,18 @@ public class StageTeachManager : MonoBehaviour {
     [SerializeField] private VideoPlayer video;
     private double FullTimeOfVideo, TimerOfVideo;
 
-    private int TeachTriggerCount;
-    private bool IsOnLoad = false;
+    [Header("SoundManager")]
+    [SerializeField] private AudioSource OpenFireSound;
+    [SerializeField] private AudioSource[] WordChange;
+    [SerializeField] private AudioSource[] TriggerSound_Success;
+    [SerializeField] private AudioSource[] TriggerSound_Fail;
+
+    [Header("Debug")]
     public bool PassingTeachStage = false;
+   
+
     private void Start() {
+        ScenceChanger.enabled = false;
         TeachTriggerCount = TeachTrigger.Count;
         FullTimeOfVideo = video.clip.length - 0.7;
         UIRenderer = OnchangeUIGameObject.GetComponent<Renderer>();
@@ -49,38 +60,46 @@ public class StageTeachManager : MonoBehaviour {
         if (!IsOnLoad && SimpleReload.OnReload) {
             PlayerInput.fire.SetBullet(TeachStageBubble);
             IsOnLoad = true;
-            PlayerInput.fire.IndexOfBullet = UnityEngine.Random.Range(0, TeachStageBubble.Length - 1);
-            MaterialChange();
-        }
-        //牆壁往下
-        if (SimpleReload.OnReload) {
-            FirstWall.transform.position = Vector3.Lerp(FirstWall.transform.position, new Vector3(FirstWall.transform.position.x, -3, FirstWall.transform.position.z), Time.deltaTime * 0.2f);
-        }
+            //第一顆子彈隨機
+            PlayerInput.fire.IndexOfBullet = Random.Range(0, TeachStageBubble.Length - 1);
+        }          
         //判定子彈是否射到
         for (int i = 0; i < TeachTrigger.Count; i++) {
             if (TeachTrigger[i].Pass) {
                 PlayerInput.fire.RemoveBullet(TeachTrigger[i].AnserObject.name);
+                SphereCollider collider = TeachTrigger[i].gameObject.GetComponent<SphereCollider>();
+                Destroy(collider);
                 TeachTriggerCount -= 1;
-                BoxCollider collider = TeachTrigger[i].gameObject.GetComponent<BoxCollider>();
-                collider.enabled = false;
             }
         }
         if (SimpleReload.OnReload) {
+            //牆壁往下
+            FirstWall.transform.position = Vector3.Lerp(FirstWall.transform.position, new Vector3(FirstWall.transform.position.x, -3, FirstWall.transform.position.z), Time.deltaTime * 0.2f);
+            StartCoroutine(DeleteSelf(FirstWall));
+            //檢查子彈or題目是否都打完
             if (TeachTriggerCount <= 0 || PlayerInput.fire.Magazine.Count <= 0) {
                 AnserOfTech.SetActive(true);
                 PassingTeachStage = true;
                 Debug.Log("Passing TeachStage");
             }
+            //變更UI圖 
+            MaterialChange();
         }
-
+            //過關
         if (PassingTeachStage) {
-            Invoke("PassTeachStage", 2f);
+            StartCoroutine(PassTeachStage());
         }
 
     }
-    public void PassTeachStage() {
-        SceneManager.LoadScene(1);
+    IEnumerator PassTeachStage() {
+        //通關時要做的ｕｉ以及特效
+        yield return new WaitForSeconds(3);
+        ScenceChanger.enabled = true;
     }
+
+    //public void PassTeachStage() {
+    //    SceneManager.LoadScene(1);
+    //}
     public void MaterialChange() {
         UIRenderer.material = UIMaterials[PlayerInput.fire.IndexOfBullet];
     }
@@ -92,5 +111,10 @@ public class StageTeachManager : MonoBehaviour {
         if (video.isPaused) {
             Canvas.transform.position = Vector3.Lerp(Canvas.transform.position, new Vector3(Canvas.transform.position.x, 7, Canvas.transform.position.z), Time.deltaTime * 0.2f);
         }
+        StartCoroutine(DeleteSelf(Canvas));
+    }
+    IEnumerator DeleteSelf(GameObject gameObject) {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
 }

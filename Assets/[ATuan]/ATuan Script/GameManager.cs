@@ -39,6 +39,8 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
     [SerializeField] GameObject[] StageTwoUI;
     [SerializeField] GameObject[] StageThreeUI;
 
+    [Header("StartPosition")]
+    [SerializeField] private Transform StartPos;
     private int RecycleNumber = 1;
 
     private int StageOneTriggerCount, StageTwoTriggerCount, StageThreeTriggerCount;
@@ -46,6 +48,8 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
     private Stage stage;
 
     public void Start() {
+        GameObject player = GameObject.FindGameObjectWithTag("Character");
+        player.transform.position = StartPos.position;
         stage = Stage.FirstStage;
         StageOneTriggerCount = StageOneTrigger.Count;
         StageTwoTriggerCount = StageTwoTrigger.Count;
@@ -107,7 +111,7 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
             }
         }
         if (StageOneTriggerCount <= 0 || inputManager.fire.Magazine.Count <= 0) {
-            SetTranslateOff(QuestionOne, FirstStage);
+            StartCoroutine(SetTranslateOff(QuestionOne, FirstStage));
             AnserOne.SetActive(true);
             Debug.Log("Passing FirstStage");
         }
@@ -119,7 +123,7 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
     }
     #endregion
     IEnumerator SetTranslateOff(GameObject obj , bool Stage) {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2);
         obj.SetActive(false);
         Stage = true;
     }

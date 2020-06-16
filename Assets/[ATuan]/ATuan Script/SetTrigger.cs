@@ -21,8 +21,8 @@ public class SetTrigger : MonoBehaviour {
     }
     public void ChangeImage(GameObject obj) {
         // 被射到的時候 要直接生一顆子彈在上面;
-        Instantiate(obj, transform.position, obj.transform.rotation);
-        
+        Rigidbody AnserObjRig = Instantiate(obj, transform.position, obj.transform.rotation).GetComponent<Rigidbody>();
+        Destroy(AnserObjRig);
     }
     public void IsPassing(GameObject Obj) {
         Debug.Log("Good Job");
