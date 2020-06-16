@@ -15,9 +15,13 @@ public class Fire : MonoBehaviour {
     private Bullet WordBullet;
     public  float Timer = 0;
     private float ColdDownTime = 1.5f;
+
+    AudioSource m_shootingSound;//MengTa
+
     void Start() {
         //animator = GetComponent<Animator>();
         MuzzlerLash.SetActive(false);
+        m_shootingSound = GetComponent<AudioSource>();//MengTa
     }
     public void RemoveBullet(string BulletName) {
         for (int i = 0; i < Magazine.Count; i++) {
@@ -74,6 +78,7 @@ public class Fire : MonoBehaviour {
         bulletRb.velocity = BarrelPivot.forward * BulletSpeed;
         MuzzlerLash.SetActive(true);
         IndexOfBullet++;
+        m_shootingSound.Play();//MengTa
         if (IndexOfBullet >= Magazine.Count) {
             IndexOfBullet = 0;
         }
