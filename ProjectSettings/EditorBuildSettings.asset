@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/[ATuan]/FirstScence(White).unity
     guid: 717c39c77176f074da7991d032cfc5d6
-  - enabled: 1
+  - enabled: 0
     path: Assets/[ATuan]/ATuanScene.unity
     guid: b5b96b819d4e9b64eb6350c8a6b7501a
   m_configObjects: {}
