@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.084495924, g: 0.06519244, b: 0.14209646, a: 1}
+  m_IndirectSpecularColor: {r: 0.0846504, g: 0.06534148, b: 0.14225121, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -718,7 +718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512884415}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0804908, y: 0.2, z: -15.2223015}
+  m_LocalPosition: {x: 1.0804908, y: 0, z: -15.2223015}
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 2.5025048}
   m_Children: []
   m_Father: {fileID: 453903557}
@@ -898,7 +898,7 @@ MonoBehaviour:
   WordChange: []
   TriggerSound_Success: []
   TriggerSound_Fail: []
-  PassingTeachStage: 0
+  PassingTeachStage: 1
 --- !u!4 &770468538
 Transform:
   m_ObjectHideFlags: 0
@@ -930,7 +930,7 @@ MonoBehaviour:
   internalProcessArgs: 
   loadAdditive: 0
   loadAsync: 1
-  loadingScreen: {fileID: 2800000, guid: f82c6cd61efc0f845a1ee8f256f50e06, type: 3}
+  loadingScreen: {fileID: 0}
   progressBarEmpty: {fileID: 0}
   progressBarFull: {fileID: 0}
   loadingScreenWidthInMeters: 6
@@ -946,11 +946,11 @@ MonoBehaviour:
   bottom: {fileID: 0}
   backgroundColor: {r: 0, g: 0, b: 0, a: 1}
   showGrid: 0
-  fadeOutTime: 1
-  fadeInTime: 1
+  fadeOutTime: 0.5
+  fadeInTime: 0.5
   postLoadSettleTime: 0
-  loadingScreenFadeInTime: 2
-  loadingScreenFadeOutTime: 2
+  loadingScreenFadeInTime: 1
+  loadingScreenFadeOutTime: 0.25
   autoTriggerOnEnable: 1
 --- !u!1 &773551086
 GameObject:
@@ -2021,7 +2021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.338
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
