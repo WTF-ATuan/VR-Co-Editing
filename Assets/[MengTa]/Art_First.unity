@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0846504, g: 0.06534148, b: 0.14225121, a: 1}
+  m_IndirectSpecularColor: {r: 0.084495924, g: 0.06519244, b: 0.14209646, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   WordChange: []
   TriggerSound_Success: []
   TriggerSound_Fail: []
-  PassingTeachStage: 1
+  PassingTeachStage: 0
 --- !u!4 &770468538
 Transform:
   m_ObjectHideFlags: 0

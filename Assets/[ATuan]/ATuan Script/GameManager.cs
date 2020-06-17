@@ -103,10 +103,9 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
         //判定子彈射到 以及關卡過
         for (int i = 0; i < StageOneTrigger.Count; i++) {
             if (StageOneTrigger[i].Pass) {
-                Debug.Log(StageOneTrigger[i] + "Ispass");
                 inputManager.fire.RemoveBullet(StageOneTrigger[i].AnserObject.name);
                 StageOneTriggerCount -= 1;
-                BoxCollider collider = StageOneTrigger[i].gameObject.GetComponent<BoxCollider>();
+                SphereCollider collider = StageOneTrigger[i].gameObject.GetComponent<SphereCollider>();
                 collider.enabled = false;
             }
         }

@@ -54,7 +54,9 @@ public class StageTeachManager : MonoBehaviour {
         StageTeach();
     }
     public void StageTeach() {
-        MovieController();
+        if (Canvas != null) {
+            MovieController();
+        }
         //順序
         //setBullet
         if (!IsOnLoad && SimpleReload.OnReload) {
@@ -69,7 +71,14 @@ public class StageTeachManager : MonoBehaviour {
                 PlayerInput.fire.RemoveBullet(TeachTrigger[i].AnserObject.name);
                 SphereCollider collider = TeachTrigger[i].gameObject.GetComponent<SphereCollider>();
                 Destroy(collider);
-                TeachTriggerCount -= 1;
+                TeachTriggerCount--;
+            }
+        }
+        //檢查triggers是否都被擊中
+        foreach (SetTrigger triggers in TeachTrigger)
+        {
+            if (triggers.Pass) {
+                Debug.Log("Passing");
             }
         }
         if (SimpleReload.OnReload) {
@@ -110,8 +119,9 @@ public class StageTeachManager : MonoBehaviour {
         }
         if (video.isPaused) {
             Canvas.transform.position = Vector3.Lerp(Canvas.transform.position, new Vector3(Canvas.transform.position.x, 7, Canvas.transform.position.z), Time.deltaTime * 0.2f);
+            StartCoroutine(DeleteSelf(Canvas));
         }
-        StartCoroutine(DeleteSelf(Canvas));
+       
     }
     IEnumerator DeleteSelf(GameObject gameObject) {
         yield return new WaitForSeconds(5);
