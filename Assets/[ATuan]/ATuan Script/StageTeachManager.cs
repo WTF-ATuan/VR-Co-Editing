@@ -84,7 +84,6 @@ public class StageTeachManager : MonoBehaviour {
         if (SimpleReload.OnReload) {
             //牆壁往下
             FirstWall.transform.position = Vector3.Lerp(FirstWall.transform.position, new Vector3(FirstWall.transform.position.x, -3, FirstWall.transform.position.z), Time.deltaTime * 0.2f);
-            StartCoroutine(DeleteSelf(FirstWall));
             //檢查子彈or題目是否都打完
             if (TeachTriggerCount <= 0 || PlayerInput.fire.Magazine.Count <= 0) {
                 AnserOfTech.SetActive(true);

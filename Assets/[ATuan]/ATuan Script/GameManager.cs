@@ -6,7 +6,7 @@ using Valve.VR.InteractionSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonMonoBehavior<GameManager> {
-    [SerializeField] private ViveInput inputManager;
+    private ViveInput inputManager;
 
     [Header("Level Manager")]
     [SerializeField] private bool FirstStage = false;
@@ -33,11 +33,14 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
     [SerializeField] private GameObject QuestionOne, QuestionTwo, QuestionThree;
 
     [Header("UIManager")]
-    [SerializeField] UIManager uIManager;
-    [SerializeField] GameObject OnFireUi;
-    [SerializeField] GameObject[] StageOneUI;
-    [SerializeField] GameObject[] StageTwoUI;
-    [SerializeField] GameObject[] StageThreeUI;
+    [SerializeField] private Material[] StageOneUI;
+    [SerializeField] private Material[] StageTwoUI;
+    [SerializeField] private Material[] StageThreeUI;
+
+    [Header("AnimatorControll")]
+    [SerializeField] Animator Man;
+    [SerializeField] Animator Grandma;
+    [SerializeField] Animator Lady;
 
     [Header("StartPosition")]
     [SerializeField] private Transform StartPos;
@@ -49,7 +52,9 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
 
     public void Start() {
         GameObject player = GameObject.FindGameObjectWithTag("Character");
+        inputManager = player.GetComponent<ViveInput>();
         player.transform.position = StartPos.position;
+        player.transform.SetParent(boatSetting.gameObject.transform);
         stage = Stage.FirstStage;
         StageOneTriggerCount = StageOneTrigger.Count;
         StageTwoTriggerCount = StageTwoTrigger.Count;
@@ -91,9 +96,7 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
         //順序
         //UIsetting 在一開始就要出來了
         //Boatset 到點後
-        //boatSetting.BoatMove((BoatPosition[RecycleNumber]), 5f);
-        if(boatSetting.velocity == Vector3.zero)
-        //setTrigger 並生成
+        StartCoroutine(BoatMovement(1));
         //setBullet
         if (RecycleNumber == 1) {
             inputManager.fire.SetBullet(StageOneBubble);
@@ -104,9 +107,9 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
         for (int i = 0; i < StageOneTrigger.Count; i++) {
             if (StageOneTrigger[i].Pass) {
                 inputManager.fire.RemoveBullet(StageOneTrigger[i].AnserObject.name);
-                StageOneTriggerCount -= 1;
                 SphereCollider collider = StageOneTrigger[i].gameObject.GetComponent<SphereCollider>();
                 collider.enabled = false;
+                StageOneTriggerCount -= 1;
             }
         }
         if (StageOneTriggerCount <= 0 || inputManager.fire.Magazine.Count <= 0) {
@@ -121,12 +124,15 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
 
     }
     #endregion
+    IEnumerator BoatMovement(int Stage) {
+        boatSetting.BoatMove(BoatPosition[Stage].position, 5f);
+        yield return new WaitForSeconds(5);
+    }
     IEnumerator SetTranslateOff(GameObject obj , bool Stage) {
         yield return new WaitForSeconds(2);
         obj.SetActive(false);
         Stage = true;
     }
-
     public enum Stage {
         FirstStage,
         SceondStage,
