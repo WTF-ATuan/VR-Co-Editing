@@ -37,7 +37,7 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
     [SerializeField] private Material[] StageTwoUI;
     [SerializeField] private Material[] StageThreeUI;
 
-    [Header("AnimatorControll")]
+    [Header("Animator")]
     [SerializeField] Animator Man;
     [SerializeField] Animator Grandma;
     [SerializeField] Animator Lady;
@@ -45,20 +45,14 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
     [Header("StartPosition")]
     [SerializeField] private Transform StartPos;
     private int RecycleNumber = 1;
-
-    private int StageOneTriggerCount, StageTwoTriggerCount, StageThreeTriggerCount;
-
     private Stage stage;
 
     public void Start() {
         GameObject player = GameObject.FindGameObjectWithTag("Character");
         inputManager = player.GetComponent<ViveInput>();
         player.transform.position = StartPos.position;
-        player.transform.SetParent(boatSetting.gameObject.transform);
+        player.transform.parent = boatSetting.gameObject.transform;
         stage = Stage.FirstStage;
-        StageOneTriggerCount = StageOneTrigger.Count;
-        StageTwoTriggerCount = StageTwoTrigger.Count;
-        StageThreeTriggerCount = StageThreeTrigger.Count;
     }
     public void Update() {
         switch (stage) {
@@ -87,6 +81,35 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
         }
     }
     public void StageTwo() {
+
+        StartCoroutine(BoatMovement(2));
+
+        if (RecycleNumber == 2) {
+            inputManager.fire.SetBullet(StageTwoBubble);
+            RecycleNumber++;
+            inputManager.fire.IndexOfBullet = UnityEngine.Random.Range(0, StageTwoBubble.Length - 1);
+        }
+
+        for (int i = 0; i < StageTwoTrigger.Count; i++) {
+            if (StageOneTrigger[i].Pass) {
+                inputManager.fire.RemoveBullet(StageTwoTrigger[i].AnserObject.name);
+                SphereCollider collider = StageOneTrigger[i].gameObject.GetComponent<SphereCollider>();
+                collider.enabled = false;
+            }
+        }
+        bool check = true;
+        foreach (SetTrigger triggers in StageTwoTrigger) {
+            if (!triggers.Pass) {
+                check = false;
+                break;
+            }
+        }
+        if (check) {
+            StartCoroutine(SetTranslateOff(QuestionTwo, SceondStage));
+            AnserOne.SetActive(true);
+            Debug.Log("Passing SceondStage");
+            //過關特效 以及聲音
+        }
         if (SceondStage) {
             stage += 1;
         }
@@ -109,15 +132,21 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
                 inputManager.fire.RemoveBullet(StageOneTrigger[i].AnserObject.name);
                 SphereCollider collider = StageOneTrigger[i].gameObject.GetComponent<SphereCollider>();
                 collider.enabled = false;
-                StageOneTriggerCount -= 1;
             }
         }
-        if (StageOneTriggerCount <= 0 || inputManager.fire.Magazine.Count <= 0) {
+        bool check = true;
+        foreach (SetTrigger triggers in StageOneTrigger) {
+            if (!triggers.Pass) {
+                check = false;
+                break;
+            }
+        }
+        if (check) {
             StartCoroutine(SetTranslateOff(QuestionOne, FirstStage));
             AnserOne.SetActive(true);
             Debug.Log("Passing FirstStage");
+            //過關特效 以及聲音 動畫
         }
-
         if (FirstStage) {
             stage += 1;
         }
@@ -125,11 +154,12 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
     }
     #endregion
     IEnumerator BoatMovement(int Stage) {
-        boatSetting.BoatMove(BoatPosition[Stage].position, 5f);
+        boatSetting.BoatMove(BoatPosition[Stage - 1].position, 5f);
         yield return new WaitForSeconds(5);
     }
     IEnumerator SetTranslateOff(GameObject obj , bool Stage) {
-        yield return new WaitForSeconds(2);
+        obj.transform.position = Vector3.Lerp(obj.transform.position, new Vector3(obj.transform.position.x, obj.transform.position.y + 5f, obj.transform.position.z), 5f);
+        yield return new WaitForSeconds(5);
         obj.SetActive(false);
         Stage = true;
     }
