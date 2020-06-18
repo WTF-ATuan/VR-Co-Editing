@@ -18,7 +18,6 @@ public class StageTeachManager : MonoBehaviour {
     [SerializeField] private GameObject FirstWall;
 
     [SerializeField] private SteamVR_LoadLevel ScenceChanger;
-    private int TeachTriggerCount;
     private bool IsOnLoad = false;
 
     [Header("UISetting")]
@@ -46,7 +45,6 @@ public class StageTeachManager : MonoBehaviour {
 
     private void Start() {
         ScenceChanger.enabled = false;
-        TeachTriggerCount = TeachTrigger.Count;
         FullTimeOfVideo = video.clip.length - 0.7;
         UIRenderer = OnchangeUIGameObject.GetComponent<Renderer>();
     }
@@ -71,25 +69,27 @@ public class StageTeachManager : MonoBehaviour {
                 PlayerInput.fire.RemoveBullet(TeachTrigger[i].AnserObject.name);
                 SphereCollider collider = TeachTrigger[i].gameObject.GetComponent<SphereCollider>();
                 Destroy(collider);
-                TeachTriggerCount--;
             }
         }
-        //檢查triggers是否都被擊中
+        //檢查triggers是否都被擊中 
+        bool cheak=true;
         foreach (SetTrigger triggers in TeachTrigger)
         {
-            if (triggers.Pass) {
-                Debug.Log("Passing");
+            if (!triggers.Pass) {
+                cheak = false;
+                break;
             }
+        }
+        if (cheak)
+        {
+            Debug.Log("Passing");
+            AnserOfTech.SetActive(true);
+            PassingTeachStage = true;
         }
         if (SimpleReload.OnReload) {
             //牆壁往下
             FirstWall.transform.position = Vector3.Lerp(FirstWall.transform.position, new Vector3(FirstWall.transform.position.x, -3, FirstWall.transform.position.z), Time.deltaTime * 0.2f);
-            //檢查子彈or題目是否都打完
-            if (TeachTriggerCount <= 0 || PlayerInput.fire.Magazine.Count <= 0) {
-                AnserOfTech.SetActive(true);
-                PassingTeachStage = true;
-                Debug.Log("Passing TeachStage");
-            }
+          
             //變更UI圖 
             MaterialChange();
         }

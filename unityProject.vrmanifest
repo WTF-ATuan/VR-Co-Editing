@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.vrcoediting.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\Noki\\Documents\\VR-Co-Editing\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\File\\Master\\2020Summer\\Object\\Unity\\VR-Co-Editing\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "VR co-Editing [Testing]"
