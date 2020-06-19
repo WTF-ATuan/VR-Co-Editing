@@ -14,7 +14,7 @@ public class ViveInput : MonoBehaviour {
     [SerializeField] private GameObject LoudPublic;
 
     [Header("PlayerInput")]
-    [SerializeField] private Hand RightHand;
+    [SerializeField] public Hand RightHand;
     [SerializeField] private Hand LeftHand;
 
     [Header("PlayerHandInput")]
@@ -25,6 +25,14 @@ public class ViveInput : MonoBehaviour {
     private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
     public bool LockingGun = true;
 
+    private void Start()
+    {
+        if (LoudPublic == null) {
+            LoudPublic = GameObject.FindGameObjectWithTag("LoudGun");
+            fire = LoudPublic.GetComponent<Fire>();
+            InteractableOfGun = GetComponent<Valve.VR.InteractionSystem.Interactable>();
+        }
+    }
 
     private void FixedUpdate() {
         InputOfVRSet();
@@ -37,12 +45,12 @@ public class ViveInput : MonoBehaviour {
         if (GripFireAction.GetLastStateDown(SteamVR_Input_Sources.RightHand)) //讀取FireActicon GrapGrip值  
         {
             //Debug.Log("OpenFIreVRInput");
-            if (RightHand.currentAttachedObject != null && RightHand.currentAttachedObject == LoudPublic && fire.Timer < 0 )
+            if (RightHand.currentAttachedObject != null && RightHand.currentAttachedObject == LoudPublic && fire.Timer < 0)
                 fire.OpenFIre();
         }
         //拿取物件Input
         if (RightHand.currentAttachedObject == null && StartGrab != GrabTypes.None) {
-            if (GrapPinchAction.GetLastStateDown(SteamVR_Input_Sources.Any)|| GripFireAction.GetLastStateDown(SteamVR_Input_Sources.RightHand)) //讀取GrapPinchAction GrapPinch值  
+            if (GrapPinchAction.GetLastStateDown(SteamVR_Input_Sources.Any) || GripFireAction.GetLastStateDown(SteamVR_Input_Sources.RightHand)) //讀取GrapPinchAction GrapPinch值  
             {
                 Debug.Log("GrapPinchActionVRInput");
                 if (RightHand.IsStillHovering(InteractableOfGun)) {
@@ -55,7 +63,7 @@ public class ViveInput : MonoBehaviour {
 
                     }
                 }
-               
+
 
             }
         }
@@ -63,8 +71,8 @@ public class ViveInput : MonoBehaviour {
             RightHand.DetachObject(LoudPublic);
             RightHand.HoverUnlock(InteractableOfGun);
         }
-            //搖桿左
-            if (SnapTurnLeft.GetLastStateDown(SteamVR_Input_Sources.RightHand)) {
+        //搖桿左
+        if (SnapTurnLeft.GetLastStateDown(SteamVR_Input_Sources.RightHand)) {
 
             Debug.Log("TurnLeftActionVRInput");
             if (RightHand.currentAttachedObject != null && RightHand.currentAttachedObject == LoudPublic)
@@ -79,5 +87,11 @@ public class ViveInput : MonoBehaviour {
                 fire.ChangeBullectPlus();
         }
 
+    }
+    public void CheckingHand() {
+        GrabTypes StartGrab = RightHand.GetBestGrabbingType();
+        if (RightHand.currentAttachedObject != LoudPublic) {
+            RightHand.AttachObject(LoudPublic, StartGrab, attachmentFlags);
+        }
     }
 }
