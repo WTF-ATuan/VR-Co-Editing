@@ -16,24 +16,25 @@ public class Fire : MonoBehaviour
     private Bullet WordBullet;
     public float Timer = 0;
     private float ColdDownTime = 1.5f;
-
-    AudioSource m_shootingSound;//MengTa
+    [SerializeField] private AudioSource OpenFireSound;
+    [SerializeField] private AudioSource ReloadSound;
 
     void Start()
     {
         //animator = GetComponent<Animator>();
         MuzzlerLash.SetActive(false);
-        m_shootingSound = GetComponent<AudioSource>();//MengTa
     }
     public void RemoveBullet(string BulletName)
     {
-        for (int i = 0; i < Magazine.Count; i++)
+        for (int i = Magazine.Count-1; i>-1; i--)
         {
-            if (Magazine[i].Name == BulletName )
+            if (Magazine[i].Name == BulletName)
             {
                 Magazine.RemoveAt(i);
-                IndexOfBullet = Random.Range(0, Magazine.Count);
-                Debug.Log("Remove" + Magazine[i].gameObject.name);
+            }
+            if (IndexOfBullet == i)
+            {
+                IndexOfBullet = 0;
             }
         }
     }
@@ -98,7 +99,7 @@ public class Fire : MonoBehaviour
         bulletRb.velocity = BarrelPivot.forward * BulletSpeed;
         MuzzlerLash.SetActive(true);
         IndexOfBullet++;
-        m_shootingSound.Play();//MengTa
+        OpenFireSound.Play();
         if (IndexOfBullet >= Magazine.Count)
         {
             IndexOfBullet = 0;

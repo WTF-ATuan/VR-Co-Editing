@@ -28,6 +28,7 @@ public class SetTrigger : MonoBehaviour
     public void ChangeImage(GameObject obj)
     {
         GameObject AnserObj = Instantiate(obj, transform.position, obj.transform.rotation);
+        AnserObj.transform.SetParent(this.transform);
         Rigidbody AnserObjRig = AnserObj.GetComponent<Rigidbody>();
         SphereCollider sphere = AnserObj.GetComponent<SphereCollider>();
         Destroy(AnserObjRig);

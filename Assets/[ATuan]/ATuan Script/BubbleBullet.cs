@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class BubbleBullet : MonoBehaviour
 {
-    public AudioSource[] BubbleSound;
+    public AudioSource BubbleSound;
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject != null) {
-            BubbleSound[Random.Range(0, BubbleSound.Length)].Play();
-            Destroy(gameObject);
+            BubbleSound.Play();
         }
     }
 }

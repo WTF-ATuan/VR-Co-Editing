@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class GameManager : SingletonMonoBehavior<GameManager> {
+public class GameManager : SingletonMonoBehavior<GameManager>
+{
     private ViveInput inputManager;
 
     [Header("Level Manager")]
     [SerializeField] private bool FirstStage = false;
     [SerializeField] private bool SceondStage = false;
     [SerializeField] private bool ThirdStage = false;
-    private SteamVR_LoadLevel ScenceManager;
+    [SerializeField] private SteamVR_LoadLevel ScenceChange;
 
     [Header("BubblePrefab")]
     [SerializeField] private GameObject[] StageOneBubble;
@@ -53,25 +54,29 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
 
     [Header("Sound")]
     public AudioSource successSound, failSound;
+    public AudioSource[] TaiwanSound;
 
-    public void Start() {
+    public void Start()
+    {
         SetPlayerPosition();
         inputManager.CheckingHand();
         stage = Stage.FirstStage;
         UIRenderer = OnchangeUIGameObject.GetComponent<Renderer>();
-        ScenceManager = GetComponent<SteamVR_LoadLevel>();
-        ScenceManager.enabled = false;
+        ScenceChange.enabled = false;
     }
 
-    public void SetPlayerPosition() {
+    public void SetPlayerPosition()
+    {
         GameObject player = GameObject.FindGameObjectWithTag("Character");
         inputManager = player.GetComponent<ViveInput>();
         player.transform.position = StartPos.position;
         player.transform.localRotation = StartPos.localRotation;
         player.transform.parent = boatSetting.gameObject.transform;
     }
-    public void Update() {
-        switch (stage) {
+    public void Update()
+    {
+        switch (stage)
+        {
             case Stage.FirstStage:
                 StageOne();
                 break;
@@ -82,107 +87,194 @@ public class GameManager : SingletonMonoBehavior<GameManager> {
                 StageThree();
                 break;
             default:
-                StartCoroutine(EndingStage());
                 break;
         }
-
-    }
-    #region Stage
-    IEnumerator EndingStage() {
-        yield return new WaitForSeconds(5f);
-        ScenceManager.enabled = true;
-    }
-    public void StageThree() {
         if (ThirdStage) {
-            stage += 1;
+            Invoke("EndingStage", 3f);
         }
     }
-    public void StageTwo() {
+    #region Stage
+    void EndingStage()
+    {
+        ScenceChange.enabled = true;
+        Destroy(this);
+    }
+    public void StageThree()
+    {
+        StartCoroutine(BoatMovement(3, 5));
 
-        StartCoroutine(BoatMovement(2 , 3));
-
-        if (RecycleNumber == 2) {
-            inputManager.fire.SetBullet(StageTwoBubble);
+        if (RecycleNumber == 3)
+        {
+            inputManager.fire.SetBullet(StageThreeBubble);
+            inputManager.fire.animator.SetTrigger("OnChangeBullet");
             RecycleNumber++;
             inputManager.fire.IndexOfBullet = 0;
         }
 
-        for (int i = 0; i < StageTwoTrigger.Count; i++) {
-            if (StageOneTrigger[i].Pass) {
-                inputManager.fire.RemoveBullet(StageTwoTrigger[i].AnserObject.name);
-                SphereCollider collider = StageOneTrigger[i].gameObject.GetComponent<SphereCollider>();
-                collider.enabled = false;
+        for (int i = 0; i < StageThreeTrigger.Count; i++)
+        {
+            if (StageOneTrigger[i].Pass)
+            {
+                //inputManager.fire.RemoveBullet(StageThreeTrigger[i].AnserObject.name);
+                //SphereCollider collider = StageThreeTrigger[i].gameObject.GetComponent<SphereCollider>();
+                //Destroy(collider);
             }
         }
+        UIRenderer.material = StageThreeUI[inputManager.fire.IndexOfBullet];
         bool check = true;
-        foreach (SetTrigger triggers in StageTwoTrigger) {
-            if (!triggers.Pass) {
+        foreach (SetTrigger triggers in StageThreeTrigger)
+        {
+            if (!triggers.Pass)
+            {
                 check = false;
                 break;
             }
         }
-        if (check) {
+        if (check)
+        {
+            LifeCircleAni.SetTrigger("Life3");
+            StartCoroutine(SetTranslateOff(QuestionThree, ThirdStage));
+            QuestionThree.transform.position = Vector3.Lerp(QuestionThree.transform.position, new Vector3(QuestionThree.transform.position.x, QuestionThree.transform.position.y + 5f, QuestionThree.transform.position.z), Time.deltaTime * 0.2f);
+            AnimatorSetting(Grandma, 2);
+            AnserOne.SetActive(true);
+            Debug.Log("Passing ThreeStage");
+            //過關特效 以及聲音
+            SoundChanger(TaiwanSound[2]);
+            ThirdStage = true;
+        }
+        if (ThirdStage)
+        {
+            stage += 1;
+        }
+    }
+    public void StageTwo()
+    {
+        StartCoroutine(BoatMovement(2, 5));
+
+        if (RecycleNumber == 2)
+        {
+            inputManager.fire.SetBullet(StageTwoBubble);
+            inputManager.fire.animator.SetTrigger("OnChangeBullet");
+            RecycleNumber++;
+            inputManager.fire.IndexOfBullet = 0;
+        }
+        UIRenderer.material = StageTwoUI[inputManager.fire.IndexOfBullet];
+        for (int i = 0; i < StageTwoTrigger.Count; i++)
+        {
+            if (StageOneTrigger[i].Pass)
+            {
+                //inputManager.fire.RemoveBullet(StageTwoTrigger[i].AnserObject.name);
+                //SphereCollider collider = StageTwoTrigger[i].gameObject.GetComponent<SphereCollider>();
+                //Destroy(collider);
+            }
+        }
+        bool check = true;
+        foreach (SetTrigger triggers in StageTwoTrigger)
+        {
+            if (!triggers.Pass)
+            {
+                check = false;
+                break;
+            }
+        }
+        if (check)
+        {
             LifeCircleAni.SetTrigger("Life2");
-            StartCoroutine(SetTranslateOff(QuestionTwo, SceondStage,Grandma));
+            StartCoroutine(SetTranslateOff(QuestionTwo, SceondStage));
+            QuestionTwo.transform.position = Vector3.Lerp(QuestionTwo.transform.position, new Vector3(QuestionTwo.transform.position.x, QuestionTwo.transform.position.y + 5f, QuestionTwo.transform.position.z), Time.deltaTime * 0.2f);
+            AnimatorSetting(Grandma, 1);
             AnserOne.SetActive(true);
             Debug.Log("Passing SceondStage");
             //過關特效 以及聲音
+            SoundChanger(TaiwanSound[1]);
+            SceondStage = true;
         }
-        if (SceondStage) {
+        if (SceondStage)
+        {
             stage += 1;
         }
 
     }
-    public void StageOne() {
+    public void StageOne()
+    {
         //順序
+        inputManager.RightHand.AttachObject(inputManager.LoudPublic, inputManager.StartGrab, inputManager.attachmentFlags);
+
         //Boatset 到點後
-        StartCoroutine(BoatMovement(1 , 10));
+        StartCoroutine(BoatMovement(1, 10));
         //setBullet
-        if (RecycleNumber == 1) {
+        if (RecycleNumber == 1)
+        {
             inputManager.fire.SetBullet(StageOneBubble);
+            inputManager.fire.animator.SetTrigger("OnChangeBullet");
             RecycleNumber++;
             inputManager.fire.IndexOfBullet = 0;
         }
+        UIRenderer.material = StageOneUI[inputManager.fire.IndexOfBullet];
         //判定子彈射到 以及關卡過
-        for (int i = 0; i < StageOneTrigger.Count; i++) {
-            if (StageOneTrigger[i].Pass) {
-                inputManager.fire.RemoveBullet(StageOneTrigger[i].AnserObject.name);
-                SphereCollider collider = StageOneTrigger[i].gameObject.GetComponent<SphereCollider>();
-                collider.enabled = false;
+        for (int i = 0; i < StageOneTrigger.Count; i++)
+        {
+            if (StageOneTrigger[i].Pass)
+            {
+                //inputManager.fire.RemoveBullet(StageOneTrigger[i].AnserObject.name);
+                //SphereCollider collider = StageOneTrigger[i].gameObject.GetComponent<SphereCollider>();
+                //Destroy(collider);
             }
         }
         bool check = true;
-        foreach (SetTrigger triggers in StageOneTrigger) {
-            if (!triggers.Pass) {
+        foreach (SetTrigger triggers in StageOneTrigger)
+        {
+            if (!triggers.Pass)
+            {
                 check = false;
                 break;
             }
         }
-        if (check) {
+        if (check)
+        {
             LifeCircleAni.SetTrigger("Life1");
-            StartCoroutine(SetTranslateOff(QuestionOne, FirstStage , Man));
+            StartCoroutine(SetTranslateOff(QuestionOne, FirstStage));
+            QuestionOne.transform.position = Vector3.Lerp(QuestionOne.transform.position, new Vector3(QuestionOne.transform.position.x, QuestionOne.transform.position.y + 5f, QuestionOne.transform.position.z), Time.deltaTime * 0.2f);
+            AnimatorSetting(Man, 0);
             AnserOne.SetActive(true);
             Debug.Log("Passing FirstStage");
+            FirstStage = true;
             //過關特效 以及聲音 動畫
+            SoundChanger(TaiwanSound[0]);
         }
-        if (FirstStage) {
+        if (FirstStage)
+        {
             stage += 1;
         }
 
     }
     #endregion
-    IEnumerator BoatMovement(int Stage , float time) {
+    void SoundChanger(AudioSource audio)
+    {
+        audio.Play();
+    }
+
+    IEnumerator BoatMovement(int Stage, float time)
+    {
         yield return new WaitForSeconds(time);
         boatSetting.BoatMove(BoatPosition[Stage - 1].position, 5f);
     }
-    IEnumerator SetTranslateOff(GameObject obj , bool Stage , Animator animator) {
-        obj.transform.position = Vector3.Lerp(obj.transform.position, new Vector3(obj.transform.position.x, obj.transform.position.y + 5f, obj.transform.position.z), Time.deltaTime * 0.2f);
+    IEnumerator AnimatorSetting(Animator animator, int num)
+    {
         animator.SetTrigger("SaveLIfe");
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(1);
+        LifeCorclePerson[num].SetActive(true);
+
+    }
+    IEnumerator SetTranslateOff(GameObject obj, bool Stage)
+    {
+        obj.transform.position = Vector3.Lerp(obj.transform.position, new Vector3(obj.transform.position.x, obj.transform.position.y + 5f, obj.transform.position.z), Time.deltaTime * 0.2f);
+        yield return new WaitForSeconds(5);
         obj.SetActive(false);
         Stage = true;
     }
-    public enum Stage {
+    public enum Stage
+    {
         FirstStage,
         SceondStage,
         ThirdStage

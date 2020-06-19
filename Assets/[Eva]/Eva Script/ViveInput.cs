@@ -10,8 +10,8 @@ using Valve.VR.InteractionSystem;
 public class ViveInput : MonoBehaviour {
     [Header("PlayerObject")]
     [SerializeField] public Fire fire;
-    [SerializeField] private Valve.VR.InteractionSystem.Interactable InteractableOfGun;
-    [SerializeField] private GameObject LoudPublic;
+    [SerializeField] public Valve.VR.InteractionSystem.Interactable InteractableOfGun;
+    [SerializeField] public GameObject LoudPublic;
 
     [Header("PlayerInput")]
     [SerializeField] public Hand RightHand;
@@ -22,15 +22,16 @@ public class ViveInput : MonoBehaviour {
     public SteamVR_Action_Boolean GrapPinchAction;
     public SteamVR_Action_Boolean SnapTurnLeft = SteamVR_Input.GetBooleanAction("TurnLeft");
     public SteamVR_Action_Boolean SnapTurnRight = SteamVR_Input.GetBooleanAction("TurnRight");
-    private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
+    public Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
     public bool LockingGun = true;
+    public GrabTypes StartGrab;
 
-    private void Start()
+    private void Update()
     {
         if (LoudPublic == null) {
             LoudPublic = GameObject.FindGameObjectWithTag("LoudGun");
             fire = LoudPublic.GetComponent<Fire>();
-            InteractableOfGun = GetComponent<Valve.VR.InteractionSystem.Interactable>();
+            InteractableOfGun = LoudPublic.GetComponent<Valve.VR.InteractionSystem.Interactable>();
         }
     }
 
@@ -40,7 +41,7 @@ public class ViveInput : MonoBehaviour {
     }
 
     public void InputOfVRSet() {
-        GrabTypes StartGrab = RightHand.GetBestGrabbingType();
+        StartGrab = RightHand.GetBestGrabbingType();
         //開槍Input
         if (GripFireAction.GetLastStateDown(SteamVR_Input_Sources.RightHand)) //讀取FireActicon GrapGrip值  
         {

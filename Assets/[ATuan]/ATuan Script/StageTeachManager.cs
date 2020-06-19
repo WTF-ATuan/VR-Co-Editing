@@ -21,8 +21,9 @@ public class StageTeachManager : SingletonMonoBehavior<StageTeachManager>
     private Renderer UIRenderer;
 
     [Header("SoundManager")]
-    [SerializeField] private AudioSource OpenFireSound;
     [SerializeField] private AudioSource[] WordChange;
+    [SerializeField] private AudioSource TaiwanSound;
+    [SerializeField] private AudioSource[] JapanSound;
     public AudioSource successSound, failSound;
     [Header("Debug")]
     public bool PassingTeachStage = false;
@@ -83,24 +84,26 @@ public class StageTeachManager : SingletonMonoBehavior<StageTeachManager>
         {
             //牆壁往下
             FirstWall.transform.position = Vector3.Lerp(FirstWall.transform.position, new Vector3(FirstWall.transform.position.x, -3, FirstWall.transform.position.z), Time.deltaTime * 0.2f);
-
+            InvokeRepeating("TaiwanSoundPlay",2f,3 );
+            SoundPlay();
             //變更UI圖 
-            //MaterialChange();
+            MaterialChange();
         }
+    }
+    void SoundPlay() {
+        JapanSound[PlayerInput.fire.IndexOfBullet].Play();
+    }
+    void TaiwanSoundPlay() {
+        TaiwanSound.Play();
     }
     void PassTeachStage()
     {
         ScenceChanger.enabled = true;
         Destroy(this);
     }
-    //public void MaterialChange()
-    //{
-    //    if (PlayerInput.fire.Magazine[PlayerInput.fire.IndexOfBullet] != null)
-    //    {
-    //        UIRenderer.material = UIMaterials[PlayerInput.fire.IndexOfBullet];
-    //    }
-    //    else {
-    //        UIRenderer.material = null;
-    //    }
-    //}
+    public void MaterialChange()
+    {
+         JapanSound[PlayerInput.fire.IndexOfBullet].Play();
+         UIRenderer.material = UIMaterials[PlayerInput.fire.IndexOfBullet];
+    }
 }

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/[MengTa]/Art_Sence.unity
     guid: 2970593816be5cb4faeb3b0140f0dc7f
+  - enabled: 1
+    path: Assets/[MengTa]/zArt_End.unity
+    guid: 13363cd13b272504c8e21469fb3dff79
   m_configObjects: {}
