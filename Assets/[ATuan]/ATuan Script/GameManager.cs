@@ -55,6 +55,9 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     [Header("Sound")]
     public AudioSource successSound, failSound;
     public AudioSource[] TaiwanSound;
+    public AudioSource[] japanSoundOne;
+    public AudioSource[] japanSoundTwo;
+    public AudioSource[] japanSoundThree;
 
     public void Start()
     {
@@ -121,6 +124,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
             }
         }
         UIRenderer.material = StageThreeUI[inputManager.fire.IndexOfBullet];
+        japanSoundThree[inputManager.fire.IndexOfBullet].Play();
         bool check = true;
         foreach (SetTrigger triggers in StageThreeTrigger)
         {
@@ -159,6 +163,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
             inputManager.fire.IndexOfBullet = 0;
         }
         UIRenderer.material = StageTwoUI[inputManager.fire.IndexOfBullet];
+        japanSoundTwo[inputManager.fire.IndexOfBullet].Play();
         for (int i = 0; i < StageTwoTrigger.Count; i++)
         {
             if (StageOneTrigger[i].Pass)
@@ -211,6 +216,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
             inputManager.fire.IndexOfBullet = 0;
         }
         UIRenderer.material = StageOneUI[inputManager.fire.IndexOfBullet];
+        japanSoundOne[inputManager.fire.IndexOfBullet].Play();
         //判定子彈射到 以及關卡過
         for (int i = 0; i < StageOneTrigger.Count; i++)
         {
