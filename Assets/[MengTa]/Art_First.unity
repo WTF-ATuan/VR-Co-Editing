@@ -1431,7 +1431,7 @@ MonoBehaviour:
   - {fileID: 1001856717}
   successSound: {fileID: 250497829}
   failSound: {fileID: 1737067758}
-  PassingTeachStage: 1
+  PassingTeachStage: 0
   TelePortFuntion: {fileID: 622972895}
 --- !u!4 &770468538
 Transform:
@@ -4060,7 +4060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1722590422
 GameObject:
   m_ObjectHideFlags: 0
