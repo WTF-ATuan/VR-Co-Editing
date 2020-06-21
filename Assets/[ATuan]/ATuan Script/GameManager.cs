@@ -113,18 +113,9 @@ public class GameManager : SingletonMonoBehavior<GameManager>
             RecycleNumber++;
             inputManager.fire.IndexOfBullet = 0;
         }
-
-        for (int i = 0; i < StageThreeTrigger.Count; i++)
-        {
-            if (StageOneTrigger[i].Pass)
-            {
-                //inputManager.fire.RemoveBullet(StageThreeTrigger[i].AnserObject.name);
-                //SphereCollider collider = StageThreeTrigger[i].gameObject.GetComponent<SphereCollider>();
-                //Destroy(collider);
-            }
-        }
         UIRenderer.material = StageThreeUI[inputManager.fire.IndexOfBullet];
         japanSoundThree[inputManager.fire.IndexOfBullet].Play();
+
         bool check = true;
         foreach (SetTrigger triggers in StageThreeTrigger)
         {
@@ -134,7 +125,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
                 break;
             }
         }
-        if (check)
+        if (check || Input.GetKeyDown(KeyCode.T))
         {
             LifeCircleAni.SetTrigger("Life3");
             StartCoroutine(SetTranslateOff(QuestionThree, ThirdStage));
@@ -164,15 +155,6 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         }
         UIRenderer.material = StageTwoUI[inputManager.fire.IndexOfBullet];
         japanSoundTwo[inputManager.fire.IndexOfBullet].Play();
-        for (int i = 0; i < StageTwoTrigger.Count; i++)
-        {
-            if (StageOneTrigger[i].Pass)
-            {
-                //inputManager.fire.RemoveBullet(StageTwoTrigger[i].AnserObject.name);
-                //SphereCollider collider = StageTwoTrigger[i].gameObject.GetComponent<SphereCollider>();
-                //Destroy(collider);
-            }
-        }
         bool check = true;
         foreach (SetTrigger triggers in StageTwoTrigger)
         {
@@ -182,7 +164,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
                 break;
             }
         }
-        if (check)
+        if (check || Input.GetKeyDown(KeyCode.S))
         {
             LifeCircleAni.SetTrigger("Life2");
             StartCoroutine(SetTranslateOff(QuestionTwo, SceondStage));
@@ -193,7 +175,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
             //過關特效 以及聲音
             SoundChanger(TaiwanSound[1]);
             SceondStage = true;
-        }
+        }     
         if (SceondStage)
         {
             stage += 1;
@@ -217,16 +199,6 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         }
         UIRenderer.material = StageOneUI[inputManager.fire.IndexOfBullet];
         japanSoundOne[inputManager.fire.IndexOfBullet].Play();
-        //判定子彈射到 以及關卡過
-        for (int i = 0; i < StageOneTrigger.Count; i++)
-        {
-            if (StageOneTrigger[i].Pass)
-            {
-                //inputManager.fire.RemoveBullet(StageOneTrigger[i].AnserObject.name);
-                //SphereCollider collider = StageOneTrigger[i].gameObject.GetComponent<SphereCollider>();
-                //Destroy(collider);
-            }
-        }
         bool check = true;
         foreach (SetTrigger triggers in StageOneTrigger)
         {
@@ -236,7 +208,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
                 break;
             }
         }
-        if (check)
+        if (check || Input.GetKeyDown(KeyCode.F))
         {
             LifeCircleAni.SetTrigger("Life1");
             StartCoroutine(SetTranslateOff(QuestionOne, FirstStage));

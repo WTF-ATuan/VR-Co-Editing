@@ -73,7 +73,7 @@ public class ViveInput : MonoBehaviour {
             RightHand.HoverUnlock(InteractableOfGun);
         }
         //搖桿左
-        if (SnapTurnLeft.GetLastStateDown(SteamVR_Input_Sources.RightHand)) {
+        if (SnapTurnLeft.GetLastStateDown(SteamVR_Input_Sources.Any)) {
 
             Debug.Log("TurnLeftActionVRInput");
             if (RightHand.currentAttachedObject != null && RightHand.currentAttachedObject == LoudPublic)
@@ -81,7 +81,7 @@ public class ViveInput : MonoBehaviour {
         }
 
         //搖桿右
-        if (SnapTurnRight.GetLastStateDown(SteamVR_Input_Sources.RightHand) && RightHand.currentAttachedObject == LoudPublic) {
+        if (SnapTurnRight.GetLastStateDown(SteamVR_Input_Sources.Any) && RightHand.currentAttachedObject == LoudPublic) {
 
             Debug.Log("TurnRightActionVRInput");
             if (RightHand.currentAttachedObject != null && RightHand.currentAttachedObject == LoudPublic)

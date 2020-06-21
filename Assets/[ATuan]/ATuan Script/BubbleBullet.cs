@@ -10,5 +10,8 @@ public class BubbleBullet : MonoBehaviour
         if (collision.gameObject != null) {
             BubbleSound.Play();
         }
+        if (collision.gameObject.tag == "Question") {
+            Destroy(gameObject);
+        }
     }
 }

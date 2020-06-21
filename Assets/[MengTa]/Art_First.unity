@@ -29,7 +29,7 @@ RenderSettings:
   m_SkyboxMaterial: {fileID: 2100000, guid: cc421da483ed06c49933077a621bff25, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
-  m_FlareFadeSpeed: 3
+  m_FlareFadeSpeed: 0
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0846576, g: 0.065350585, b: 0.14225155, a: 1}
+  m_IndirectSpecularColor: {r: 0.12919697, g: 0.035790015, b: 0.2029424, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -355,7 +355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81379673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.67, y: -1.86, z: 3.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3050790365897803698}
@@ -2070,20 +2070,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.398383, y: 27.13014, z: 0.061633095}
   m_Center: {x: 0.04883814, y: 2.2451324, z: -0.030816577}
---- !u!64 &867213433
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 867247823}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 1da92ff19df2475439e0a299cd18c816, type: 3}
 --- !u!1 &867247813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,7 +2170,6 @@ GameObject:
   - component: {fileID: 867613423}
   - component: {fileID: 864221903}
   - component: {fileID: 865318927}
-  - component: {fileID: 867213433}
   m_Layer: 0
   m_Name: bottom wall
   m_TagString: Untagged
@@ -2563,7 +2548,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080696516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.27, z: 5.43}
+  m_LocalPosition: {x: -0.02, y: 0.06, z: 5.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1722497264}
@@ -2580,7 +2565,6 @@ GameObject:
   - component: {fileID: 1217178575}
   - component: {fileID: 1217178574}
   - component: {fileID: 1217178573}
-  - component: {fileID: 1217178572}
   m_Layer: 0
   m_Name: Out_Plane
   m_TagString: Untagged
@@ -2588,20 +2572,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1217178572
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217178571}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1217178573
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6527,7 +6497,7 @@ GameObject:
   - component: {fileID: 470171972292518722}
   m_Layer: 0
   m_Name: Stages
-  m_TagString: Untagged
+  m_TagString: Question
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

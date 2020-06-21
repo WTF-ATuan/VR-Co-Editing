@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.112718195, g: 0.2815615, b: 0.70872027, a: 1}
+  m_IndirectSpecularColor: {r: 0.38818806, g: 0.26120237, b: 0.651041, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1439,7 +1439,7 @@ PrefabInstance:
     - target: {fileID: 7417049226949411930, guid: 38e928fa4bedb444c9a65518c29ee673,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7417049226949411930, guid: 38e928fa4bedb444c9a65518c29ee673,
         type: 3}
@@ -4200,7 +4200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a26aaa5e59b84f545bd3eaa454f74e3d, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a26aaa5e59b84f545bd3eaa454f74e3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4481,7 +4481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426087496}
   m_LocalRotation: {x: -0.13052596, y: -0, z: -0, w: 0.99144495}
-  m_LocalPosition: {x: 68.75, y: 151.995, z: -98.88}
+  m_LocalPosition: {x: 68.792, y: 151.995, z: -99.073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 953712161}
@@ -16977,14 +16977,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490223882}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81d006fccd39f2a46a0444e346b3a7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstStage: 1
-  SceondStage: 1
-  ThirdStage: 1
+  FirstStage: 0
+  SceondStage: 0
+  ThirdStage: 0
   ScenceChange: {fileID: 1490223885}
   StageOneBubble:
   - {fileID: 235852541}
@@ -17062,6 +17062,22 @@ MonoBehaviour:
   - {fileID: 1321841}
   - {fileID: 242872752}
   - {fileID: 1285904473}
+  japanSoundOne:
+  - {fileID: 2015653119}
+  - {fileID: 854315449}
+  - {fileID: 2144142504}
+  - {fileID: 1682703674}
+  - {fileID: 145201542}
+  - {fileID: 512340270}
+  japanSoundTwo:
+  - {fileID: 503022587}
+  - {fileID: 1958134238}
+  - {fileID: 2035392556}
+  - {fileID: 2020096928}
+  japanSoundThree:
+  - {fileID: 1589336014}
+  - {fileID: 532883112}
+  - {fileID: 221113525}
 --- !u!4 &1490223884
 Transform:
   m_ObjectHideFlags: 0
@@ -17974,8 +17990,8 @@ Transform:
   - {fileID: 6582677251795264425}
   - {fileID: 3816584880418420534}
   - {fileID: 767892298}
-  - {fileID: 123049526}
   - {fileID: 347822446}
+  - {fileID: 123049526}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24071,8 +24087,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 23.250805, y: 8.609995, z: 0.99999994}
-  m_Center: {x: -0.94378346, y: 3.8049965, z: -7.459974}
+  m_Size: {x: 23.250805, y: 5.821661, z: 0.99999994}
+  m_Center: {x: -0.94378346, y: 2.4108295, z: -7.459974}
 --- !u!65 &2101668085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24084,21 +24100,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 23.184958, y: 8.518294, z: 0.99999994}
-  m_Center: {x: -0.8775055, y: 3.7591462, z: 6.61}
---- !u!65 &2101668086
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101702231}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0000012, y: 8.685333, z: 14.280636}
-  m_Center: {x: 10.199971, y: 3.8426661, z: -0.29782888}
+  m_Size: {x: 23.184958, y: 5.1425433, z: 0.99999994}
+  m_Center: {x: -0.8775055, y: 2.07127, z: 6.609999}
 --- !u!65 &2101668087
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24191,7 +24194,6 @@ GameObject:
   - component: {fileID: 2101668083}
   - component: {fileID: 2101668084}
   - component: {fileID: 2101668085}
-  - component: {fileID: 2101668086}
   - component: {fileID: 2101668087}
   - component: {fileID: 2101668088}
   m_Layer: 0
@@ -32659,7 +32661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6242020832660712238
 Transform:
   m_ObjectHideFlags: 0
@@ -32738,7 +32740,7 @@ GameObject:
   - component: {fileID: 6335936728377476197}
   m_Layer: 0
   m_Name: Stages
-  m_TagString: Untagged
+  m_TagString: Question
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35078,7 +35080,7 @@ GameObject:
   - component: {fileID: 8668347073118424923}
   m_Layer: 0
   m_Name: Stages
-  m_TagString: Untagged
+  m_TagString: Question
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35126,7 +35128,7 @@ GameObject:
   - component: {fileID: 8750563929386761222}
   m_Layer: 0
   m_Name: Stages
-  m_TagString: Untagged
+  m_TagString: Question
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

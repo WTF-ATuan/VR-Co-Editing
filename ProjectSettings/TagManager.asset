@@ -12,6 +12,7 @@ TagManager:
   - FxTemporaire
   - Magzine
   - Character
+  - Question
   layers:
   - Default
   - TransparentFX

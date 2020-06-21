@@ -60,9 +60,9 @@ public class StageTeachManager : SingletonMonoBehavior<StageTeachManager>
         {
             if (TeachTrigger[i].Pass)
             {
-                PlayerInput.fire.RemoveBullet(TeachTrigger[i].AnserObject.name);
-                SphereCollider collider = TeachTrigger[i].gameObject.GetComponent<SphereCollider>();
-                Destroy(collider);
+                //PlayerInput.fire.RemoveBullet(TeachTrigger[i].AnserObject.name);
+                //SphereCollider collider = TeachTrigger[i].gameObject.GetComponent<SphereCollider>();
+                //Destroy(collider);
             }
         }
         //檢查triggers是否都被擊中 
@@ -75,7 +75,7 @@ public class StageTeachManager : SingletonMonoBehavior<StageTeachManager>
                 break;
             }
         }
-        if (cheak)
+        if (cheak||Input.GetKeyDown(KeyCode.H))
         {
             AnserOfTech.SetActive(true);
             PassingTeachStage = true;
