@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public abstract class ComponentSystem : MonoBehaviour {
     public MyEnvent Event;
-    public void OnEnable()
+    public void Start()
     {
         OnStart();
     }
@@ -13,7 +13,7 @@ public abstract class ComponentSystem : MonoBehaviour {
     {
         OnUpdate();
     }
-    public abstract void OnUpdate();
+    public virtual void OnUpdate() { }
     public virtual void OnStart() { }
 }
 [System.Serializable]

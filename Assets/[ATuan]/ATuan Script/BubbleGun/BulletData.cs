@@ -6,9 +6,14 @@ using UnityEngine;
 public class BulletData{
     public string name;
     public GameObject gameObject;
+    public BubbleData bubbleData;
     public Material bullectMat;
-    public bool isFiring;
-    public bool isHit;
+    public bool isFiring {
+        get => bubbleData.isFire;    
+    }
+    public bool isHit {
+        get => bubbleData.isHit;
+    }
     public Material UImat;
     public SoundFile soundFile;
 }

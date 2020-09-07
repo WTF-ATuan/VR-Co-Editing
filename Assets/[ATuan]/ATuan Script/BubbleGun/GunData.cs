@@ -9,5 +9,6 @@ public class GunData : MonoBehaviour , IFireData {
     public Animator GunAni;
     public GameObject HitEffect;
     public Transform BarrelPivot;
-    public float ColdDownTime = 0f;
+    public float FireColdownTime = 0f;
+    public float ChangingBulletTime = 0f;
 }
