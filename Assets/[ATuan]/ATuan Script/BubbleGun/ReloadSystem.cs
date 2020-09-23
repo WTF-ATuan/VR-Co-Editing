@@ -7,7 +7,9 @@ public class ReloadSystem : ComponentSystem {
     //還需要拿題目(別人給)
     public BulletSet CurrentBulletSet = null;
     public GunData gunData;
+    [SerializeField]
     private BulletData[] bulletDatas = new BulletData[3];
+    [SerializeField]
     private int currentbulletCount;
 
     public override void OnStart()

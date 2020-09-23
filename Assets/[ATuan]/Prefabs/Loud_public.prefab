@@ -493,7 +493,9 @@ GameObject:
   - component: {fileID: 4794304838171098990}
   - component: {fileID: 4794304838177984654}
   - component: {fileID: 4794304838170699240}
-  - component: {fileID: 4794304838170699238}
+  - component: {fileID: 3029945585773164196}
+  - component: {fileID: 3029945585773164198}
+  - component: {fileID: 3029945585773164199}
   m_Layer: 0
   m_Name: Loud_public
   m_TagString: LoudGun
@@ -510,7 +512,7 @@ Transform:
   m_GameObject: {fileID: 4794304838170600270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.918, y: 1.3836596, z: -28.333302}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4794304838171098988}
   - {fileID: 4794304838171098986}
@@ -592,7 +594,7 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &4794304838170699238
+--- !u!114 &3029945585773164196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -601,16 +603,94 @@ MonoBehaviour:
   m_GameObject: {fileID: 4794304838170600270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac76c24433974d145b6c6ed2f6523741, type: 3}
+  m_Script: {fileID: 11500000, guid: c4946564b258ede44a4ab23c85f9ad27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MuzzlerLash: {fileID: 1782395880954752, guid: e802c9c5b472d2345a808aca4bc81014,
-    type: 3}
-  BulletSpeed: 25
-  ColdDownTime: 1.5
-  BarrelPivot: {fileID: 4794304838821140827}
-  IndexOfBullet: 0
-  Timer: 0
+  previousBullet:
+    name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Name: 
+      Sound: {fileID: 0}
+  currentBullet:
+    name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Name: 
+      Sound: {fileID: 0}
+  nextBullet:
+    name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Name: 
+      Sound: {fileID: 0}
+  GunAni: {fileID: 4794304838177984654}
+  HitEffect: {fileID: 0}
+  BarrelPivot: {fileID: 0}
+  FireColdownTime: 0
+  ChangingBulletTime: 0
+--- !u!114 &3029945585773164198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794304838170600270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33479ee4626835547a232096a72724e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentBulletSet: {fileID: 11400000, guid: 0e3b14b2a0f8e5b45ab4b5d75864b9e5, type: 2}
+  gunData: {fileID: 3029945585773164196}
+  bulletDatas:
+  - name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Name: 
+      Sound: {fileID: 0}
+  - name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Name: 
+      Sound: {fileID: 0}
+  - name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Name: 
+      Sound: {fileID: 0}
+  currentbulletCount: 0
+--- !u!114 &3029945585773164199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794304838170600270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c63f4900b93b0459f703b887363fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunData: {fileID: 3029945585773164196}
 --- !u!1 &4794304838821140826
 GameObject:
   m_ObjectHideFlags: 0

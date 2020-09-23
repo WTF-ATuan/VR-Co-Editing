@@ -7,24 +7,29 @@ using System;
 //負責生出子彈 以及變更子彈 
 public class FireSystem : ComponentSystem {
     public GunData gunData;
-    private Timer FireTImer;
-    private Timer ChangingBulletTimer;
+    public Timer FireTImer;
+    public Timer ChangingBulletTimer;
+    public DataEvent<InputData> InputEvent;
     public override void OnStart()
     {
         FireTImer = new Timer(gunData.FireColdownTime);
         ChangingBulletTimer = new Timer(gunData.ChangingBulletTime);
+        InputAction();
+    }
+    public void InputAction() {
+        InputEvent.AddListener(SnapTurnTrigger);
+        InputEvent.AddListener(FireTrigger);
     }
     public override void OnUpdate()
     {
-        FireTrigger();
-        SnapTurnTrigger();
+        InputEvent.Invoke(InputData.instance);
         FireTImer.Tick(Time.fixedDeltaTime);
         ChangingBulletTimer.Tick(Time.fixedDeltaTime);
     }
 
-    public void SnapTurnTrigger()
+    public void SnapTurnTrigger(InputData input)
     {
-        if (InputData.instance.SnapTurnLeft.active)
+        if (input.SnapTurnLeft.active)
         {
             if (ChangingBulletTimer.IsTimerEnd)
             {
@@ -32,7 +37,7 @@ public class FireSystem : ComponentSystem {
                 ChangingBulletTimer.RestTimer();
             }
         }
-        if (InputData.instance.SnapTurnRight.active)
+        if (input.SnapTurnRight.active)
         {
             if (ChangingBulletTimer.IsTimerEnd)
             {
@@ -42,9 +47,9 @@ public class FireSystem : ComponentSystem {
         }
     }
 
-    public void FireTrigger()
+    public void FireTrigger(InputData input)
     {
-        if (InputData.instance.FireButton.active)
+        if (input.FireButton.active)
         {
             if (FireTImer.IsTimerEnd)
             {
@@ -58,7 +63,6 @@ public class FireSystem : ComponentSystem {
         GameObject bullet = Instantiate(data.currentBullet.gameObject, data.BarrelPivot.position, data.currentBullet.gameObject.transform.rotation);
         bullet.name = data.name;
         data.currentBullet = null;
-
     }
     public void ChangeBulletPlus(GunData data)
     {
