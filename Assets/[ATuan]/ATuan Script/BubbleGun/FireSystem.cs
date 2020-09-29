@@ -26,7 +26,6 @@ public class FireSystem : ComponentSystem {
         FireTImer.Tick(Time.fixedDeltaTime);
         ChangingBulletTimer.Tick(Time.fixedDeltaTime);
     }
-
     public void SnapTurnTrigger(InputData input)
     {
         if (input.SnapTurnLeft.active)
@@ -46,7 +45,6 @@ public class FireSystem : ComponentSystem {
             }
         }
     }
-
     public void FireTrigger(InputData input)
     {
         if (input.FireButton.active)

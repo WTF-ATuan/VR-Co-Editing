@@ -5,14 +5,13 @@ using UnityEngine;
 public class HeadPointer : SingletonMonoBehavior<HeadPointer> {
     public bool IsActive;
     public bool DebugLine;
-    public event System.Action<PointerData> PointOnHit;
+    public DataEvent<PointerData> PointOnHit;
     [SerializeField]
     private Transform HeadTransform;
     private Ray ray;
     [SerializeField]
     [Range(10, 100)]
     private float DebugLineLengh;
-
     public void Update()
     {
         if (IsActive)
@@ -37,7 +36,7 @@ public class HeadPointer : SingletonMonoBehavior<HeadPointer> {
                     targerDistance = raycastHit.distance,
                     returnHit = raycastHit.collider.GetComponent<IReturnHit>(),
                 };
-                PointOnHit(data);
+                PointOnHit.Invoke(data);
             }
         }
     }
