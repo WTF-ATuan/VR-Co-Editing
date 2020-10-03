@@ -42,7 +42,7 @@ public class ReloadSystem : ComponentSystem {
                 }
                 else
                 {
-                    bulletDatas[i] = CurrentBulletSet.bulletSets[currentbulletCount];
+                    bulletDatas[i] = CurrentBulletSet.bullets[currentbulletCount];
                     currentbulletCount += 1;
                     SetBulletData(bulletDatas);
                 }

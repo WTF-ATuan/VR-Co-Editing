@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: BulletSet
-  m_EditorClassIdentifier: Assembly-CSharp::BulletSet
-  bulletSets:
-  - name: 
-    gameObject: {fileID: 0}
-    bubbleData: {fileID: 0}
-    bullectMat: {fileID: 0}
-    UImat: {fileID: 0}
-    soundFile:
-      Sound: {fileID: 0}
+  m_Name: LevelOneLevelSet
+  m_EditorClassIdentifier: Assembly-CSharp::LevelSet
+  LevelDatas: []
+  OnPassing:
+    m_PersistentCalls:
+      m_Calls: []

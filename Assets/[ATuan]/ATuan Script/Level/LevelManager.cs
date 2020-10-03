@@ -5,6 +5,9 @@ using UnityEngine;
 public class LevelManager : SingletonMonoBehavior<LevelManager>
 {
     public List<LevelSet> AllLevels;
+    public List<BulletSet> AllBullets;
+    public BulletSet nextBullet;
+    public BulletSet currentBullet;
     public LevelSet nextLevel;
     public LevelSet currentLevel;
     public int currentLevelNumber;

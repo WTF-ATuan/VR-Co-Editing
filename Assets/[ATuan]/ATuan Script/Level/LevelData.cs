@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelData : MonoBehaviour
+[System.Serializable]
+public class LevelData
 {
+    public string name;
     public Material currentMat;
     public Material passMat;
     public SoundFile soundFile;
@@ -11,7 +13,7 @@ public class LevelData : MonoBehaviour
     public bool pass;
     public bool miss;
 }
-[CreateAssetMenu(fileName = "LevelData", menuName = "Data / Level")]
+[CreateAssetMenu(fileName = "New LevelData", menuName = "Data / Level")]
 public class LevelSet : ScriptableObject
 {
     public List<LevelData> LevelDatas;

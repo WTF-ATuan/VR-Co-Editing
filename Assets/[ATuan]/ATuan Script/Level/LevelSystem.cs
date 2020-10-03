@@ -23,5 +23,14 @@ public class LevelSystem : MonoBehaviour
             else
                 levelData.miss = true;
         }
+        JudgeData();
+    }
+    public void JudgeData() {
+        if (levelData.pass) {
+        
+        }
+        if (levelData.miss) {
+            
+        }
     }
 }
