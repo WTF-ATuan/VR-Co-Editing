@@ -17,6 +17,6 @@ public class SoundManager : MonoBehaviour
 }
 [System.Serializable]
 public class SoundFile {
-    public string Name;
+    public string Name => Sound.name;
     public AudioClip Sound;
 }

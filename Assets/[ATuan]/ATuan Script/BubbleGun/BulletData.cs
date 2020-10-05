@@ -17,7 +17,7 @@ public class BulletData{
     public Material UImat;
     public SoundFile soundFile;
 }
-[CreateAssetMenu(fileName = "BulletSet", menuName = "Data/Bullet")]
+[CreateAssetMenu(fileName = "New BulletSet", menuName = "Data/Bullet")]
 public class BulletSet : ScriptableObject{
-    public List<BulletData> bulletSets = new List<BulletData>();
+    public List<BulletData> bullets = new List<BulletData>();
 }

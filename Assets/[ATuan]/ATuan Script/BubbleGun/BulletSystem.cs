@@ -18,5 +18,11 @@ public class BulletSystem : ComponentSystem {
         {
             bubbleData.isHit = true;
         }
+        JudgeData();
+    }
+    public void JudgeData() {
+        if (bubbleData.isHit) {
+            
+        }
     }
 }
