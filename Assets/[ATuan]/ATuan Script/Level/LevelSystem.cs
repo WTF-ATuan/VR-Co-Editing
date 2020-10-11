@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LevelData))]
-public class LevelSystem : MonoBehaviour
+public class LevelSystem : MonoBehaviour 
 {
     LevelData levelData;
     private void Start()
@@ -12,7 +12,6 @@ public class LevelSystem : MonoBehaviour
             return;
         levelData = GetComponent<LevelData>();
     }
-
     public void OnTriggerEnter(Collider other)
     {
         if (other != null) {

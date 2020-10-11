@@ -47,5 +47,4 @@ public class CombineSystemCustomEditor : Editor
         }
         GUILayout.EndHorizontal();
     }
-
 }

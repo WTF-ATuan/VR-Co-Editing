@@ -6,9 +6,13 @@ public class LevelManager : SingletonMonoBehavior<LevelManager>
 {
     public List<LevelSet> AllLevels;
     public List<BulletSet> AllBullets;
+    [HideInInspector]
     public BulletSet nextBullet;
+    [HideInInspector]
     public BulletSet currentBullet;
+    [HideInInspector]
     public LevelSet nextLevel;
+    [HideInInspector]
     public LevelSet currentLevel;
     public int currentLevelNumber;
 

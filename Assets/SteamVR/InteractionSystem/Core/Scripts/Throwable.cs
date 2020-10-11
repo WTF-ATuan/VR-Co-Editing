@@ -58,7 +58,6 @@ namespace Valve.VR.InteractionSystem
 
         protected new Rigidbody rigidbody;
 
-        [HideInInspector]
         public Interactable interactable;
 
 

@@ -32,7 +32,6 @@ namespace Valve.VR
         private SerializedProperty poserScale;
 
 
-
         private SerializedProperty blendingBehaviourArray;
 
 
@@ -436,7 +435,7 @@ namespace Valve.VR
         public override void OnInspectorGUI()
         {
 
-
+            base.OnInspectorGUI();
             serializedObject.Update();
 
             DrawPoseEditorMenu();
