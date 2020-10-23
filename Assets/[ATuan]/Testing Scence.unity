@@ -252,6 +252,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202a6e24b48d1684398409c47161adcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &138406958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 138406960}
+  - component: {fileID: 138406959}
+  m_Layer: 0
+  m_Name: ScenceBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &138406959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138406958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb73ab2cda6b4249b934088182dfad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  Boat: {fileID: 0}
+  BubbleGun: {fileID: 0}
+  PlayerHp: 0
+  EasyVersion:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  NormalVersion:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  HardVersion:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  EnemyCount: 0
+  levelManager: {fileID: 0}
+  GameTime: 0
+  DifficultyChoose: 0
+  EasyMap: []
+  NormalMap: []
+  HardMap: []
+--- !u!4 &138406960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138406958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4567001, y: 1.2463616, z: -1.200477}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &173879881 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9,
@@ -555,8 +630,10 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - '[not set]'
-  overridePreviewLeftHandPrefab: {fileID: 0}
-  overridePreviewRightHandPrefab: {fileID: 0}
+  overridePreviewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
+    type: 3}
+  overridePreviewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
+    type: 3}
   skeletonMainPose: {fileID: 0}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -931,7 +1008,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129898430}
-  - component: {fileID: 2129898429}
   - component: {fileID: 2129898431}
   m_Layer: 0
   m_Name: HandPointer
@@ -940,25 +1016,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2129898429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129898428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a043c731a29ecd745a9270fbf002ee68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 60
-  thickness: 0.01
-  arcDuration: 3
-  segmentBreak: 0.025
-  arcSpeed: 0.2
-  material: {fileID: 0}
-  traceLayerMask: 0
 --- !u!4 &2129898430
 Transform:
   m_ObjectHideFlags: 0
@@ -986,7 +1043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireAction:
-    actionPath: 
+    actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
   handObject: {fileID: 0}
   pointerObject: {fileID: 0}

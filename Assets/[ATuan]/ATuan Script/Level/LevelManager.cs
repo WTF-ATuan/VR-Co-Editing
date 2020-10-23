@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : SingletonMonoBehavior<LevelManager>
+public class LevelManager : MonoBehaviour
 {
-    public List<LevelSet> AllLevels;
-    public List<BulletSet> AllBullets;
+    private List<LevelSet> Levels;
+    private List<BulletSet> Bullets;
     [HideInInspector]
     public BulletSet nextBullet;
     [HideInInspector]
@@ -16,8 +16,16 @@ public class LevelManager : SingletonMonoBehavior<LevelManager>
     public LevelSet currentLevel;
     public int currentLevelNumber;
 
-    public void Start()
+    
+    public void Initialize(ScenceData scenceData) {
+        Levels = scenceData.AllLevels;
+        Bullets = scenceData.AllBullets;
+        AwakeLevel();
+    }
+    public void AwakeLevel()
     {
+        if (Levels == null || Bullets == null)
+            Debug.LogError("NotSetLevel or Bullet");
         currentLevelNumber = -1;
         if (currentLevel != null)
             currentLevelNumber++;
@@ -42,7 +50,7 @@ public class LevelManager : SingletonMonoBehavior<LevelManager>
             {
                 currentLevel = nextLevel;
                 currentLevelNumber++;
-                nextLevel = AllLevels[currentLevelNumber];
+                nextLevel = Levels[currentLevelNumber];
             }
             else
                 Debug.LogError("MissingNextLevel");

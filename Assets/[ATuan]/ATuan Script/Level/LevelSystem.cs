@@ -15,7 +15,7 @@ public class LevelSystem : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other != null) {
-            if (other.name == levelData.name)
+            if (other.name == levelData.anserBullet.name)
             {
                 levelData.pass = true;
             }
@@ -26,10 +26,13 @@ public class LevelSystem : MonoBehaviour
     }
     public void JudgeData() {
         if (levelData.pass) {
-        
+        // pass image come out
+
+        // pass sound come out
         }
         if (levelData.miss) {
-            
+        // miss sound come out 
+        
         }
     }
 }

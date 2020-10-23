@@ -4,7 +4,6 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
 
-[RequireComponent(typeof(TeleportArc))]
 public class HandPointer : MonoBehaviour
 {
     public SteamVR_Action_Boolean fireAction;
