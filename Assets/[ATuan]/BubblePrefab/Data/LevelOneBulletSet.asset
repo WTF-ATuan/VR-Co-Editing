@@ -12,4 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: LevelOneBulletSet
   m_EditorClassIdentifier: Assembly-CSharp::BulletSet
-  bulletSets: []
+  bullets:
+  - name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Sound: {fileID: 0}
+  - name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Sound: {fileID: 0}
+  - name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Sound: {fileID: 0}
+  - name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Sound: {fileID: 0}
+  - name: 
+    gameObject: {fileID: 0}
+    bubbleData: {fileID: 0}
+    bullectMat: {fileID: 0}
+    UImat: {fileID: 0}
+    soundFile:
+      Sound: {fileID: 0}
