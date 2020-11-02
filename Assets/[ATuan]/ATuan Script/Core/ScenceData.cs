@@ -51,6 +51,8 @@ public class ScenceData : MonoBehaviour
     public LevelManager levelManager;
     public List<LevelSet> AllLevels;
     public List<BulletSet> AllBullets;
+    public LevelSet currentLevel;
+    public BulletSet currentBulletSet;
     private void AwakeLevel()
     {
         if (!levelManager) Debug.LogError("null LevelManager");
@@ -79,8 +81,11 @@ public class ScenceData : MonoBehaviour
     public List<Transform> EndPoint;
     [Header("Sound")]
     public SoundManager soundManager;
+    public List<SoundFile> soundFiles;
     private void AwakeSound() {
         if (!soundManager) Debug.LogError("Sound Miss");
+        if(soundFiles == null) Debug.LogError("File MIss");
+        soundManager.Initialize(this);
     }
     [Header("PassEvent")]
     public EventSystem OnPass;
