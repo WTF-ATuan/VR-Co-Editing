@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ReloadSystem : ComponentSystem {
     //還需要拿題目(別人給)
-    public BulletSet CurrentBulletSet = null;
+    public BulletSet CurrentBulletSet;
     public GunData gunData;
     [SerializeField]
     private BulletData[] bulletDatas = new BulletData[3];
@@ -20,6 +20,10 @@ public class ReloadSystem : ComponentSystem {
     {
         TrackGunData();
         CurrentBulletSet = ScenceData.Data.levelManager.currentBullet;
+    }
+
+    private void LoadBulletSet(){
+        CurrentBulletSet = ScenceData.Data.currentBulletSet;
     }
 
     public void TrackGunData()
