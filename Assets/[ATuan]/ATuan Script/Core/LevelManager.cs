@@ -18,8 +18,8 @@ public class LevelManager : MonoBehaviour
 
     
     public void Initialize(ScenceData scenceData) {
-        Levels = scenceData.AllLevels;
-        Bullets = scenceData.AllBullets;
+        Levels = scenceData.thisLevel;
+        Bullets = scenceData.thisBullets;
         AwakeLevel();
     }
     public void AwakeLevel()

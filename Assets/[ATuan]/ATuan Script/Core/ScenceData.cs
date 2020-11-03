@@ -9,7 +9,6 @@ public class ScenceData : MonoBehaviour
         get;
         private set;
     }
-
     private void Awake()
     {
         Data = this;
@@ -20,6 +19,7 @@ public class ScenceData : MonoBehaviour
         AwakeEnemy();
         AwakeSound();
         OnStart.Invoke(null);
+        DontDestroyOnLoad(this.gameObject);
     }
     [Header("Player")]
     public GameObject Player;
@@ -27,15 +27,16 @@ public class ScenceData : MonoBehaviour
     public GameObject BubbleGun;
     public Camera VRCamera;
     public int PlayerHp;
+    public PlayerManager playerManager;
+    public GameObject LoudGun;
     private void AwakePlayer()
     {
-        if (PlayerHp <= 0)
-            Debug.LogError("NotSetHp");
-        if (!Player)
-            Debug.LogError("null player");
-        if (!Boat)
-            Debug.LogError("null boat");
+        if (PlayerHp <= 0) Debug.LogError("NotSetHp");
+        if (!Player) Debug.LogError("null player");
+        if (!Boat) Debug.LogError("null boat");
         if (!VRCamera) Debug.LogWarning("VR Camera miss");
+        if (!playerManager) Debug.LogError("null PlayerScript");
+        playerManager.Initialize(this);
     }
     [Header("Enemy")]
     public EnemyBase[] EasyVersion;
@@ -49,18 +50,20 @@ public class ScenceData : MonoBehaviour
     }
     [Header("Level")]
     public LevelManager levelManager;
-    public List<LevelSet> AllLevels;
-    public List<BulletSet> AllBullets;
+    public List<LevelSet> thisLevel;
+    public List<BulletSet> thisBullets;
     private void AwakeLevel()
     {
         if (!levelManager) Debug.LogError("null LevelManager");
-        if (AllLevels == null) Debug.LogError("Missing Level");
-        if (AllBullets == null) Debug.LogError("Missing Bullet");
+        if (thisLevel == null) Debug.LogError("Missing Level");
+        if (thisBullets == null) Debug.LogError("Missing Bullet");
         levelManager.Initialize(this);
     }
     [Header("GameControl")]
     public float GameTime;
     public Difficulty Difficulty;
+    public bool IsPassLevel;
+    public bool IsFailLevel;
     public GameManager gameManager;
     private void AwakeGame() {
         if (!gameManager) Debug.LogError("null gameManager");
@@ -76,14 +79,16 @@ public class ScenceData : MonoBehaviour
     }
     [Header("TriggerPoint")]
     public List<Transform> CheckPoint;
-    public List<Transform> EndPoint;
+    public Transform EndPoint;
     [Header("Sound")]
     public SoundManager soundManager;
     private void AwakeSound() {
         if (!soundManager) Debug.LogError("Sound Miss");
     }
-    [Header("PassEvent")]
+    [Header("Pass or Fail Event")]
     public EventSystem OnPass;
+    public EventSystem OnFail;
+
 }
 public enum Difficulty
 {

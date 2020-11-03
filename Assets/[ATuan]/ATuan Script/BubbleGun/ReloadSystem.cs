@@ -19,6 +19,7 @@ public class ReloadSystem : ComponentSystem {
     public override void OnUpdate()
     {
         TrackGunData();
+        CurrentBulletSet = ScenceData.Data.levelManager.currentBullet;
     }
 
     public void TrackGunData()

@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MineData;
-public class GunData : MonoBehaviour , IFireData {
+public class GunData : MonoBehaviour
+{
     public BulletData previousBullet = null;
     public BulletData currentBullet = null;
     public BulletData nextBullet = null;

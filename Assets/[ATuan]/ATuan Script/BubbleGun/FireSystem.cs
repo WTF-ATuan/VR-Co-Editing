@@ -5,18 +5,22 @@ using MineData;
 using System;
 
 //負責生出子彈 以及變更子彈 
-public class FireSystem : ComponentSystem {
+public class FireSystem : ComponentSystem
+{
     public GunData gunData;
     public Timer FireTImer;
     public Timer ChangingBulletTimer;
     public DataEvent<InputData> InputEvent;
+    public BubbleGunUI gunUI;
     public override void OnStart()
     {
         FireTImer = new Timer(gunData.FireColdownTime);
         ChangingBulletTimer = new Timer(gunData.ChangingBulletTime);
+        gunUI.Initialize(gunData);
         InputAction();
     }
-    public void InputAction() {
+    public void InputAction()
+    {
         InputEvent.AddListener(SnapTurnTrigger);
         InputEvent.AddListener(FireTrigger);
     }
@@ -44,6 +48,7 @@ public class FireSystem : ComponentSystem {
                 ChangingBulletTimer.RestTimer();
             }
         }
+        gunUI.ChangingMesh();
     }
     public void FireTrigger(InputData input)
     {
@@ -55,6 +60,7 @@ public class FireSystem : ComponentSystem {
                 FireTImer.RestTimer();
             }
         }
+        gunUI.ChangingMesh();
     }
     public void OpenFire(GunData data)
     {
