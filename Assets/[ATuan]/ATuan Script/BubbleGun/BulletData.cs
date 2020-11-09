@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class BulletData{
+public class BulletData : MonoBehaviour{
     public string name;
+    public float Speed;
+    [HideInInspector]
     public GameObject gameObject;
-    public BubbleData bubbleData;
-    public Material bullectMat;
-    public bool isFiring {
-        get => bubbleData.isFire;    
-    }
-    public bool isHit {
-        get => bubbleData.isHit;
-    }
+    [HideInInspector]
+    public Rigidbody bubbleRig;
+    public bool isHit;
     public Material UImat;
     public SoundFile soundFile;
+    public SoundFile HitSound;
+
 }
 [CreateAssetMenu(fileName = "New BulletSet", menuName = "Data/Bullet")]
 public class BulletSet : ScriptableObject{

@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MineData;
-using System;
 
 //負責生出子彈 以及變更子彈 
 public class FireSystem : ComponentSystem
@@ -21,11 +19,14 @@ public class FireSystem : ComponentSystem
     }
     public void InputAction()
     {
+        InputEvent = new DataEvent<InputData>();
         InputEvent.AddListener(SnapTurnTrigger);
         InputEvent.AddListener(FireTrigger);
     }
     public override void OnUpdate()
     {
+        if(InputData.instance.HandObjcet != gameObject)
+            return;
         InputEvent.Invoke(InputData.instance);
         FireTImer.Tick(Time.fixedDeltaTime);
         ChangingBulletTimer.Tick(Time.fixedDeltaTime);
@@ -67,17 +68,25 @@ public class FireSystem : ComponentSystem
         GameObject bullet = Instantiate(data.currentBullet.gameObject, data.BarrelPivot.position, data.currentBullet.gameObject.transform.rotation);
         bullet.name = data.name;
         data.currentBullet = null;
+        PlaySound(gunData.FireSound);
     }
     public void ChangeBulletPlus(GunData data)
     {
         data.previousBullet = data.currentBullet;
         data.currentBullet = data.nextBullet;
         data.nextBullet = null;
+        PlaySound(data.currentBullet.soundFile);
     }
     public void ChangeBulletMinus(GunData data)
     {
         data.nextBullet = data.currentBullet;
         data.currentBullet = data.previousBullet;
         data.previousBullet = null;
+        PlaySound(data.currentBullet.soundFile);
+    }
+
+    private void PlaySound(SoundFile file)
+    {
+        ScenceData.Data.soundManager.PlaySound(file);
     }
 }

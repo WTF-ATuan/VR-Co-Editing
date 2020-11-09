@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Crocodile : EnemyBase
 {
-    public override Transform TargetPosition {
-        get => ScenceData.Data.EndPoint;
+    protected override Vector3 TargetPosition
+    {
+        get => ScenceData.Data.EndPoint.position;
     }
 
-    public override void Onhit(BulletData bulletData)
+    protected override void Onhit()
     {
-
     }
-    public override void OnPass()
+
+    protected override void OnPass()
     {
-       
+        anserObject.SetActive(true);
+        EnemyAnimator.SetBool("isdead", true);
+    }
+
+    protected override void OnFail()
+    {
+        
     }
 }

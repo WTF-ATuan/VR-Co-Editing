@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: LevelOne-1
+  m_EditorClassIdentifier: Assembly-CSharp::LevelSet
+  Enemy: {fileID: 865586866, guid: 898ec30545794d44fa083c750199b844, type: 3}
+  LevelDatas:
+  - {fileID: 388224212616113073, guid: 4eeeb1fbe535b9b40b0790f8ecf34314, type: 3}
+  - {fileID: 5765382451722767209, guid: 4075a017df84af24f8ca3d4e3b2c3fa3, type: 3}
+  - {fileID: 7393933905237047179, guid: ca368160c2227db49b671d8faa4f0174, type: 3}
+  - {fileID: 2016611490060664410, guid: 173d082c89f8ab94b8b61ee7fa973669, type: 3}
+  - {fileID: 8909392309817385959, guid: b595ee7743238be4cb29c09cfd19b69d, type: 3}
+  - {fileID: 3394007321377004049, guid: ca0f8e843a35ec24ab19731fc25f81ac, type: 3}
+  OnPassing:
+    m_PersistentCalls:
+      m_Calls: []

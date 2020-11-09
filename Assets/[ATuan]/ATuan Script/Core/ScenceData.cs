@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ScenceData : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class ScenceData : MonoBehaviour
         AwakePlayer();
         AwakeMap();
         AwakeLevel();
-        AwakeEnemy();
         AwakeSound();
         OnStart.Invoke(null);
         DontDestroyOnLoad(this.gameObject);
@@ -38,25 +38,18 @@ public class ScenceData : MonoBehaviour
         if (!playerManager) Debug.LogError("null PlayerScript");
         playerManager.Initialize(this);
     }
-    [Header("Enemy")]
-    public EnemyBase[] EasyVersion;
-    public EnemyBase[] NormalVersion;
-    public EnemyBase[] HardVersion;
-    public int EnemyCount;
-    public EnemyManager enemyManager;
-    private void AwakeEnemy() {
-        if (!enemyManager) Debug.LogError("null EnemyManager");
-        enemyManager.Initialize(this);
-    }
     [Header("Level")]
     public LevelManager levelManager;
-    public List<LevelSet> thisLevel;
-    public List<BulletSet> thisBullets;
+    public List<LevelSet> allLevelSets;
+    public List<BulletSet> allBullets;
+    public LevelSet currentLevelSet;
+    public BulletSet currentBulletSet;
+    public int LevelCount;
     private void AwakeLevel()
     {
         if (!levelManager) Debug.LogError("null LevelManager");
-        if (thisLevel == null) Debug.LogError("Missing Level");
-        if (thisBullets == null) Debug.LogError("Missing Bullet");
+        if (allLevelSets == null) Debug.LogError("Missing Level");
+        if (allBullets == null) Debug.LogError("Missing Bullet");
         levelManager.Initialize(this);
     }
     [Header("GameControl")]
@@ -82,6 +75,8 @@ public class ScenceData : MonoBehaviour
     public Transform EndPoint;
     [Header("Sound")]
     public SoundManager soundManager;
+
+    public List<SoundFile> soundFiles;
     private void AwakeSound() {
         if (!soundManager) Debug.LogError("Sound Miss");
     }

@@ -8,24 +8,22 @@ public class AutoComBinding : MonoBehaviour
     public LevelSet levelSet;
     public BulletSet bulletSet;
 
-    public void LevelComBine()
+    public void BulletComBine()
     {
         for (int i = 0; i < levelSet.LevelDatas.Count; i++)
         {
-            if (levelSet.LevelDatas[i].anserBullet == null)
-            {
-                if (bulletSet.bullets[i] != null)
-                    levelSet.LevelDatas[i].anserBullet = bulletSet.bullets[i];
-                else {
-                    Debug.LogError("Bulletset Null");
-                }
-            }
+            levelSet.LevelDatas[i].anserBullet = bulletSet.bullets[i];
         }
     }
 
-    public void BulletComBine()
+    public void BulletNameComBine()
     {
-
+        for (int i = 0; i < levelSet.LevelDatas.Count; i++)
+        {
+            if(bulletSet.bullets[i].name == null)
+                return;
+            bulletSet.bullets[i].name = levelSet.LevelDatas[i].name;
+        }
 
     }
 }
@@ -39,11 +37,11 @@ public class CombineSystemCustomEditor : Editor
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("ComBineLevel"))
         {
-            combineData.LevelComBine();
+            combineData.BulletComBine();
         }
         if (GUILayout.Button("ComBineeBullet"))
         {
-            combineData.BulletComBine();
+            combineData.BulletNameComBine();
         }
         GUILayout.EndHorizontal();
     }

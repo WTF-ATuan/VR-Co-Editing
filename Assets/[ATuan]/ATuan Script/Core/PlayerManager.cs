@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Valve.VR.InteractionSystem;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -8,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     public void Initialize(ScenceData scenceData)
     {
         this.scenceData = scenceData;
+        UpdateEvent.AddUpdate(OnUpdate);
     }
     public bool IsPlayerDied()
     {
@@ -22,4 +22,18 @@ public class PlayerManager : MonoBehaviour
     public void MovePlayer(Vector3 TargetPosition) {
         scenceData.Player.transform.position = TargetPosition;
     }
+
+    private void OnUpdate()
+    {
+        if (InputData.instance.HovingObject.gameObject == ScenceData.Data.BubbleGun)
+        {
+            if (InputData.instance.GripButton.active || InputData.instance.FireButton.active)
+            {
+                InputData.instance.Equip(InputData.instance.HovingObject , InputData.instance.HandTouch);
+                UpdateEvent.RemoveUpdate(OnUpdate);
+            }
+        }
+        
+    }
+
 }

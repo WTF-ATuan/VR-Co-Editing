@@ -3,29 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReloadSystem : ComponentSystem {
-    //還需要拿題目(別人給)
-    public BulletSet CurrentBulletSet;
+public class ReloadSystem : ComponentSystem
+{
+    public BulletSet CurrentBulletSet => ScenceData.Data.currentBulletSet;
     public GunData gunData;
-    [SerializeField]
-    private BulletData[] bulletDatas = new BulletData[3];
-    [SerializeField]
-    private int currentbulletCount;
+    [SerializeField] private BulletData[] bulletDatas;
+    [SerializeField] private int currentbulletCount;
 
     public override void OnStart()
     {
+        bulletDatas = new BulletData[]
+        {
+            CurrentBulletSet.bullets[0],
+            CurrentBulletSet.bullets[1],
+            CurrentBulletSet.bullets[2]
+        };
+        SetBulletData(bulletDatas);
         currentbulletCount = bulletDatas.Length + 1;
+        UpdateEvent.AddUpdate(TrackGunData);
     }
-    public override void OnUpdate()
-    {
-        TrackGunData();
-        CurrentBulletSet = ScenceData.Data.levelManager.currentBullet;
-    }
-
-    private void LoadBulletSet(){
-        CurrentBulletSet = ScenceData.Data.currentBulletSet;
-    }
-
+    
     public void TrackGunData()
     {
         //偵測子彈是否為null 
@@ -38,7 +35,6 @@ public class ReloadSystem : ComponentSystem {
         {
             if (bulletDatas[i] == null)
             {
-
                 if (bulletDatas[i - 1] != null && i > 0)
                 {
                     bulletDatas[i] = bulletDatas[i - 1];
@@ -54,13 +50,16 @@ public class ReloadSystem : ComponentSystem {
             }
         }
     }
+
     public void GetBulletData(BulletData[] bulletDatas)
     {
         bulletDatas[0] = gunData.previousBullet;
         bulletDatas[1] = gunData.currentBullet;
         bulletDatas[2] = gunData.nextBullet;
     }
-    public void SetBulletData(BulletData[] bulletDatas) {
+
+    public void SetBulletData(BulletData[] bulletDatas)
+    {
         gunData.previousBullet = bulletDatas[0];
         gunData.currentBullet = bulletDatas[1];
         gunData.nextBullet = bulletDatas[2];

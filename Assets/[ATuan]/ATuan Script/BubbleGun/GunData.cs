@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 public class GunData : MonoBehaviour
 {
-    public BulletData previousBullet = null;
-    public BulletData currentBullet = null;
-    public BulletData nextBullet = null;
+    public BulletData previousBullet;
+    public BulletData currentBullet;
+    public BulletData nextBullet;
     public Animator GunAni;
-    public GameObject HitEffect;
+    //public GameObject HitEffect;
     public Transform BarrelPivot;
-    public float FireColdownTime = 0f;
-    public float ChangingBulletTime = 0f;
+    public float FireColdownTime;
+    public float ChangingBulletTime;
+    public SoundFile FireSound;
 }

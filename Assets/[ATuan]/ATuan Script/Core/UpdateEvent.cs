@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpdateEvent : MonoBehaviour
 {
     public delegate void updateCrtl();
-    public static updateCrtl updateEvent;
+    private static updateCrtl updateEvent;
 
     public void Update()
     {
