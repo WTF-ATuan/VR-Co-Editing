@@ -1,39 +1,49 @@
 ﻿using Valve.VR.InteractionSystem;
 using UnityEngine;
+using Valve.VR;
 
 public class PlayerManager : MonoBehaviour
 {
     private ScenceData scenceData;
+
     public void Initialize(ScenceData scenceData)
     {
         this.scenceData = scenceData;
         UpdateEvent.AddUpdate(OnUpdate);
     }
+
     public bool IsPlayerDied()
     {
         return scenceData.PlayerHp <= 0;
     }
-    public void GetHit(int Damage) {
+
+    public void GetHit(int Damage)
+    {
         scenceData.PlayerHp -= Damage;
     }
-    public void Recovery(int Hp) {
+
+    public void Recovery(int Hp)
+    {
         scenceData.PlayerHp += Hp;
     }
-    public void MovePlayer(Vector3 TargetPosition) {
+
+    public void MovePlayer(Vector3 TargetPosition)
+    {
         scenceData.Player.transform.position = TargetPosition;
     }
 
     private void OnUpdate()
     {
-        if (InputData.instance.HovingObject.gameObject == ScenceData.Data.BubbleGun)
+        if (InputData.instance.HovingObject != null)
         {
-            if (InputData.instance.GripButton.active || InputData.instance.FireButton.active)
+            if (InputData.instance.HovingObject.gameObject == ScenceData.Data.LoudGun)
             {
-                InputData.instance.Equip(InputData.instance.HovingObject , InputData.instance.HandTouch);
-                UpdateEvent.RemoveUpdate(OnUpdate);
+                if (InputData.instance.GripButton.GetLastStateDown(SteamVR_Input_Sources.Any) || InputData.instance.FireButton.active)
+                {
+                    InputData.instance.Equip(InputData.instance.HovingObject, InputData.instance.HandTouch);
+                    UpdateEvent.RemoveUpdate(OnUpdate);
+                }
             }
         }
-        
     }
-
 }

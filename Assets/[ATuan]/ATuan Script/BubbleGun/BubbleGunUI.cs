@@ -9,7 +9,7 @@ public class BubbleGunUI : MonoBehaviour
 
     public void Initialize(GunData data)
     {
-        this.gunData = data;
+        gunData = data;
     }
     public void ChangingMesh()
     {

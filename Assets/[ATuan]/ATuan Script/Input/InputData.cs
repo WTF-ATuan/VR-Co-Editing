@@ -10,16 +10,36 @@ public class InputData : SingletonMonoBehavior<InputData>
     [Header("Player")] public Player PlayerScript;
     public Hand Hand_R;
     public Hand Hand_L;
-    private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
 
-    public GameObject HandObjcet =>
-        Hand_R.currentAttachedObject ? Hand_R.currentAttachedObject : Hand_L.currentAttachedObject;
+    private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) &
+                                                   (~Hand.AttachmentFlags.DetachOthers) &
+                                                   (~Hand.AttachmentFlags.VelocityMovement);
+    public GameObject HandObjcet
+    {
+        get
+        {
+            if (Hand_R.currentAttachedObject != null)
+                return Hand_R.currentAttachedObject;
+            if (Hand_L.currentAttachedObject != null)
+                return Hand_L.currentAttachedObject;
+            return null;
+        }
+    }
 
-    public Hand HandTouch => HovingObject ? HovingObject.hoveringHand : null;
+    public Hand HandTouch =>
+        HovingObject ? HovingObject.hoveringHand : null;
 
-    public Interactable HovingObject => Hand_R.hoveringInteractable
-        ? Hand_R.hoveringInteractable
-        : Hand_L.hoveringInteractable;
+    public Interactable HovingObject
+    {
+        get
+        {
+            if (Hand_R.hoveringInteractable != null)
+                return Hand_R.hoveringInteractable;
+            if (Hand_L.hoveringInteractable != null)
+                return Hand_L.hoveringInteractable;
+            return null;
+        }
+    }
 
     [Header("ImportingInput")] public SteamVR_Action_Boolean FireButton;
     public SteamVR_Action_Boolean GripButton;

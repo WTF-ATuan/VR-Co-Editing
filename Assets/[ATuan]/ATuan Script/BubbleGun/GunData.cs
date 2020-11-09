@@ -6,10 +6,12 @@ public class GunData : MonoBehaviour
     public BulletData previousBullet;
     public BulletData currentBullet;
     public BulletData nextBullet;
-    public Animator GunAni;
+    public int currentBulletCount;
+    //public Animator GunAni;
     //public GameObject HitEffect;
     public Transform BarrelPivot;
     public float FireColdownTime;
     public float ChangingBulletTime;
     public SoundFile FireSound;
+    public bool needReload;
 }

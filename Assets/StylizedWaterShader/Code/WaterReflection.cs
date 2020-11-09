@@ -33,7 +33,8 @@ public class WaterReflection : MonoBehaviour
 		Camera cam = Camera.current;
 		if( !cam )
 			return;
-
+		
+		
 		// Safeguard from recursive reflections.        
 		if( s_InsideRendering )
 			return;

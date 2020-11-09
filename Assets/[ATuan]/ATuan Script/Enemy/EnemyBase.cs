@@ -12,13 +12,14 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] private float failMaxDistance;
     public float moveSpeed;
     public SoundFile titleSoundFile;
-    public GameObject anserObject;
+    public GameObject anserObject , target_textureObj;
     public float repeatTime;
     public bool pass;
 
     private void Awake()
     {
         anserObject.SetActive(false);
+        target_textureObj.SetActive(false);
         StartCoroutine(TitleSound(repeatTime, titleSoundFile));
         EnemyAnimator = GetComponent<Animator>();
         UpdateEvent.AddUpdate(OnUpdate);
@@ -51,7 +52,11 @@ public abstract class EnemyBase : MonoBehaviour
     private void PassTrack(bool ispass)
     {
         if (ispass)
+        {
+            anserObject.SetActive(true);
+            target_textureObj.SetActive(true);
             OnPass();
+        }
     }
 
     private void MoveToTarget(Vector3 targetPosition)

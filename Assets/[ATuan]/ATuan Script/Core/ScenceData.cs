@@ -14,17 +14,16 @@ public class ScenceData : MonoBehaviour
     {
         Data = this;
         AwakeGame();
-        AwakePlayer();
         AwakeMap();
         AwakeLevel();
         AwakeSound();
+        AwakePlayer();
         OnStart.Invoke(null);
         DontDestroyOnLoad(this.gameObject);
     }
     [Header("Player")]
     public GameObject Player;
     public GameObject Boat;
-    public GameObject BubbleGun;
     public Camera VRCamera;
     public int PlayerHp;
     public PlayerManager playerManager;

@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6125846515748821331}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 32.597637, y: 139.48392, z: -123.68487}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 6125846516393647549}
   m_Father: {fileID: 0}
@@ -127,14 +127,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\u30FC"
   Speed: 5
-  gameObject: {fileID: 0}
   bubbleRig: {fileID: 0}
   isHit: 0
-  UImat: {fileID: 0}
+  UImat: {fileID: 2100000, guid: 49680fe3be3abb248a8c571bd20bcad3, type: 2}
   soundFile:
     Sound: {fileID: 0}
   HitSound:
     Sound: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
 --- !u!114 &8310791993924711225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +158,6 @@ GameObject:
   - component: {fileID: 6125846516393647549}
   - component: {fileID: 6125846516393647544}
   - component: {fileID: 6125846516393647547}
-  - component: {fileID: 6125846516393647546}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -227,17 +226,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6125846516393647546
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6125846516393647548}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}

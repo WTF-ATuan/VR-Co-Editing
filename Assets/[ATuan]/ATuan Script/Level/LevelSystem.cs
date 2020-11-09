@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(LevelData))]
 public class LevelSystem : MonoBehaviour 
 {
-    LevelData levelData;
+    private LevelData levelData;
     private void Start()
     {
         if (levelData != null)

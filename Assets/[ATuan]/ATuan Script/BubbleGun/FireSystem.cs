@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 //負責生出子彈 以及變更子彈 
 public class FireSystem : ComponentSystem
@@ -10,6 +11,7 @@ public class FireSystem : ComponentSystem
     public Timer ChangingBulletTimer;
     public DataEvent<InputData> InputEvent;
     public BubbleGunUI gunUI;
+
     public override void OnStart()
     {
         FireTImer = new Timer(gunData.FireColdownTime);
@@ -17,12 +19,14 @@ public class FireSystem : ComponentSystem
         gunUI.Initialize(gunData);
         InputAction();
     }
+
     public void InputAction()
     {
         InputEvent = new DataEvent<InputData>();
         InputEvent.AddListener(SnapTurnTrigger);
         InputEvent.AddListener(FireTrigger);
     }
+
     public override void OnUpdate()
     {
         if(InputData.instance.HandObjcet != gameObject)
@@ -31,9 +35,10 @@ public class FireSystem : ComponentSystem
         FireTImer.Tick(Time.fixedDeltaTime);
         ChangingBulletTimer.Tick(Time.fixedDeltaTime);
     }
+
     public void SnapTurnTrigger(InputData input)
     {
-        if (input.SnapTurnLeft.active)
+        if (input.SnapTurnLeft.GetLastStateDown(SteamVR_Input_Sources.Any))
         {
             if (ChangingBulletTimer.IsTimerEnd)
             {
@@ -41,7 +46,8 @@ public class FireSystem : ComponentSystem
                 ChangingBulletTimer.RestTimer();
             }
         }
-        if (input.SnapTurnRight.active)
+
+        if (input.SnapTurnRight.GetLastStateDown(SteamVR_Input_Sources.Any))
         {
             if (ChangingBulletTimer.IsTimerEnd)
             {
@@ -49,11 +55,13 @@ public class FireSystem : ComponentSystem
                 ChangingBulletTimer.RestTimer();
             }
         }
+
         gunUI.ChangingMesh();
     }
+
     public void FireTrigger(InputData input)
     {
-        if (input.FireButton.active)
+        if (input.FireButton.GetLastStateDown(SteamVR_Input_Sources.Any))
         {
             if (FireTImer.IsTimerEnd)
             {
@@ -61,27 +69,31 @@ public class FireSystem : ComponentSystem
                 FireTImer.RestTimer();
             }
         }
+
         gunUI.ChangingMesh();
     }
+
     public void OpenFire(GunData data)
     {
-        GameObject bullet = Instantiate(data.currentBullet.gameObject, data.BarrelPivot.position, data.currentBullet.gameObject.transform.rotation);
-        bullet.name = data.name;
-        data.currentBullet = null;
+        BulletData bulletData = Instantiate(data.currentBullet.gameObject, data.BarrelPivot.position,
+            data.currentBullet.transform.rotation).GetComponent<BulletData>();
+        bulletData.direction = gunData.gameObject.transform.eulerAngles.normalized;
+        data.currentBulletCount++;
+        data.needReload = true;
         PlaySound(gunData.FireSound);
     }
+
     public void ChangeBulletPlus(GunData data)
     {
-        data.previousBullet = data.currentBullet;
-        data.currentBullet = data.nextBullet;
-        data.nextBullet = null;
+        data.currentBulletCount++;
+        data.needReload = true;
         PlaySound(data.currentBullet.soundFile);
     }
+
     public void ChangeBulletMinus(GunData data)
     {
-        data.nextBullet = data.currentBullet;
-        data.currentBullet = data.previousBullet;
-        data.previousBullet = null;
+        data.currentBulletCount--;
+        data.needReload = true;
         PlaySound(data.currentBullet.soundFile);
     }
 

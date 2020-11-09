@@ -3,52 +3,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReloadSystem : ComponentSystem
+public class ReloadSystem : MonoBehaviour
 {
     public BulletSet CurrentBulletSet => ScenceData.Data.currentBulletSet;
     public GunData gunData;
     [SerializeField] private BulletData[] bulletDatas;
     [SerializeField] private int currentbulletCount;
 
-    public override void OnStart()
+    public void Start()
     {
         bulletDatas = new BulletData[]
         {
+            CurrentBulletSet.bullets[CurrentBulletSet.bullets.Count - 1],
             CurrentBulletSet.bullets[0],
-            CurrentBulletSet.bullets[1],
-            CurrentBulletSet.bullets[2]
+            CurrentBulletSet.bullets[1]
         };
+        currentbulletCount = 1;
         SetBulletData(bulletDatas);
-        currentbulletCount = bulletDatas.Length + 1;
-        UpdateEvent.AddUpdate(TrackGunData);
+        UpdateEvent.AddUpdate(OnUpdate);
     }
-    
-    public void TrackGunData()
+
+    public void OnUpdate()
     {
-        //偵測子彈是否為null 
-        // if (true) 先拿取前一個子彈,並把前一個子彈射為null
-        // 如果前一個子彈也是空的 再去bulletset裡面拿後面的子彈
         GetBulletData(bulletDatas);
-        if (currentbulletCount > bulletDatas.Length)
-            currentbulletCount = 0;
-        for (int i = 0; i < bulletDatas.Length; i++)
+        if (gunData.needReload)
         {
-            if (bulletDatas[i] == null)
-            {
-                if (bulletDatas[i - 1] != null && i > 0)
-                {
-                    bulletDatas[i] = bulletDatas[i - 1];
-                    bulletDatas[i - 1] = null;
-                    SetBulletData(bulletDatas);
-                }
-                else
-                {
-                    bulletDatas[i] = CurrentBulletSet.bullets[currentbulletCount];
-                    currentbulletCount += 1;
-                    SetBulletData(bulletDatas);
-                }
-            }
+            currentbulletCount = gunData.currentBulletCount;
+            TrackGunData(CurrentBulletSet.bullets);
         }
+    }
+
+    public void TrackGunData(List<BulletData> bullets)
+    {
+        if (currentbulletCount > bullets.Count - 1)
+            currentbulletCount = 0;
+        if (currentbulletCount == 0)
+            bulletDatas[0] = bullets[bullets.Count - 1];
+        else
+            bulletDatas[0] = bullets[currentbulletCount - 1];
+        bulletDatas[1] = CurrentBulletSet.bullets[currentbulletCount];
+        if (currentbulletCount == bullets.Count - 1)
+            bulletDatas[2] = bullets[0];
+        else
+            bulletDatas[2] = bullets[currentbulletCount + 1];
+        gunData.needReload = false;
+        SetBulletData(bulletDatas);
     }
 
     public void GetBulletData(BulletData[] bulletDatas)
@@ -63,5 +62,6 @@ public class ReloadSystem : ComponentSystem
         gunData.previousBullet = bulletDatas[0];
         gunData.currentBullet = bulletDatas[1];
         gunData.nextBullet = bulletDatas[2];
+        gunData.currentBulletCount = currentbulletCount;
     }
 }

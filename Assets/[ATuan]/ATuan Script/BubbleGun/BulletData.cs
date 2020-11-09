@@ -7,13 +7,12 @@ public class BulletData : MonoBehaviour{
     public string name;
     public float Speed;
     [HideInInspector]
-    public GameObject gameObject;
-    [HideInInspector]
     public Rigidbody bubbleRig;
     public bool isHit;
     public Material UImat;
     public SoundFile soundFile;
     public SoundFile HitSound;
+    public Vector3 direction;
 
 }
 [CreateAssetMenu(fileName = "New BulletSet", menuName = "Data/Bullet")]

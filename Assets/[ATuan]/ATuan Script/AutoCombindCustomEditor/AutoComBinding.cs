@@ -22,7 +22,7 @@ public class AutoComBinding : MonoBehaviour
         {
             if(bulletSet.bullets[i].name == null)
                 return;
-            bulletSet.bullets[i].name = levelSet.LevelDatas[i].name;
+            levelSet.LevelDatas[i].name = bulletSet.bullets[i].name;
         }
 
     }
