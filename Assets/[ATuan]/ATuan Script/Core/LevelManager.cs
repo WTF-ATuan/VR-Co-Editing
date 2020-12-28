@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public BulletSet currentBullet;
     private LevelSet nextLevel;
     [HideInInspector] public LevelSet currentLevel;
-    [HideInInspector] public int currentLevelNumber;
+    public int currentLevelNumber;
     private int levelCount;
 
     public void Initialize(ScenceData scenceData)
@@ -36,6 +36,19 @@ public class LevelManager : MonoBehaviour
 
         BulletUpdate(currentLevel, currentBullet);
         GameLoading();
+        //forTest
+        DebugInput();
+    }
+//forTest 資策會完刪掉
+    private void DebugInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            currentLevel.OnPassing.Invoke(null);
+            EnemyBase enemy = GameObject.FindObjectOfType<EnemyBase>();
+            enemy.pass = true;
+            Debug.Log(enemy.pass);
+        }
     }
 
     public void AwakeLevel()
@@ -144,7 +157,6 @@ public class LevelManager : MonoBehaviour
             levelCount--;
             pass = true;
         }
-
         pass = false;
     }
 }

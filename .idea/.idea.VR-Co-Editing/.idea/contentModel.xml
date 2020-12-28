@@ -61,8 +61,50 @@
           </e>
         </e>
         <e p="[MengTa]" t="Include">
+          <e p="2.0" t="Include">
+            <e p="Buildings pack by @Quaternius" t="Include">
+              <e p="License.txt" t="Include" />
+            </e>
+          </e>
           <e p="Shader" t="Include">
             <e p="ToonComplete.shader" t="Include" />
+          </e>
+        </e>
+        <e p="LowPolyWaterv2" t="Include">
+          <e p="Demos" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="DemoFreeFlyCamera.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="LPWInspector.cs" t="Include" />
+            <e p="LPWShaderGUI.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="LowPolyWaterScript.cs" t="Include" />
+            <e p="src" t="Include">
+              <e p="LPWDepthEffect.cs" t="Include" />
+              <e p="LPWDisplace.cs" t="Include" />
+              <e p="LPWHiddenProps.cs" t="Include" />
+              <e p="LPWNoise.cs" t="Include" />
+              <e p="LPWNormalSolver.cs" t="Include" />
+              <e p="LPWReflection.cs" t="Include" />
+              <e p="LPWWaterChunk.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="LowPolyWaterAdvanced.shader" t="Include" />
+            <e p="LowPolyWaterLite.shader" t="Include" />
+            <e p="LPWCompatibility.cginc" t="Include" />
+            <e p="LPWLighting.cginc" t="Include" />
+            <e p="LPWLite.cginc" t="Include" />
+            <e p="LPWNoise.cginc" t="Include" />
+            <e p="LPWReflection.cginc" t="Include" />
+            <e p="LPWRenderDepth.shader" t="Include" />
+            <e p="LPWRipples.cginc" t="Include" />
+            <e p="LPWShoreBlend.cginc" t="Include" />
+            <e p="LPWStandard.cginc" t="Include" />
+            <e p="LPWWaves.cginc" t="Include" />
           </e>
         </e>
         <e p="ModePack_Art" t="Include">

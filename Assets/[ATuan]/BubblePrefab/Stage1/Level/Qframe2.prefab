@@ -107,14 +107,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961e9f7bf39751d46bcf3c0d5ad8f53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
   passMat: {fileID: 0}
   anserBullet: {fileID: 0}
   pass: 0
   miss: 0
-  passSound:
+  goodSound:
     Sound: {fileID: 0}
-  missSound:
+  badSound:
     Sound: {fileID: 0}
 --- !u!114 &4847802641068117310
 MonoBehaviour:

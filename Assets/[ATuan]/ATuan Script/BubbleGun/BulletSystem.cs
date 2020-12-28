@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class BulletSystem : ComponentSystem {
     private BulletData bulletData;
     public override void OnStart()
     {
+        //PlaySound(bulletData.soundFile);
         bulletData = GetComponent<BulletData>();
         gameObject.name = bulletData.name;
         bulletData.bubbleRig = GetComponent<Rigidbody>();
@@ -37,4 +39,8 @@ public class BulletSystem : ComponentSystem {
     {
         ScenceData.Data.soundManager.PlaySound(file);
     }
+
+    //private void OnDestroy()
+    //{
+    //}
 }

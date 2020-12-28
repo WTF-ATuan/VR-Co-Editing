@@ -34,16 +34,24 @@ public class PlayerManager : MonoBehaviour
 
     private void OnUpdate()
     {
+        MoveForward(ScenceData.Data.Boat);
         if (InputData.instance.HovingObject != null)
         {
             if (InputData.instance.HovingObject.gameObject == ScenceData.Data.LoudGun)
             {
-                if (InputData.instance.GripButton.GetLastStateDown(SteamVR_Input_Sources.Any) || InputData.instance.FireButton.active)
+                if (InputData.instance.GripButton.GetLastStateDown(SteamVR_Input_Sources.Any) ||
+                    InputData.instance.FireButton.active)
                 {
                     InputData.instance.Equip(InputData.instance.HovingObject, InputData.instance.HandTouch);
+                    ScenceData.Data.LoudGun.transform.SetParent(null);
                     UpdateEvent.RemoveUpdate(OnUpdate);
                 }
             }
         }
+    }
+
+    private void MoveForward(GameObject boat)
+    {
+        boat.transform.position += Vector3.forward * (ScenceData.Data.playerSpeed);
     }
 }

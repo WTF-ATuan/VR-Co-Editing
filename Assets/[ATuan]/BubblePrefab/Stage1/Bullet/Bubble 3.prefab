@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 72573077603425230}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 33.500843, y: 139.48392, z: -123.68487}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 72573077278308075}
   m_Father: {fileID: 0}
@@ -205,14 +205,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: "\u3089"
-  Speed: 5
+  Speed: 8.5
   bubbleRig: {fileID: 0}
   isHit: 0
   UImat: {fileID: 2100000, guid: b1061442f9b8e6f47aca26165787e460, type: 2}
   soundFile:
     Sound: {fileID: 0}
   HitSound:
-    Sound: {fileID: 0}
+    Sound: {fileID: 8300000, guid: 01d1d08e8bdb4014c8a40e91eeeb02d7, type: 3}
   direction: {x: 0, y: 0, z: 0}
 --- !u!114 &6693697243483618750
 MonoBehaviour:

@@ -27,6 +27,7 @@ public class ScenceData : MonoBehaviour
     public Camera VRCamera;
     public int PlayerHp;
     public PlayerManager playerManager;
+    public float playerSpeed;
     public GameObject LoudGun;
     private void AwakePlayer()
     {
@@ -72,6 +73,7 @@ public class ScenceData : MonoBehaviour
     [Header("TriggerPoint")]
     public List<Transform> CheckPoint;
     public Transform EndPoint;
+    public Transform StartPoint;
     [Header("Sound")]
     public SoundManager soundManager;
 

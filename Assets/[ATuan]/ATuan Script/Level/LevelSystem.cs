@@ -30,11 +30,11 @@ public class LevelSystem : MonoBehaviour
         MeshRenderer mesh = GetComponent<MeshRenderer>();
         mesh.material = levelData.passMat;
         // pass sound come out
-        PlayerSound(levelData.passSound);
+        PlayerSound(levelData.goodSound);
         }
         if (levelData.miss) {
         // miss sound come out 
-        PlayerSound(levelData.missSound);
+        PlayerSound(levelData.badSound);
         }
     }
     private void PlayerSound(SoundFile file)

@@ -5479,7 +5479,7 @@ Transform:
   m_GameObject: {fileID: 9220295029160083436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.8061, y: -0.61656, z: -15.13}
-  m_LocalScale: {x: 3.4406016, y: 3.4406016, z: 3.4406016}
+  m_LocalScale: {x: 3.4406, y: 3.4406, z: 3.4406}
   m_Children:
   - {fileID: 8301392691274158487}
   - {fileID: 1764602658748353481}
@@ -5520,11 +5520,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   failMaxDistance: 2
-  moveSpeed: 0.1
+  moveSpeed: 0.01
   titleSoundFile:
     Sound: {fileID: 0}
-  anserObject: {fileID: 0}
-  target_textureObj: {fileID: 0}
+  anserObject: {fileID: 7608139894630789430}
+  target_textureObj: {fileID: 8277222322865493697}
   repeatTime: 4
   pass: 0
 --- !u!1001 &975129346349299695
@@ -5534,6 +5534,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8412374282261407062}
     m_Modifications:
+    - target: {fileID: 2545036142732548134, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: anserBullet
+      value: 
+      objectReference: {fileID: -3301032979758613498, guid: af181e3681e35874ea7d79c10a58a5fe,
+        type: 3}
+    - target: {fileID: 2545036142732548134, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: passSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 558ea10555e8d344dbd8153d817c1f99, type: 3}
+    - target: {fileID: 2545036142732548134, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: missSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 171979e10f322f44dbce753f8237ea77, type: 3}
+    - target: {fileID: 2973164168800842931, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: anserBullet
+      value: 
+      objectReference: {fileID: 6003716774737608184, guid: c125b85e1a283bd4f97efcd702181ad5,
+        type: 3}
+    - target: {fileID: 2973164168800842931, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: passSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 558ea10555e8d344dbd8153d817c1f99, type: 3}
+    - target: {fileID: 2973164168800842931, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: missSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 171979e10f322f44dbce753f8237ea77, type: 3}
+    - target: {fileID: 2976582612742731597, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: anserBullet
+      value: 
+      objectReference: {fileID: -2009730002765335917, guid: 5e021725d9f48524f98d11ac7a0c4026,
+        type: 3}
+    - target: {fileID: 2976582612742731597, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: passSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 558ea10555e8d344dbd8153d817c1f99, type: 3}
+    - target: {fileID: 2976582612742731597, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: missSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 171979e10f322f44dbce753f8237ea77, type: 3}
     - target: {fileID: 5100554685489836271, guid: d8a29fdbbcd1b324484aa51b27923851,
         type: 3}
       propertyPath: m_Name
@@ -5594,11 +5642,71 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6914068792726555881, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: anserBullet
+      value: 
+      objectReference: {fileID: 3359402585356936887, guid: c8465878c5a1e3e43bf5ab7dc74eb5be,
+        type: 3}
+    - target: {fileID: 6914068792726555881, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: passSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 558ea10555e8d344dbd8153d817c1f99, type: 3}
+    - target: {fileID: 6914068792726555881, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: missSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 171979e10f322f44dbce753f8237ea77, type: 3}
+    - target: {fileID: 7947568776335473646, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: anserBullet
+      value: 
+      objectReference: {fileID: 393425568299123099, guid: 77d30a97843cda34ba9700336a2ecef0,
+        type: 3}
+    - target: {fileID: 7947568776335473646, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: passSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 558ea10555e8d344dbd8153d817c1f99, type: 3}
+    - target: {fileID: 7947568776335473646, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: missSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 171979e10f322f44dbce753f8237ea77, type: 3}
+    - target: {fileID: 9006892329209854707, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: anserBullet
+      value: 
+      objectReference: {fileID: -1718954233591916856, guid: 5b6cd404f0b8f0d4abb4d4f83d49f4b8,
+        type: 3}
+    - target: {fileID: 9006892329209854707, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: passSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 558ea10555e8d344dbd8153d817c1f99, type: 3}
+    - target: {fileID: 9006892329209854707, guid: d8a29fdbbcd1b324484aa51b27923851,
+        type: 3}
+      propertyPath: missSound.Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 171979e10f322f44dbce753f8237ea77, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8a29fdbbcd1b324484aa51b27923851, type: 3}
 --- !u!4 &6750068442191331052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5775116127987697923, guid: d8a29fdbbcd1b324484aa51b27923851,
+    type: 3}
+  m_PrefabInstance: {fileID: 975129346349299695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7608139894630789430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7214150970887325401, guid: d8a29fdbbcd1b324484aa51b27923851,
+    type: 3}
+  m_PrefabInstance: {fileID: 975129346349299695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8277222322865493697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175735834134028590, guid: d8a29fdbbcd1b324484aa51b27923851,
     type: 3}
   m_PrefabInstance: {fileID: 975129346349299695}
   m_PrefabAsset: {fileID: 0}

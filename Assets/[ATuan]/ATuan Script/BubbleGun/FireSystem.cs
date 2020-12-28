@@ -77,7 +77,7 @@ public class FireSystem : ComponentSystem
     {
         BulletData bulletData = Instantiate(data.currentBullet.gameObject, data.BarrelPivot.position,
             data.currentBullet.transform.rotation).GetComponent<BulletData>();
-        bulletData.direction = gunData.gameObject.transform.eulerAngles.normalized;
+        bulletData.direction = data.BarrelPivot.forward.normalized;
         data.currentBulletCount++;
         data.needReload = true;
         PlaySound(gunData.FireSound);
