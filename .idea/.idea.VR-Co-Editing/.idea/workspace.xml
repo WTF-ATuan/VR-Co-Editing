@@ -11,38 +11,52 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/049BE2AF-E36F-487E-B06E-F49D51A0BAB6/fd/9eed30da/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/AutoCombindCustomEditor/AutoMeterials.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ShowTime.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Tool/MyReadOnlyPropertyDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ComicManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelCollector.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BubbleSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BubbleData.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/SoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/EnemyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/UpdateEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/AutoCombindCustomEditor/AutoMeterials.cs" />
         <option value="$PROJECT_DIR$/Assets/StylizedWaterShader/Code/WaterReflection.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/GunData.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/ReloadSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BubbleGunUI.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/AutoCombindCustomEditor/AutoComBinding.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/SystemManager/ComponentSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletData.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/SoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/FireSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/ScenceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelData.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Crocodile.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/LevelManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/ReloadSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Input/InputData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelCollition.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/ScenceData.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSet.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelCollector.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ComicManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSet.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Crocodile.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ShowTime.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelData.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSystem.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1jwp6ngcmpWg9pMZL9VsJWqjCZF" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -50,7 +64,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -82,6 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604724837969</updated>
       <workItem from="1604724842953" duration="55388000" />
+      <workItem from="1609145725171" duration="21987000" />
     </task>
     <servers />
   </component>
@@ -94,9 +109,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1419" y="-239" key="SettingsEditor" timestamp="1604913836532">
-      <screen x="-1920" y="-283" width="1920" height="1080" />
+    <state x="501" y="44" key="SettingsEditor" timestamp="1609226573520">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="501" y="44" key="SettingsEditor/-1920.143.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1609226573520" />
     <state x="-1419" y="-239" key="SettingsEditor/0.0.1920.1080/-1920.-283.1920.1080@-1920.-283.1920.1080" timestamp="1604913836532" />
     <state x="-1381" y="-238" width="840" height="1034" key="search.everywhere.popup" timestamp="1604943809881">
       <screen x="-1920" y="-283" width="1920" height="1080" />

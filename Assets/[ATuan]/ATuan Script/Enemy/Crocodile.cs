@@ -5,34 +5,25 @@ using UnityEngine;
 
 public class Crocodile : EnemyBase
 {
-    [SerializeField] private EventSystem OnFailEvent;
-    [SerializeField] private EventSystem OnPassEvent;
+    [SerializeField] private EventSystem onPassEvent;
     [SerializeField] private GameObject changingMeshObject;
-    protected override Vector3 TargetPosition
-    {
-        get => ScenceData.Data.StartPoint.position;
-    }
+    protected override Vector3 TargetPosition => ScenceData.Data.Player.transform.position;
 
-    protected override void Onhit()
+    protected override void OnHit()
     {
+        
     }
 
     protected override void OnPass()
     {
-        anserObject.SetActive(true);
-        EnemyAnimator.SetBool("isdead", true);
-        OnPassEvent.Invoke(null);
+        answerObject.SetActive(true);
+        EnemyAnimator.SetBool("isDead", true);
+        moveSpeed = 0;
     }
 
     protected override void OnFail()
     {
-        OnFailEvent.Invoke(null);
-    }
-//For Testing
-    public void ChangeMesh(Material material)
-    {
-        changingMeshObject.SetActive(true);
-        MeshRenderer mesh = changingMeshObject.GetComponent<MeshRenderer>();
-        mesh.material = material;
+        moveSpeed = 0;
+        
     }
 }

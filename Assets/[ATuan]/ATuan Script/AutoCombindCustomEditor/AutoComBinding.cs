@@ -10,19 +10,19 @@ public class AutoComBinding : MonoBehaviour
 
     public void BulletComBine()
     {
-        for (int i = 0; i < levelSet.LevelDatas.Count; i++)
+        for (int i = 0; i < levelSet.levelData.Count; i++)
         {
-            levelSet.LevelDatas[i].anserBullet = bulletSet.bullets[i];
+            levelSet.levelData[i].answerBullet = bulletSet.bullets[i];
         }
     }
 
     public void BulletNameComBine()
     {
-        for (int i = 0; i < levelSet.LevelDatas.Count; i++)
+        for (int i = 0; i < levelSet.levelData.Count; i++)
         {
             if(bulletSet.bullets[i].name == null)
                 return;
-            levelSet.LevelDatas[i].name = bulletSet.bullets[i].name;
+            levelSet.levelData[i].name = bulletSet.bullets[i].name;
         }
 
     }

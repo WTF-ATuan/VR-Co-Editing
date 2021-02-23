@@ -13,6 +13,6 @@ public class BubbleGunUI : MonoBehaviour
     }
     public void ChangingMesh()
     {
-        UIMesh.material = gunData.currentBullet.UImat;
+        UIMesh.material = gunData.currentBullet.uiMat;
     }
 }

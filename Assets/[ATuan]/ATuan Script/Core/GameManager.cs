@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private ScenceData scenceData;
+    private ScenceData scenesData;
 
-    public void Initialize(ScenceData scenceData)
+    public void Initialize(ScenceData scenesData)
     {
-        this.scenceData = scenceData;
-        ReferenceDiffcultly();
+        this.scenesData = scenesData;
+        ReferenceDifficulty();
     }
     private void Start()
     {
@@ -18,28 +18,28 @@ public class GameManager : MonoBehaviour
     }
     private void GameTimeUpdate()
     {
-        scenceData.GameTime += Time.deltaTime;
+        scenesData.GameTime += Time.deltaTime;
     }
-    private void ReferenceDiffcultly() {
-        scenceData.Difficulty = new Difficulty();
-        scenceData.Difficulty = Difficulty.UnSet;
+    private void ReferenceDifficulty() {
+        scenesData.Difficulty = new Difficulty();
+        scenesData.Difficulty = Difficulty.UnSet;
     }
     public void ResetGame()
     {
-        scenceData.IsPassLevel = false;
-        scenceData.IsFailLevel = false;
-        scenceData.GameTime = 0;
+        scenesData.IsPassLevel = false;
+        scenesData.IsFailLevel = false;
+        scenesData.GameTime = 0;
     }
-    public void SetDiffcultly(Difficulty difficulty)
+    public void SetDifficulty(Difficulty difficulty)
     {
-        scenceData.Difficulty = difficulty;
+        scenesData.Difficulty = difficulty;
     }
     public void PassLevel() {
-        scenceData.IsPassLevel = true;
-        scenceData.OnPass.Invoke(null);
+        scenesData.IsPassLevel = true;
+        scenesData.OnPass.Invoke(null);
     }
     public void FailLevel() {
-        scenceData.IsFailLevel = true;
-        scenceData.OnFail.Invoke(null);
+        scenesData.IsFailLevel = true;
+        scenesData.OnFail.Invoke(null);
     }
 }

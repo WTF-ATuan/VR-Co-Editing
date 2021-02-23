@@ -5,17 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class BulletData : MonoBehaviour{
     public string name;
-    public float Speed;
-    [HideInInspector]
+    public float speed;
+    [MyReadOnly]
     public Rigidbody bubbleRig;
+    [MyReadOnly]
     public bool isHit;
-    public Material UImat;
+    public Material uiMat;
     public SoundFile soundFile;
-    public SoundFile HitSound;
+    public SoundFile hitSound;
+    [MyReadOnly]
     public Vector3 direction;
+}
 
-}
-[CreateAssetMenu(fileName = "New BulletSet", menuName = "Data/Bullet")]
-public class BulletSet : ScriptableObject{
-    public List<BulletData> bullets = new List<BulletData>();
-}

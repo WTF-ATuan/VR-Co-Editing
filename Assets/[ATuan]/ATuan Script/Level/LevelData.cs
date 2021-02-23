@@ -5,22 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class LevelData:MonoBehaviour
 {
-    public Material passMat;
-    public BulletData anserBullet;
+    public Material passWordMat;
+    public Material passFrame;
+    public Material failFrame;
+    public BulletData answerBullet;
+    
     public bool pass;
+    [MyReadOnly]
     public bool miss;
     public SoundFile goodSound;
     public SoundFile badSound;
-}
-[CreateAssetMenu(fileName = "New LevelData", menuName = "Data / Level")]
-public class LevelSet : ScriptableObject
-{
-    public EnemyBase Enemy;
-    public List<LevelData> LevelDatas;
-    public EventSystem OnPassing;
-
-    public void DebugText(string Text)
-    {
-        Debug.Log(Text);
-    }
 }

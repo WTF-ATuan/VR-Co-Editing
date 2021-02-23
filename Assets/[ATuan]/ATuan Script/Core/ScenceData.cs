@@ -39,18 +39,18 @@ public class ScenceData : MonoBehaviour
         playerManager.Initialize(this);
     }
     [Header("Level")]
-    public LevelManager levelManager;
-    public List<LevelSet> allLevelSets;
+    // public LevelManager levelManager;
+    public List<EnemyBase> allEnemy;
     public List<BulletSet> allBullets;
-    public LevelSet currentLevelSet;
+    public EnemyBase currentEnemy;
     public BulletSet currentBulletSet;
-    public int LevelCount;
+    public int levelCount;
     private void AwakeLevel()
     {
-        if (!levelManager) Debug.LogError("null LevelManager");
-        if (allLevelSets == null) Debug.LogError("Missing Level");
+        // if (!levelManager) Debug.LogError("null LevelManager");
+        if (allEnemy == null) Debug.LogError("Missing Level");
         if (allBullets == null) Debug.LogError("Missing Bullet");
-        levelManager.Initialize(this);
+        // levelManager.Initialize(this);
     }
     [Header("GameControl")]
     public float GameTime;
@@ -73,7 +73,6 @@ public class ScenceData : MonoBehaviour
     [Header("TriggerPoint")]
     public List<Transform> CheckPoint;
     public Transform EndPoint;
-    public Transform StartPoint;
     [Header("Sound")]
     public SoundManager soundManager;
 

@@ -7,15 +7,15 @@ public class BulletSystem : ComponentSystem {
     private BulletData bulletData;
     public override void OnStart()
     {
-        //PlaySound(bulletData.soundFile);
         bulletData = GetComponent<BulletData>();
         gameObject.name = bulletData.name;
         bulletData.bubbleRig = GetComponent<Rigidbody>();
+        Destroy(gameObject , 5f);
     }
 
     public override void OnUpdate()
     {
-        bulletData.bubbleRig.velocity = bulletData.direction * bulletData.Speed;
+        bulletData.bubbleRig.velocity = bulletData.direction * bulletData.speed;
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -25,14 +25,13 @@ public class BulletSystem : ComponentSystem {
             bulletData.isHit = true;
         }
 
-        JugeData();
+        JudgeData();
     }
 
-    private void JugeData()
+    private void JudgeData()
     {
         if(bulletData.isHit)
-            PlaySound(bulletData.HitSound);
-        //Destroy(gameObject);
+            PlaySound(bulletData.hitSound);
     }
 
     private void PlaySound(SoundFile file)

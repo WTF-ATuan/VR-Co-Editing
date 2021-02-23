@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/[MengTa]/Art_First.unity
-    guid: f7a2ba53eaaaac0438e2db4f053cb714
+    path: Assets/[ATuan]/MoveScence.unity
+    guid: f5a8407f01f9e1a49bf13663bb7f4ae0
   - enabled: 1
-    path: Assets/[MengTa]/Art_Sence.unity
-    guid: 2970593816be5cb4faeb3b0140f0dc7f
-  - enabled: 1
-    path: Assets/[MengTa]/zArt_End.unity
-    guid: 13363cd13b272504c8e21469fb3dff79
+    path: Assets/[ATuan]/Main_Sence.unity
+    guid: 07b17310d0d715342b8d5d7791390f16
   m_configObjects: {}
