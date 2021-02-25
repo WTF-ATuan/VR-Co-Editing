@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class BulletData : MonoBehaviour{
+[CreateAssetMenu(fileName = "New BulletData", menuName = "Data / BulletData")]
+public class BulletData : ScriptableObject{
+	[HideInInspector] public GameObject bulletObject;
+	[HideInInspector] public float speed;
+	[HideInInspector] public Vector3 direction;
 	public new string name;
-	public float speed;
-	[MyReadOnly] public Rigidbody bubbleRig;
 	[MyReadOnly] public bool isHit;
-	[MyReadOnly]public bool isFire;
+	[MyReadOnly] public bool isFire;
 	public Material uiMat;
 	public SoundFile soundFile;
 	public SoundFile hitSound;
-	[MyReadOnly] public Vector3 direction;
+	
 }

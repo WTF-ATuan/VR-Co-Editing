@@ -5,17 +5,21 @@ using UnityEngine;
 
 public class BulletSystem : ComponentSystem {
     [SerializeField]private BulletData bulletData;
-    public override void OnStart()
-    {
-        bulletData = GetComponent<BulletData>();
+    public float speed;
+    
+    private Rigidbody _bubbleRig;
+    public override void OnStart(){
+
         gameObject.name = bulletData.name;
-        bulletData.bubbleRig = GetComponent<Rigidbody>();
+        bulletData.bulletObject = gameObject;
+        bulletData.speed = speed;
+        _bubbleRig = GetComponent<Rigidbody>();
         Destroy(gameObject , 5f);
     }
 
     public override void OnUpdate()
     {
-        bulletData.bubbleRig.velocity = bulletData.direction * bulletData.speed;
+        _bubbleRig.velocity = bulletData.direction * bulletData.speed;
     }
 
     public void OnCollisionEnter(Collision collision)

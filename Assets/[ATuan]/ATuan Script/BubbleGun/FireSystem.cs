@@ -13,27 +13,30 @@ public class FireSystem : ComponentSystem{
 		_changingBulletTimer = new Timer(gunData.changingBulletTime);
 		gunUI.Initialize(gunData);
 	}
-	
+
 	public override void OnUpdate(){
 		_fireTimer.Tick(Time.fixedDeltaTime);
 		_changingBulletTimer.Tick(Time.fixedDeltaTime);
 	}
-	
+
 	public void BulletChangeLeft(){
 		if(_changingBulletTimer.IsTimerEnd){
 			ChangeBulletMinus(gunData);
 			_changingBulletTimer.RestTimer();
 		}
+
 		gunUI.ChangingMesh();
 	}
+
 	public void BulletChangeRight(){
 		if(_changingBulletTimer.IsTimerEnd){
 			ChangeBulletPlus(gunData);
 			_changingBulletTimer.RestTimer();
 		}
+
 		gunUI.ChangingMesh();
 	}
-	
+
 
 	public void FireTrigger(){
 		if(_fireTimer.IsTimerEnd){
@@ -45,10 +48,10 @@ public class FireSystem : ComponentSystem{
 	}
 
 	private void OpenFire(GunData data){
-		var bulletData = Instantiate(data.currentBullet.gameObject, data.barrelPivot.position,
-			data.currentBullet.transform.rotation).GetComponent<BulletData>();
-		bulletData.direction = data.barrelPivot.forward.normalized;
-		bulletData.isFire = true;
+		Instantiate(data.currentBullet.bulletObject, data.barrelPivot.position,
+			data.currentBullet.bulletObject.transform.rotation);
+		data.currentBullet.direction = data.barrelPivot.forward.normalized;
+		data.currentBullet.isFire = true;
 		data.currentBulletCount++;
 		data.needReload = true;
 		PlaySound(gunData.fireSound);

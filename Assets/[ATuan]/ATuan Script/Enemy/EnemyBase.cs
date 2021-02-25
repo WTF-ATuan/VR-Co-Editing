@@ -11,22 +11,19 @@ public abstract class EnemyBase : MonoBehaviour
 {
     protected Animator EnemyAnimator;
     private Rigidbody _enemyRigidbody;
-    public LevelCollector levelCollector;
+    public LevelController levelController;
     public float failMaxDistance;
     public float moveSpeed;
     public SoundFile titleSoundFile;
-    public GameObject answerObject;
     public float repeatTime;
-    public LevelSet thisLevelSet;
 
 
     private void Awake()
     {
-        answerObject.SetActive(false);
         StartCoroutine(TitleSound(repeatTime, titleSoundFile));
         EnemyAnimator = GetComponent<Animator>();
         _enemyRigidbody = GetComponent<Rigidbody>();
-        levelCollector = GetComponentInChildren<LevelCollector>();
+        levelController = GetComponentInChildren<LevelController>();
         UpdateEvent.AddUpdate(OnUpdate);
     }
 
@@ -49,7 +46,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     private void TargetTrack(Vector3 targetPosition)
     {
-        if (levelCollector.Passing)
+        if (levelController.Passing)
             return;
         var distance = Vector3.Distance(transform.position, targetPosition);
         if (distance < failMaxDistance)
@@ -58,8 +55,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     private void PassTrack()
     {
-        if (!levelCollector.Passing) return;
-        answerObject.SetActive(true);
+        if (!levelController.Passing) return;
         OnPass();
     }
 
@@ -71,7 +67,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     private IEnumerator TitleSound(float second, SoundFile file)
     {
-        if (levelCollector.Passing)
+        if (levelController.Passing)
             yield break;
         yield return new WaitForSeconds(second);
         PlaySound(file);
