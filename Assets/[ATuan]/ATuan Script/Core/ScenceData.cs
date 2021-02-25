@@ -13,7 +13,6 @@ public class ScenceData : MonoBehaviour
     private void Awake()
     {
         Data = this;
-        AwakeGame();
         AwakeMap();
         AwakeLevel();
         AwakeSound();
@@ -45,14 +44,6 @@ public class ScenceData : MonoBehaviour
     }
     [Header("GameControl")]
     public float gameTime;
-    public Difficulty difficulty;
-    public bool isPassLevel;
-    public bool isFailLevel;
-    public GameManager gameManager;
-    private void AwakeGame() {
-        if (!gameManager) Debug.LogError("null gameManager");
-        gameManager.Initialize(this);
-    }
     [Header("Map")]
     public List<GameObject> easyMap;
     public List<GameObject> normalMap;

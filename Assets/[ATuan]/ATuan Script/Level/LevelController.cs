@@ -6,20 +6,15 @@ using UnityEngine;
 public class LevelController : MonoBehaviour{
 	public bool Passing => IsPassLevel();
 	public LevelSet levelSet;
-	public List<LevelData> levels;
-
-	private void Start(){
-		levels = new List<LevelData>(GetComponentsInChildren<LevelData>());
-	}
-
 
 	private bool IsPassLevel(){
 		var isPass = false;
-		foreach(var level in levels){
+		foreach(var level in levelSet.levelData){
 			var mesh = level.levelObj.GetComponent<MeshRenderer>();
 			if(level.pass){
 				ScenceData.Data.soundManager.PlaySound(levelSet.goodSound);
 				mesh.material = levelSet.passMat;
+				level.passWordObj.SetActive(true);
 				level.levelObj.GetComponent<Collider>().enabled = false;
 			}
 

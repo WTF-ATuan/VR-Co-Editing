@@ -7,29 +7,12 @@ public class HoldingObject : MonoBehaviour{
 
 
 	public Rigidbody holdingObject;
-
-	public FireSystem loadFire;
 	
 
 	private void FixedUpdate(){
 		Holding();
-		FireControl();
 	}
-
-	private void FireControl(){
-		if(SteamVR_Actions.default_GrabPinch.GetStateDown(HandSources)){
-			loadFire.FireTrigger();
-		}
-
-		if(SteamVR_Actions.default_SnapTurnLeft.GetStateDown(HandSources)){
-			loadFire.BulletChangeLeft();
-		}
-
-		if(SteamVR_Actions.default_SnapTurnRight.GetStateDown(HandSources)){
-			loadFire.BulletChangeRight();
-		}
-	}
-
+	
 	private void Holding(){
 		var holdingObjectTransform = holdingObject.transform;
 		var thisTransform = transform;

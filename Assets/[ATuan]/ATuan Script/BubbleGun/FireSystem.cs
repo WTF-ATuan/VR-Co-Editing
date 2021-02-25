@@ -17,9 +17,12 @@ public class FireSystem : ComponentSystem{
 	public override void OnUpdate(){
 		_fireTimer.Tick(Time.fixedDeltaTime);
 		_changingBulletTimer.Tick(Time.fixedDeltaTime);
+		if(HandInput.Input.PinchPress) FireTrigger();
+		if(HandInput.Input.SnapLeft) BulletChangeLeft();
+		if(HandInput.Input.SnapRight) BulletChangeRight();
 	}
 
-	public void BulletChangeLeft(){
+	private void BulletChangeLeft(){
 		if(_changingBulletTimer.IsTimerEnd){
 			ChangeBulletMinus(gunData);
 			_changingBulletTimer.RestTimer();
@@ -28,7 +31,7 @@ public class FireSystem : ComponentSystem{
 		gunUI.ChangingMesh();
 	}
 
-	public void BulletChangeRight(){
+	private void BulletChangeRight(){
 		if(_changingBulletTimer.IsTimerEnd){
 			ChangeBulletPlus(gunData);
 			_changingBulletTimer.RestTimer();
@@ -38,7 +41,7 @@ public class FireSystem : ComponentSystem{
 	}
 
 
-	public void FireTrigger(){
+	private void FireTrigger(){
 		if(_fireTimer.IsTimerEnd){
 			OpenFire(gunData);
 			_fireTimer.RestTimer();
