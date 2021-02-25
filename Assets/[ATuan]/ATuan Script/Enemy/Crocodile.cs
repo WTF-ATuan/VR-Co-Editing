@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Crocodile : EnemyBase
 {
-    [SerializeField] private EventSystem onPassEvent;
-    [SerializeField] private GameObject changingMeshObject;
+    [SerializeField] private EventSystem passEvent;
+    private static readonly int IsDead = Animator.StringToHash("isDead");
     protected override Vector3 TargetPosition => ScenceData.Data.player.transform.position;
 
     protected override void OnHit()
@@ -17,7 +17,7 @@ public class Crocodile : EnemyBase
     protected override void OnPass()
     {
         answerObject.SetActive(true);
-        EnemyAnimator.SetBool("isDead", true);
+        EnemyAnimator.SetBool(IsDead, true);
         moveSpeed = 0;
     }
 

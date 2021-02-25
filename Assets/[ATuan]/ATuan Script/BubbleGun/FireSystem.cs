@@ -2,108 +2,71 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireSystem : ComponentSystem
-{
-    public GunData gunData;
-    private Timer FireTimer;
-    private Timer ChangingBulletTimer;
-    private DataEvent<InputData> InputEvent;
-    public BubbleGunUI gunUI;
+public class FireSystem : ComponentSystem{
+	public GunData gunData;
+	private Timer _fireTimer;
+	private Timer _changingBulletTimer;
+	public BubbleGunUI gunUI;
 
-    public override void OnStart()
-    {
-        FireTimer = new Timer(gunData.FireColdownTime);
-        ChangingBulletTimer = new Timer(gunData.ChangingBulletTime);
-        gunUI.Initialize(gunData);
-        InputAction();
-    }
+	public override void OnStart(){
+		_fireTimer = new Timer(gunData.fireColdDownTime);
+		_changingBulletTimer = new Timer(gunData.changingBulletTime);
+		gunUI.Initialize(gunData);
+	}
+	
+	public override void OnUpdate(){
+		_fireTimer.Tick(Time.fixedDeltaTime);
+		_changingBulletTimer.Tick(Time.fixedDeltaTime);
+	}
+	
+	public void BulletChangeLeft(){
+		if(_changingBulletTimer.IsTimerEnd){
+			ChangeBulletMinus(gunData);
+			_changingBulletTimer.RestTimer();
+		}
+		gunUI.ChangingMesh();
+	}
+	public void BulletChangeRight(){
+		if(_changingBulletTimer.IsTimerEnd){
+			ChangeBulletPlus(gunData);
+			_changingBulletTimer.RestTimer();
+		}
+		gunUI.ChangingMesh();
+	}
+	
 
-    private void InputAction()
-    {
-        InputEvent = new DataEvent<InputData>();
-        InputEvent.AddListener(SnapTurnTrigger);
-        InputEvent.AddListener(FireTrigger);
-    }
+	public void FireTrigger(){
+		if(_fireTimer.IsTimerEnd){
+			OpenFire(gunData);
+			_fireTimer.RestTimer();
+		}
 
-    public override void OnUpdate()
-    {
-        if(InputData.instance.HandObject != gameObject)
-            return;
-        InputEvent.Invoke(InputData.instance);
-        FireTimer.Tick(Time.fixedDeltaTime);
-        ChangingBulletTimer.Tick(Time.fixedDeltaTime);
-        
-    }
+		gunUI.ChangingMesh();
+	}
 
-    private void SnapTurnTrigger(InputData input)
-    {
-        if (input.TurnLeftAction)
-        {
-            if (ChangingBulletTimer.IsTimerEnd)
-            {
-                ChangeBulletMinus(gunData);
-                ChangingBulletTimer.RestTimer();
-            }
-        }
+	private void OpenFire(GunData data){
+		var bulletData = Instantiate(data.currentBullet.gameObject, data.barrelPivot.position,
+			data.currentBullet.transform.rotation).GetComponent<BulletData>();
+		bulletData.direction = data.barrelPivot.forward.normalized;
+		bulletData.isFire = true;
+		data.currentBulletCount++;
+		data.needReload = true;
+		PlaySound(gunData.fireSound);
+	}
 
-        if (input.TurnRightAction)
-        {
-            if (ChangingBulletTimer.IsTimerEnd)
-            {
-                ChangeBulletPlus(gunData);
-                ChangingBulletTimer.RestTimer();
-            }
-        }
+	private void ChangeBulletPlus(GunData data){
+		data.currentBulletCount++;
+		data.needReload = true;
+		PlaySound(data.currentBullet.soundFile);
+	}
 
-        gunUI.ChangingMesh();
-    }
+	private void ChangeBulletMinus(GunData data){
+		data.currentBulletCount--;
+		data.needReload = true;
+		PlaySound(data.currentBullet.soundFile);
+	}
 
-    private void FireTrigger(InputData input)
-    {
-        if (input.FireAction)
-        {
-            if (FireTimer.IsTimerEnd)
-            {
-                OpenFire(gunData);
-                FireTimer.RestTimer();
-            }
-        }
-
-        gunUI.ChangingMesh();
-    }
-
-    private void OpenFire(GunData data)
-    {
-        var bulletData = Instantiate(data.currentBullet.gameObject, data.BarrelPivot.position,
-            data.currentBullet.transform.rotation).GetComponent<BulletData>();
-        bulletData.direction = data.BarrelPivot.forward.normalized;
-        data.currentBulletCount++;
-        data.needReload = true;
-        Haptic();
-        PlaySound(gunData.FireSound);
-    }
-
-    private void ChangeBulletPlus(GunData data)
-    {
-        data.currentBulletCount++;
-        data.needReload = true;
-        PlaySound(data.currentBullet.soundFile);
-    }
-
-    private void ChangeBulletMinus(GunData data)
-    {
-        data.currentBulletCount--;
-        data.needReload = true;
-        PlaySound(data.currentBullet.soundFile);
-    }
-
-    private void PlaySound(SoundFile file)
-    {
-        ScenceData.Data.soundManager.PlaySound(file);
-    }
-
-    private void Haptic()
-    {
-        InputData.instance.Haptic(0.5f, InputData.instance.hand.handType, 75f);
-    }
+	private void PlaySound(SoundFile file){
+		ScenceData.Data.soundManager.PlaySound(file);
+	}
 }

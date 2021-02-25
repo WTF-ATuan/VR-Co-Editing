@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 4371027571981196722}
   - component: {fileID: 6853156611922624922}
   m_Layer: 0
-  m_Name: Qframe3
+  m_Name: Chinise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,11 +342,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2394658855427731122}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.654603, y: 1.4207041, z: 1.9146938}
+  m_LocalPosition: {x: 1.654603, y: 1.42, z: 1.23}
   m_LocalScale: {x: 0.42209074, y: 0.07368773, z: 0.07368773}
   m_Children: []
   m_Father: {fileID: 6750068442191331052}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &4371027571981196722
 MeshFilter:
@@ -726,9 +726,8 @@ Transform:
   m_Children:
   - {fileID: 8301392691640116313}
   - {fileID: 8508151465957623403}
-  - {fileID: 5670880937425550281}
   - {fileID: 2674917214429361164}
-  - {fileID: 8066664013214247661}
+  - {fileID: 8552573775154251391}
   - {fileID: 4880093013855993653}
   m_Father: {fileID: 8412374282261407062}
   m_RootOrder: 3
@@ -873,36 +872,6 @@ Transform:
   - {fileID: 2427354718612796224}
   m_Father: {fileID: 4606903140049506160}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6153091143443279457
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5670880937425550281}
-  m_Layer: 0
-  m_Name: word_chinese
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5670880937425550281
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6153091143443279457}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0640345, y: -2.394923, z: -0.12902354}
-  m_LocalScale: {x: 3.4406016, y: 3.4406016, z: 3.4406016}
-  m_Children: []
-  m_Father: {fileID: 6750068442191331052}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6224029456428334442
 GameObject:
@@ -1277,37 +1246,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &7608139894630789430
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8066664013214247661}
-  m_Layer: 0
-  m_Name: word_japanese
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8066664013214247661
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7608139894630789430}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0640345, y: -4.1496296, z: -0.12902354}
-  m_LocalScale: {x: 3.4406016, y: 3.4406016, z: 3.4406016}
-  m_Children:
-  - {fileID: 8552573775154251391}
-  m_Father: {fileID: 6750068442191331052}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7710135083455677447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,7 +1258,7 @@ GameObject:
   - component: {fileID: 7076888285052313371}
   - component: {fileID: 697631601746433162}
   m_Layer: 0
-  m_Name: Qframe3
+  m_Name: Japan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1334,11 +1272,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7710135083455677447}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.069, y: 1.109, z: 0.59400004}
-  m_LocalScale: {x: 0.15630844, y: 0.021417107, z: 0.021417107}
+  m_LocalPosition: {x: 1.8266329, y: -0.33400267, z: 1.23}
+  m_LocalScale: {x: 0.53779507, y: 0.073687725, z: 0.073687725}
   m_Children: []
-  m_Father: {fileID: 8066664013214247661}
-  m_RootOrder: 0
+  m_Father: {fileID: 6750068442191331052}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &7076888285052313371
 MeshFilter:
@@ -1412,7 +1350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8211996905731194166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0640345, y: -3.2791574, z: -0.12902354}
+  m_LocalPosition: {x: 2.0640345, y: -3.295, z: -0.803}
   m_LocalScale: {x: 3.4406016, y: 3.4406016, z: 3.4406016}
   m_Children:
   - {fileID: 6287790785202984154}
@@ -1436,7 +1374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc597977a791d774a9fd71ad8850f4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passing: 0
   levels: []
 --- !u!1 &8277222322865493697
 GameObject:
@@ -1448,7 +1385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4880093013855993653}
   m_Layer: 0
-  m_Name: target_texture
+  m_Name: Anser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1462,7 +1399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8277222322865493697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0640345, y: -3.2791574, z: -0.12902354}
+  m_LocalPosition: {x: 2.0640345, y: -3.2791574, z: -0.803}
   m_LocalScale: {x: 3.4406016, y: 3.4406016, z: 3.4406016}
   m_Children:
   - {fileID: 8182010580149393813}
@@ -1472,7 +1409,7 @@ Transform:
   - {fileID: 4426251950739488129}
   - {fileID: 875747580490975837}
   m_Father: {fileID: 6750068442191331052}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8301392691274158486
 GameObject:
@@ -6263,7 +6200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8301392691640116312}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.8748012, y: 0.42079672, z: 1.5736198}
+  m_LocalPosition: {x: 1.8748012, y: 0.42079672, z: 1.211}
   m_LocalScale: {x: 0.6401366, y: 1, z: 0.32886997}
   m_Children: []
   m_Father: {fileID: 6750068442191331052}
@@ -6436,7 +6373,7 @@ MonoBehaviour:
   moveSpeed: 1
   titleSoundFile:
     Sound: {fileID: 8300000, guid: 832e54fb6ff130844b2eef77600b8ff9, type: 3}
-  answerObject: {fileID: 7608139894630789430}
+  answerObject: {fileID: 0}
   repeatTime: 3.5
   thisLevelSet: {fileID: 11400000, guid: f547793ed3d297841bbf9dadf9087636, type: 2}
   onPassEvent:
@@ -6843,6 +6780,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8508151465957623403}
     m_Modifications:
+    - target: {fileID: 388224212616113073, guid: 4eeeb1fbe535b9b40b0790f8ecf34314,
+        type: 3}
+      propertyPath: pass
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 388224212616113073, guid: 4eeeb1fbe535b9b40b0790f8ecf34314,
         type: 3}
       propertyPath: passMat

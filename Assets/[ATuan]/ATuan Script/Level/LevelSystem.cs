@@ -6,36 +6,36 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(LevelData))]
 public class LevelSystem : MonoBehaviour{
-	private LevelData _levelData;
+	[SerializeField] private LevelData levelData;
 
 	private void Start(){
-		if(_levelData != null)
+		if(levelData != null)
 			return;
-		_levelData = GetComponent<LevelData>();
+		levelData = GetComponent<LevelData>();
 	}
 
 	public void OnTriggerEnter(Collider other){
-		if(other.name == _levelData.answerBullet.name){
-			_levelData.pass = true;
+		if(other.name == levelData.answerBullet.name){
+			levelData.pass = true;
 		}
 		else
-			_levelData.miss = true;
+			levelData.miss = true;
 
 		JudgeData();
 	}
 	
 	private void JudgeData(){
 		var mesh = GetComponent<MeshRenderer>();
-		if(_levelData.pass){
+		if(levelData.pass){
 			// pass image come out
-			mesh.material = _levelData.passWordMat;
+			mesh.material = levelData.passWordMat;
 			// pass sound come out
-			PlayerSound(_levelData.goodSound);
+			PlayerSound(levelData.goodSound);
 			GetComponent<Collider>().enabled = false;
 		}
 
-		if(_levelData.miss){
-			PlayerSound(_levelData.badSound);
+		if(levelData.miss){
+			PlayerSound(levelData.badSound);
 		}
 	}
 

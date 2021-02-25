@@ -15,15 +15,15 @@ public class ComicManager : MonoBehaviour
 
     private void Update()
     {
-        if (InputData.instance.GripAction)
-        {
-            comicCount++;
-            ChangeImage();
-        }
-        if(isOver)
-            SceneManager.LoadScene(sceneName);
-        
-            
+        // if (InputData.instance.GripAction)
+        // {
+        //     comicCount++;
+        //     ChangeImage();
+        // }
+        // if(isOver)
+        //     SceneManager.LoadScene(sceneName);
+        //
+        //     
     }
 
     private void ChangeImage()

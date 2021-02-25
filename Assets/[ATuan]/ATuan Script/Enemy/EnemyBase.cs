@@ -10,7 +10,7 @@ using Valve.VR.InteractionSystem;
 public abstract class EnemyBase : MonoBehaviour
 {
     protected Animator EnemyAnimator;
-    private Rigidbody enemyRigidbody;
+    private Rigidbody _enemyRigidbody;
     public LevelCollector levelCollector;
     public float failMaxDistance;
     public float moveSpeed;
@@ -25,7 +25,7 @@ public abstract class EnemyBase : MonoBehaviour
         answerObject.SetActive(false);
         StartCoroutine(TitleSound(repeatTime, titleSoundFile));
         EnemyAnimator = GetComponent<Animator>();
-        enemyRigidbody = GetComponent<Rigidbody>();
+        _enemyRigidbody = GetComponent<Rigidbody>();
         levelCollector = GetComponentInChildren<LevelCollector>();
         UpdateEvent.AddUpdate(OnUpdate);
     }
@@ -66,7 +66,7 @@ public abstract class EnemyBase : MonoBehaviour
     private void MoveToTarget(Vector3 targetPosition)
     {
         var finalPos = targetPosition - transform.position;
-        enemyRigidbody.velocity = finalPos.normalized * moveSpeed;
+        _enemyRigidbody.velocity = finalPos.normalized * moveSpeed;
     }
 
     private IEnumerator TitleSound(float second, SoundFile file)

@@ -4,25 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletSystem : ComponentSystem {
-    private BulletData _bulletData;
+    [SerializeField]private BulletData bulletData;
     public override void OnStart()
     {
-        _bulletData = GetComponent<BulletData>();
-        gameObject.name = _bulletData.name;
-        _bulletData.bubbleRig = GetComponent<Rigidbody>();
+        bulletData = GetComponent<BulletData>();
+        gameObject.name = bulletData.name;
+        bulletData.bubbleRig = GetComponent<Rigidbody>();
         Destroy(gameObject , 5f);
     }
 
     public override void OnUpdate()
     {
-        _bulletData.bubbleRig.velocity = _bulletData.direction * _bulletData.speed;
+        bulletData.bubbleRig.velocity = bulletData.direction * bulletData.speed;
     }
 
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.collider != null)
         {
-            _bulletData.isHit = true;
+            bulletData.isHit = true;
         }
 
         JudgeData();
@@ -30,8 +30,8 @@ public class BulletSystem : ComponentSystem {
 
     private void JudgeData()
     {
-        if(_bulletData.isHit)
-            PlaySound(_bulletData.hitSound);
+        if(bulletData.isHit)
+            PlaySound(bulletData.hitSound);
     }
 
     private void PlaySound(SoundFile file)

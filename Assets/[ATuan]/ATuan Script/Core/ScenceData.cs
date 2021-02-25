@@ -23,16 +23,11 @@ public class ScenceData : MonoBehaviour
     }
     [Header("Player")]
     public GameObject player;
-    public Camera vrCamera;
-    public int playerHp;
     public PlayerManager playerManager;
     public float playerSpeed;
-    public GameObject loudGun;
     private void AwakePlayer()
     {
-        if (playerHp <= 0) Debug.LogError("NotSetHp");
         if (!player) Debug.LogError("null player");
-        if (!vrCamera) Debug.LogWarning("VR Camera miss");
         if (!playerManager) Debug.LogError("null PlayerScript");
         playerManager.Initialize(this);
     }
