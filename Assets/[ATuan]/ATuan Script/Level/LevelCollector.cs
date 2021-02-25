@@ -3,26 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelCollector : MonoBehaviour
-{
-    [MyReadOnly] public bool passing;
+public class LevelCollector : MonoBehaviour{
+    public bool Passing => IsPassLevel();
     public List<LevelData> levels;
 
     private void Start()
     {
         levels = new List<LevelData>(GetComponentsInChildren<LevelData>());
-        UpdateEvent.AddUpdate(ToUpdate);
     }
+    
 
-    private void ToUpdate()
-    {
+    private bool IsPassLevel(){
         var isPass = false;
         foreach (var level in levels)
         {
             if (!level.pass)
                 isPass = true;
         }
-        if (!isPass)
-            passing = true;
+        return isPass;
     }
 }

@@ -32,6 +32,7 @@ public class FireSystem : ComponentSystem
         InputEvent.Invoke(InputData.instance);
         FireTimer.Tick(Time.fixedDeltaTime);
         ChangingBulletTimer.Tick(Time.fixedDeltaTime);
+        
     }
 
     private void SnapTurnTrigger(InputData input)

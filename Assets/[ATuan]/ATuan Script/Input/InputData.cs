@@ -9,20 +9,17 @@ public class InputData : SingletonMonoBehavior<InputData>
     public SteamVR_Action_Vibration hapticAction;
 
 
-    private Hand.AttachmentFlags attachmentFlags;
+    private Hand.AttachmentFlags _attachmentFlags;
     private void Start()
     {
-        attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) &
+        _attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) &
                           (~Hand.AttachmentFlags.DetachOthers) &
                           (~Hand.AttachmentFlags.VelocityMovement);
     }
    
 
     public GameObject HandObject => hand.currentAttachedObject;
-
-
-    // public Hand HandTouch =>
-    //     HoveringObject ? HoveringObject.hoveringHand : null;
+    
 
     public Interactable HoveringObject => hand.hoveringInteractable;
 
@@ -43,14 +40,13 @@ public class InputData : SingletonMonoBehavior<InputData>
     [SerializeField] private SteamVR_Action_Boolean snapTurnRight;
 
    
-    public void Equip(Interactable obj, Hand hand)
+    public void Equip(Interactable obj)
     {
         hand.HoverLock(obj);
-        hand.AttachObject(obj.gameObject, GrabTypes.Pinch, attachmentFlags);
-        hand.HideController();
+        hand.AttachObject(obj.gameObject, GrabTypes.Pinch, _attachmentFlags);
     }
-    public void Haptic(float ShakeTime, SteamVR_Input_Sources source, float amplitude)
+    public void Haptic(float shakeTime, SteamVR_Input_Sources source, float amplitude)
     {
-        hapticAction.Execute(Time.time, ShakeTime, 150, amplitude, source);
+        hapticAction.Execute(Time.time, shakeTime, 150, amplitude, source);
     }
 }

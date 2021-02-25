@@ -22,19 +22,17 @@ public class ScenceData : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
     [Header("Player")]
-    public GameObject Player;
-    public GameObject Boat;
-    public Camera VRCamera;
-    public int PlayerHp;
+    public GameObject player;
+    public Camera vrCamera;
+    public int playerHp;
     public PlayerManager playerManager;
     public float playerSpeed;
-    public GameObject LoudGun;
+    public GameObject loudGun;
     private void AwakePlayer()
     {
-        if (PlayerHp <= 0) Debug.LogError("NotSetHp");
-        if (!Player) Debug.LogError("null player");
-        if (!Boat) Debug.LogError("null boat");
-        if (!VRCamera) Debug.LogWarning("VR Camera miss");
+        if (playerHp <= 0) Debug.LogError("NotSetHp");
+        if (!player) Debug.LogError("null player");
+        if (!vrCamera) Debug.LogWarning("VR Camera miss");
         if (!playerManager) Debug.LogError("null PlayerScript");
         playerManager.Initialize(this);
     }
@@ -47,32 +45,30 @@ public class ScenceData : MonoBehaviour
     public int levelCount;
     private void AwakeLevel()
     {
-        // if (!levelManager) Debug.LogError("null LevelManager");
         if (allEnemy == null) Debug.LogError("Missing Level");
         if (allBullets == null) Debug.LogError("Missing Bullet");
-        // levelManager.Initialize(this);
     }
     [Header("GameControl")]
-    public float GameTime;
-    public Difficulty Difficulty;
-    public bool IsPassLevel;
-    public bool IsFailLevel;
+    public float gameTime;
+    public Difficulty difficulty;
+    public bool isPassLevel;
+    public bool isFailLevel;
     public GameManager gameManager;
     private void AwakeGame() {
         if (!gameManager) Debug.LogError("null gameManager");
         gameManager.Initialize(this);
     }
     [Header("Map")]
-    public List<GameObject> EasyMap;
-    public List<GameObject> NormalMap;
-    public List<GameObject> HardMap;
+    public List<GameObject> easyMap;
+    public List<GameObject> normalMap;
+    public List<GameObject> hardMap;
     public MapManager mapManager;
     private void AwakeMap() {
         if (!mapManager) Debug.LogError("null MapManager");
     }
     [Header("TriggerPoint")]
-    public List<Transform> CheckPoint;
-    public Transform EndPoint;
+    public List<Transform> checkPoint;
+    public Transform endPoint;
     [Header("Sound")]
     public SoundManager soundManager;
 
@@ -81,8 +77,8 @@ public class ScenceData : MonoBehaviour
         if (!soundManager) Debug.LogError("Sound Miss");
     }
     [Header("Pass or Fail Event")]
-    public EventSystem OnPass;
-    public EventSystem OnFail;
+    public EventSystem onPass;
+    public EventSystem onFail;
 
 }
 public enum Difficulty

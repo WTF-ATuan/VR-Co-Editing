@@ -496,6 +496,8 @@ GameObject:
   - component: {fileID: 3029945585773164196}
   - component: {fileID: 3029945585773164198}
   - component: {fileID: 3029945585773164199}
+  - component: {fileID: 61316419}
+  - component: {fileID: 61316420}
   m_Layer: 0
   m_Name: Loud_public
   m_TagString: LoudGun
@@ -512,7 +514,7 @@ Transform:
   m_GameObject: {fileID: 4794304838170600270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.918, y: 1.3836596, z: -28.333302}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_Children:
   - {fileID: 4794304838171098988}
   - {fileID: 4794304838171098986}
@@ -558,7 +560,7 @@ MonoBehaviour:
     actionSetPath: 
   hideHandOnAttach: 0
   hideSkeletonOnAttach: 0
-  hideControllerOnAttach: 0
+  hideControllerOnAttach: 1
   handAnimationOnPickup: 0
   setRangeOfMotionOnPickup: -1
   useHandObjectAttachmentPoint: 1
@@ -606,38 +608,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4946564b258ede44a4ab23c85f9ad27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousBullet:
-    name: 
-    gameObject: {fileID: 0}
-    bubbleData: {fileID: 0}
-    bullectMat: {fileID: 0}
-    UImat: {fileID: 0}
-    soundFile:
-      Name: 
-      Sound: {fileID: 0}
-  currentBullet:
-    name: 
-    gameObject: {fileID: 0}
-    bubbleData: {fileID: 0}
-    bullectMat: {fileID: 0}
-    UImat: {fileID: 0}
-    soundFile:
-      Name: 
-      Sound: {fileID: 0}
-  nextBullet:
-    name: 
-    gameObject: {fileID: 0}
-    bubbleData: {fileID: 0}
-    bullectMat: {fileID: 0}
-    UImat: {fileID: 0}
-    soundFile:
-      Name: 
-      Sound: {fileID: 0}
-  GunAni: {fileID: 4794304838177984654}
-  HitEffect: {fileID: 0}
-  BarrelPivot: {fileID: 0}
-  FireColdownTime: 0
-  ChangingBulletTime: 0
+  previousBullet: {fileID: 0}
+  currentBullet: {fileID: 0}
+  nextBullet: {fileID: 0}
+  currentBulletCount: 0
+  BarrelPivot: {fileID: 4794304838821140827}
+  FireColdownTime: 0.2
+  ChangingBulletTime: 0.1
+  FireSound:
+    Sound: {fileID: 8300000, guid: 1eff2a7d83fd0f9468b35561044fecfb, type: 3}
+  needReload: 0
 --- !u!114 &3029945585773164198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,34 +630,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33479ee4626835547a232096a72724e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentBulletSet: {fileID: 11400000, guid: 0e3b14b2a0f8e5b45ab4b5d75864b9e5, type: 2}
   gunData: {fileID: 3029945585773164196}
-  bulletDatas:
-  - name: 
-    gameObject: {fileID: 0}
-    bubbleData: {fileID: 0}
-    bullectMat: {fileID: 0}
-    UImat: {fileID: 0}
-    soundFile:
-      Name: 
-      Sound: {fileID: 0}
-  - name: 
-    gameObject: {fileID: 0}
-    bubbleData: {fileID: 0}
-    bullectMat: {fileID: 0}
-    UImat: {fileID: 0}
-    soundFile:
-      Name: 
-      Sound: {fileID: 0}
-  - name: 
-    gameObject: {fileID: 0}
-    bubbleData: {fileID: 0}
-    bullectMat: {fileID: 0}
-    UImat: {fileID: 0}
-    soundFile:
-      Name: 
-      Sound: {fileID: 0}
-  currentbulletCount: 0
+  bulletData: []
+  currentBulletCount: 0
 --- !u!114 &3029945585773164199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,6 +646,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 3029945585773164196}
+  gunUI: {fileID: 61316419}
+--- !u!114 &61316419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794304838170600270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e6ba68d1f08d147b372fe7512c8565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIMesh: {fileID: 4794304838172867974}
+--- !u!114 &61316420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794304838170600270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7418c7dd8f977d4e969202d3fa7e926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poseEditorExpanded: 1
+  blendEditorExpanded: 1
+  poseNames:
+  - LoudnewPose (MAIN)
+  - LoudnewPose
+  overridePreviewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
+    type: 3}
+  overridePreviewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
+    type: 3}
+  skeletonMainPose: {fileID: 11400000, guid: b65766505f812f0468a6986072debe5f, type: 2}
+  skeletonAdditionalPoses:
+  - {fileID: 11400000, guid: b65766505f812f0468a6986072debe5f, type: 2}
+  showLeftPreview: 0
+  showRightPreview: 0
+  previewLeftInstance: {fileID: 0}
+  previewRightInstance: {fileID: 0}
+  previewPoseSelection: 0
+  blendingBehaviours:
+  - name: gunPose
+    enabled: 1
+    influence: 0.315
+    pose: 0
+    value: 0
+    action_single:
+      actionPath: 
+      needsReinit: 0
+    action_bool:
+      actionPath: 
+      needsReinit: 0
+    smoothingSpeed: 0
+    type: 0
+    useMask: 0
+    mask:
+      palm: 1
+      thumb: 1
+      index: 1
+      middle: 1
+      ring: 1
+      pinky: 1
+      values: 010101010101
+    previewEnabled: 1
+  scale: 1
 --- !u!1 &4794304838821140826
 GameObject:
   m_ObjectHideFlags: 0

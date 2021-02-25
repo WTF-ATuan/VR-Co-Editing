@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
     private Vector3 playerPosition;
     private void Start()
     {
-        playerPosition = ScenceData.Data.Player.transform.position;
+        playerPosition = ScenceData.Data.player.transform.position;
         SoundPlayer = GetComponent<AudioSource>();
     }
 

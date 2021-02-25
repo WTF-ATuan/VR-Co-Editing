@@ -11,12 +11,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/049BE2AF-E36F-487E-B06E-F49D51A0BAB6/fd/9eed30da/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/AutoCombindCustomEditor/AutoMeterials.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ShowTime.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Tool/MyReadOnlyPropertyDrawer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ComicManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelCollector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ShowTime.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ComicManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -32,25 +31,25 @@
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/AutoCombindCustomEditor/AutoComBinding.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/SystemManager/ComponentSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/SoundManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/FireSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/ReloadSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Input/InputData.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelCollition.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/LevelManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/ScenceData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSet.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelCollector.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ComicManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSet.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Crocodile.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ShowTime.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelData.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Input/InputData.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/FireSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelCollector.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/ScenceData.cs" />
       </list>
     </option>
   </component>
@@ -97,6 +96,7 @@
       <updated>1604724837969</updated>
       <workItem from="1604724842953" duration="55388000" />
       <workItem from="1609145725171" duration="21987000" />
+      <workItem from="1614072132422" duration="5306000" />
     </task>
     <servers />
   </component>

@@ -43,13 +43,13 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void OnUpdate()
     {
         MoveToTarget(TargetPosition);
-        TargetTrack(ScenceData.Data.Player.transform.position);
+        TargetTrack(ScenceData.Data.player.transform.position);
         PassTrack();
     }
 
     private void TargetTrack(Vector3 targetPosition)
     {
-        if (levelCollector.passing)
+        if (levelCollector.Passing)
             return;
         var distance = Vector3.Distance(transform.position, targetPosition);
         if (distance < failMaxDistance)
@@ -58,7 +58,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     private void PassTrack()
     {
-        if (!levelCollector.passing) return;
+        if (!levelCollector.Passing) return;
         answerObject.SetActive(true);
         OnPass();
     }
@@ -71,7 +71,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     private IEnumerator TitleSound(float second, SoundFile file)
     {
-        if (levelCollector.passing)
+        if (levelCollector.Passing)
             yield break;
         yield return new WaitForSeconds(second);
         PlaySound(file);

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using TMPro;
 using UnityEngine;
 
@@ -14,6 +12,6 @@ public class ShowTime : MonoBehaviour
 
     private void ToUpdate()
     {
-        textMeshPro.text = ScenceData.Data.GameTime.ToString();
+        textMeshPro.text = ScenceData.Data.gameTime.ToString("F1");
     }
 }

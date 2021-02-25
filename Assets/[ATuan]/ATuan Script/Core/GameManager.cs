@@ -18,28 +18,28 @@ public class GameManager : MonoBehaviour
     }
     private void GameTimeUpdate()
     {
-        scenesData.GameTime += Time.deltaTime;
+        scenesData.gameTime += Time.deltaTime;
     }
     private void ReferenceDifficulty() {
-        scenesData.Difficulty = new Difficulty();
-        scenesData.Difficulty = Difficulty.UnSet;
+        scenesData.difficulty = new Difficulty();
+        scenesData.difficulty = Difficulty.UnSet;
     }
     public void ResetGame()
     {
-        scenesData.IsPassLevel = false;
-        scenesData.IsFailLevel = false;
-        scenesData.GameTime = 0;
+        scenesData.isPassLevel = false;
+        scenesData.isFailLevel = false;
+        scenesData.gameTime = 0;
     }
     public void SetDifficulty(Difficulty difficulty)
     {
-        scenesData.Difficulty = difficulty;
+        scenesData.difficulty = difficulty;
     }
     public void PassLevel() {
-        scenesData.IsPassLevel = true;
-        scenesData.OnPass.Invoke(null);
+        scenesData.isPassLevel = true;
+        scenesData.onPass.Invoke(null);
     }
     public void FailLevel() {
-        scenesData.IsFailLevel = true;
-        scenesData.OnFail.Invoke(null);
+        scenesData.isFailLevel = true;
+        scenesData.onFail.Invoke(null);
     }
 }
