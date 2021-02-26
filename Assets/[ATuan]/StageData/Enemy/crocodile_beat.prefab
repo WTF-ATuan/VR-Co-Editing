@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1822537e66f4b564aaccc7cec828dfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 0}
-  passWordObject: {fileID: 0}
+  levelData: {fileID: 11400000, guid: 965183c6b90d51143bd728d0aedd575f, type: 2}
+  passWordObject: {fileID: 1432707261438643006}
 --- !u!1 &503288049029030303
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5820701339339259766
 Transform:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &875747580490975837
 Transform:
   m_ObjectHideFlags: 0
@@ -609,8 +609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1822537e66f4b564aaccc7cec828dfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 0}
-  passWordObject: {fileID: 0}
+  levelData: {fileID: 11400000, guid: bb186afeeecebf041bb6c33837d71449, type: 2}
+  passWordObject: {fileID: 6336345915337920875}
 --- !u!1 &2664845260899843912
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8182010580149393813
 Transform:
   m_ObjectHideFlags: 0
@@ -927,8 +927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1822537e66f4b564aaccc7cec828dfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 0}
-  passWordObject: {fileID: 0}
+  levelData: {fileID: 11400000, guid: 80059b765d30d5844a1d56306123309a, type: 2}
+  passWordObject: {fileID: 2891528106628536487}
 --- !u!1 &3341778516881932483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,8 +1035,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1822537e66f4b564aaccc7cec828dfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 0}
-  passWordObject: {fileID: 0}
+  levelData: {fileID: 11400000, guid: 3472501ee33546345a27ef73a0563c04, type: 2}
+  passWordObject: {fileID: 990695243100174579}
 --- !u!1 &3501317745873953776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,8 +1235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1822537e66f4b564aaccc7cec828dfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 0}
-  passWordObject: {fileID: 0}
+  levelData: {fileID: 11400000, guid: bd383535843800c42b347a3db443f1ff, type: 2}
+  passWordObject: {fileID: 7252824586231953757}
 --- !u!1 &5422498393591514880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,7 +1289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4426251950739488129
 Transform:
   m_ObjectHideFlags: 0
@@ -1460,7 +1460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9052239790354273518
 Transform:
   m_ObjectHideFlags: 0
@@ -1751,8 +1751,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1822537e66f4b564aaccc7cec828dfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 0}
-  passWordObject: {fileID: 0}
+  levelData: {fileID: 11400000, guid: 3472501ee33546345a27ef73a0563c04, type: 2}
+  passWordObject: {fileID: 5488091711887712603}
 --- !u!1 &7076665489429248304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +1832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1227782127111975271
 Transform:
   m_ObjectHideFlags: 0
@@ -2023,8 +2023,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSet: {fileID: 11400000, guid: f547793ed3d297841bbf9dadf9087636, type: 2}
-  levels:
-  - {fileID: 0}
 --- !u!1 &8277222322865493697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,7 +2038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4880093013855993653
 Transform:
   m_ObjectHideFlags: 0

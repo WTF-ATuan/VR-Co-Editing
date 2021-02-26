@@ -55,8 +55,9 @@ public abstract class EnemyBase : MonoBehaviour
 
     private void PassTrack()
     {
-        if (!levelController.Passing) return;
-        OnPass();
+        if(levelController.Passing){
+            OnPass();
+        }
     }
 
     private void MoveToTarget(Vector3 targetPosition)

@@ -8,8 +8,9 @@ public class LevelController : MonoBehaviour{
 	public LevelSet levelSet;
 
 	private bool IsPassLevel(){
-		var isPass = false;
+		var isPass = true;
 		foreach(var level in levelSet.levelData){
+			if(level.levelObj == null) return false;
 			var mesh = level.levelObj.GetComponent<MeshRenderer>();
 			if(level.pass){
 				ScenceData.Data.soundManager.PlaySound(levelSet.goodSound);
@@ -25,7 +26,7 @@ public class LevelController : MonoBehaviour{
 			}
 
 			if(!level.pass){
-				isPass = true;
+				isPass = false;
 			}
 		}
 

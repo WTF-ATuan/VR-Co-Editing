@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 [CreateAssetMenu(fileName = "New BulletData", menuName = "Data / BulletData")]
 public class BulletData : ScriptableObject{
-	[HideInInspector] public GameObject bulletObject;
+	public GameObject bulletObject;
 	[HideInInspector] public float speed;
 	[HideInInspector] public Vector3 direction;
 	public new string name;
@@ -14,5 +14,4 @@ public class BulletData : ScriptableObject{
 	public Material uiMat;
 	public SoundFile soundFile;
 	public SoundFile hitSound;
-	
 }

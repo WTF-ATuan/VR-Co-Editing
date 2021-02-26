@@ -23,7 +23,6 @@
               <e p="ReloadSystem.cs" t="Include" />
             </e>
             <e p="Core" t="Include">
-              <e p="GameManager.cs" t="Include" />
               <e p="LevelManager.cs" t="Include" />
               <e p="MapManager.cs" t="Include" />
               <e p="PlayerManager.cs" t="Include" />
@@ -39,11 +38,8 @@
               <e p="IData.cs" t="Include" />
               <e p="ISystemBehavior.cs" t="Include" />
             </e>
-            <e p="Input" t="Include">
-              <e p="InputData.cs" t="Include" />
-            </e>
             <e p="Level" t="Include">
-              <e p="LevelCollector.cs" t="Include" />
+              <e p="LevelController.cs" t="Include" />
               <e p="LevelData.cs" t="Include" />
               <e p="LevelSet.cs" t="Include" />
               <e p="LevelSystem.cs" t="Include" />
@@ -55,6 +51,7 @@
             <e p="Player" t="Include">
               <e p="HandPointer.cs" t="Include" />
               <e p="HeadPointer.cs" t="Include" />
+              <e p="HoldingObject.cs" t="Include" />
             </e>
             <e p="SystemManager" t="Include">
               <e p="ComponentSystem.cs" t="Include" />
@@ -78,6 +75,8 @@
             <e p="ToonComplete.shader" t="Include" />
           </e>
         </e>
+        <e p="HandInput.cs" t="Include" />
+        <e p="HoldObject.cs" t="Include" />
         <e p="LowPolyWaterv2" t="Include">
           <e p="Demos" t="Include">
             <e p="Scripts" t="Include">

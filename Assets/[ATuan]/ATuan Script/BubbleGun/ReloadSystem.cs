@@ -11,7 +11,7 @@ public class ReloadSystem : MonoBehaviour{
 	[SerializeField] private int currentBulletCount;
 
 	public void Start(){
-		bulletData = new[] {
+		bulletData = new[]{
 			CurrentBulletSet.bullets[CurrentBulletSet.bullets.Count - 1],
 			CurrentBulletSet.bullets[0],
 			CurrentBulletSet.bullets[1]
@@ -30,10 +30,12 @@ public class ReloadSystem : MonoBehaviour{
 	}
 
 	private void TrackGunData(List<BulletData> bullets){
-		foreach(var data in bullets.Where(data => data.isFire)){
-			bullets.Remove(data);
-			Destroy(data);
-		}
+		// for(var index = 0; index < bullets.Count; index++){
+		// 	var data = bullets[index];
+		// 	if(data.isFire)
+		// 		bullets.RemoveAt(index);
+		// }
+
 		if(currentBulletCount > bullets.Count - 1)
 			currentBulletCount = 0;
 		if(currentBulletCount == 0)

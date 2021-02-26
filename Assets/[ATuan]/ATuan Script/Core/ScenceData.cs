@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class ScenceData : MonoBehaviour
 {
-    public EventSystem OnStart;
+    public EventSystem start;
     public static ScenceData Data {
         get;
         private set;
@@ -13,11 +13,10 @@ public class ScenceData : MonoBehaviour
     private void Awake()
     {
         Data = this;
-        AwakeMap();
         AwakeLevel();
         AwakeSound();
         AwakePlayer();
-        OnStart.Invoke(null);
+        start.Invoke(null);
         DontDestroyOnLoad(this.gameObject);
     }
     [Header("Player")]
@@ -44,14 +43,6 @@ public class ScenceData : MonoBehaviour
     }
     [Header("GameControl")]
     public float gameTime;
-    [Header("Map")]
-    public List<GameObject> easyMap;
-    public List<GameObject> normalMap;
-    public List<GameObject> hardMap;
-    public MapManager mapManager;
-    private void AwakeMap() {
-        if (!mapManager) Debug.LogError("null MapManager");
-    }
     [Header("TriggerPoint")]
     public List<Transform> checkPoint;
     public Transform endPoint;
@@ -63,8 +54,8 @@ public class ScenceData : MonoBehaviour
         if (!soundManager) Debug.LogError("Sound Miss");
     }
     [Header("Pass or Fail Event")]
-    public EventSystem onPass;
-    public EventSystem onFail;
+    public EventSystem pass;
+    public EventSystem fail;
 
 }
 public enum Difficulty

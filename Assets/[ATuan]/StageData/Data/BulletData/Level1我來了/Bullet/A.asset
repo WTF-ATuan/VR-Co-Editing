@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2aa754ec58aea428666bc467d98433, type: 3}
+  m_Name: A
+  m_EditorClassIdentifier: 
+  bulletObject: {fileID: 821922570736438998, guid: 1ca983b3fd7914242bf93c15572462f2,
+    type: 3}
+  speed: 0
+  direction: {x: 0, y: 0, z: 0}
+  name: A
+  isHit: 0
+  isFire: 0
+  uiMat: {fileID: 2100000, guid: 5c758340d92d5524e867eedc98ea27aa, type: 2}
+  soundFile:
+    Sound: {fileID: 8300000, guid: bb606d513ef4b1c4f955c5b471babc89, type: 3}
+  hitSound:
+    Sound: {fileID: 8300000, guid: cf40bb6ca5db2ca47beccdf240d0841b, type: 3}

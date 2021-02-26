@@ -11,7 +11,6 @@ public class BulletSystem : ComponentSystem {
     public override void OnStart(){
 
         gameObject.name = bulletData.name;
-        bulletData.bulletObject = gameObject;
         bulletData.speed = speed;
         _bubbleRig = GetComponent<Rigidbody>();
         Destroy(gameObject , 5f);
