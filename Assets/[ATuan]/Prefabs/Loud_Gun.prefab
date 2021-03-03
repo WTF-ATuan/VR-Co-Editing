@@ -377,7 +377,7 @@ MonoBehaviour:
   currentBullet: {fileID: 0}
   nextBullet: {fileID: 0}
   currentBulletCount: 0
-  barrelPivot: {fileID: 0}
+  barrelPivot: {fileID: 7085478315743919911}
   fireColdDownTime: 0
   changingBulletTime: 0
   fireSound:
@@ -774,13 +774,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7085478316376884536}
-  m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0.06940063}
-  m_LocalScale: {x: 1.0850599, y: 1.0850599, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7085478316377315602}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 180, z: 0}
 --- !u!33 &7085478316376021306
 MeshFilter:
   m_ObjectHideFlags: 0
