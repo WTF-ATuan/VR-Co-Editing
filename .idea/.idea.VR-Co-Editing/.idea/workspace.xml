@@ -34,22 +34,22 @@
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelCollition.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSet.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ComicManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSet.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Crocodile.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ShowTime.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Input/InputData.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelCollector.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/ScenceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/FireSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelController.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/ReloadSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ComicManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/FireSystem.cs" />
       </list>
     </option>
   </component>
@@ -98,6 +98,7 @@
       <workItem from="1609145725171" duration="21987000" />
       <workItem from="1614072132422" duration="5306000" />
       <workItem from="1614313242623" duration="2649000" />
+      <workItem from="1614871020911" duration="1711000" />
     </task>
     <servers />
   </component>

@@ -19,7 +19,7 @@ MonoBehaviour:
   name: I
   isHit: 0
   isFire: 0
-  uiMat: {fileID: 2100000, guid: 14897f006a175d34ca49bcc21ad3b6d6, type: 2}
+  uiMat: {fileID: 2100000, guid: 391b501b3273c8a49afd46a8290e6045, type: 2}
   soundFile:
     Sound: {fileID: 8300000, guid: 96b8f1497ed184945a692663e23fb053, type: 3}
   hitSound:

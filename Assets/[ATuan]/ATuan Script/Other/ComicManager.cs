@@ -9,13 +9,13 @@ public class ComicManager : MonoBehaviour{
 	public List<Sprite> comics;
 	public Image[] imageChangers;
 	[SerializeField] private int comicNum;
-
+	
 	[SerializeField] private string nextScenceName;
 	[SerializeField] private GameObject water;
 	
 
 	private void Update(){
-		if(HandInput.Input.PinchPress && HandInput.Input.SnapRight){
+		if(HandInput.Input.PinchPress || HandInput.Input.SnapRight){
 			comicNum++;
 			ChangeImage();
 		}
@@ -34,7 +34,7 @@ public class ComicManager : MonoBehaviour{
 	}
 
 	private void ChangeImage(){
-		if(comicNum >= comics.Count){
+		if(comicNum >= comics.Count -1){
 			StartCoroutine(DelayChange(2.5f));
 		}
 		
@@ -44,13 +44,12 @@ public class ComicManager : MonoBehaviour{
 	}
 
 	private void WaterComeUp(){
-		var lerpY = Mathf.Lerp(water.transform.position.y, 5, Time.deltaTime * 2);
+		var lerpY = Mathf.Lerp(water.transform.position.y, 2, Time.deltaTime);
 		water.transform.position = transform.position + (Vector3.one * lerpY);
 	}
 
 	private IEnumerator DelayChange(float time){
 		yield return new WaitForSeconds(time);
 		SceneManager.LoadScene(nextScenceName);
-
 	}
 }

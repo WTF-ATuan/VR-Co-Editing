@@ -8,14 +8,14 @@ public class FireSystem : ComponentSystem{
 	private Timer _changingBulletTimer;
 	public BubbleGunUI gunUI;
 
-	private LineRenderer _line;
+	[SerializeField]private LineRenderer line;
+	[SerializeField] private Transform linePosition;
 
 	public override void OnStart(){
 		_fireTimer = new Timer(gunData.fireColdDownTime);
 		_changingBulletTimer = new Timer(gunData.changingBulletTime);
 		gunUI.Initialize(gunData);
-		_line = GetComponent<LineRenderer>();
-		_line.SetPositions(new[]{Vector3.zero, Vector3.zero});
+		line.SetPositions(new[]{Vector3.zero, Vector3.zero});
 	}
 
 	public override void OnUpdate(){
@@ -24,8 +24,8 @@ public class FireSystem : ComponentSystem{
 		if(HandInput.Input.PinchPress) FireTrigger();
 		if(HandInput.Input.SnapLeft) BulletChangeLeft();
 		if(HandInput.Input.SnapRight) BulletChangeRight();
-		_line.SetPosition(0 , gunData.barrelPivot.position);
-		_line.SetPosition(1 , gunData.barrelPivot.forward * 5f);
+		line.SetPosition(0 , linePosition.position);
+		line.SetPosition(1 , linePosition.forward);
 	}
 
 	private void BulletChangeLeft(){

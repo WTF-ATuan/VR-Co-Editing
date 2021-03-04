@@ -19,7 +19,7 @@ MonoBehaviour:
   name: Wa
   isHit: 0
   isFire: 0
-  uiMat: {fileID: 2100000, guid: 99cd7f110338fe54193e394b2e5e58aa, type: 2}
+  uiMat: {fileID: 2100000, guid: 0b3dfec52167121489e7e86c75a36ebf, type: 2}
   soundFile:
     Sound: {fileID: 8300000, guid: f15d4e7a784bd2444b116e9e6af86053, type: 3}
   hitSound:

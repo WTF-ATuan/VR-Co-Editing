@@ -33,9 +33,8 @@ public class ReloadSystem : MonoBehaviour{
 		// for(var index = 0; index < bullets.Count; index++){
 		// 	var data = bullets[index];
 		// 	if(data.isFire)
-		// 		bullets.RemoveAt(index);
+		// 		currentBulletCount++;
 		// }
-
 		if(currentBulletCount > bullets.Count - 1)
 			currentBulletCount = 0;
 		if(currentBulletCount == 0)
