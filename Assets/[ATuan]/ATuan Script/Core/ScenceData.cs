@@ -18,7 +18,7 @@ public class ScenceData : MonoBehaviour
         AwakeSound();
         AwakePlayer();
         start.Invoke(null);
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
     [Header("Player")]
     public GameObject player;
