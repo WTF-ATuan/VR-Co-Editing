@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Atuan_Script.Core;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -29,8 +30,8 @@ public class ScenceData : MonoBehaviour
         if (!playerManager) Debug.LogError("null PlayerScript");
         playerManager.Initialize(this);
     }
-    [Header("Level")]
-    // public LevelManager levelManager;
+
+    [Header("Level")] public TaskManager taskManager;
     public List<EnemyBase> allEnemy;
     public List<BulletSet> allBullets;
     public EnemyBase currentEnemy;
@@ -38,8 +39,10 @@ public class ScenceData : MonoBehaviour
     public int levelCount;
     private void AwakeLevel()
     {
+        if(taskManager == null) Debug.LogError("Missing TaskManager");
         if (allEnemy == null) Debug.LogError("Missing Level");
         if (allBullets == null) Debug.LogError("Missing Bullet");
+        taskManager.Initialize(this);
     }
     [Header("GameControl")]
     public float gameTime;

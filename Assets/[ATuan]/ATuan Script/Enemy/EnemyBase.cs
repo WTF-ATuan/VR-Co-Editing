@@ -17,6 +17,7 @@ public abstract class EnemyBase : MonoBehaviour
     public SoundFile titleSoundFile;
     public float repeatTime;
 
+    public bool Pass => levelController.Passing;
 
     private void Awake()
     {

@@ -41,15 +41,16 @@
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Input/InputData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelCollector.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/ScenceData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelController.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/ReloadSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ComicManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/FireSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/ScenceData.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/TaskManager.cs" />
       </list>
     </option>
   </component>
@@ -99,6 +100,8 @@
       <workItem from="1614072132422" duration="5306000" />
       <workItem from="1614313242623" duration="2649000" />
       <workItem from="1614871020911" duration="1711000" />
+      <workItem from="1615294932644" duration="1070000" />
+      <workItem from="1615386905887" duration="355000" />
     </task>
     <servers />
   </component>
