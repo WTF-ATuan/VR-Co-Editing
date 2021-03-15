@@ -30,7 +30,12 @@ public class LevelController : MonoBehaviour{
 			}
 		}
 
-		return isPass;
+		if(isPass){
+			gameObject.SetActive(false);
+			return true;
+		}
+
+		return false;
 	}
 
 	private IEnumerator DelayChangeMesh(float delaySecond, Renderer mesh, Material changeMat){
