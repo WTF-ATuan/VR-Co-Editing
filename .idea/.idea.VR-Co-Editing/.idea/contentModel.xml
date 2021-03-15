@@ -28,6 +28,7 @@
               <e p="PlayerManager.cs" t="Include" />
               <e p="ScenceData.cs" t="Include" />
               <e p="SoundManager.cs" t="Include" />
+              <e p="TaskManager.cs" t="Include" />
               <e p="UpdateEvent.cs" t="Include" />
             </e>
             <e p="Enemy" t="Include">
