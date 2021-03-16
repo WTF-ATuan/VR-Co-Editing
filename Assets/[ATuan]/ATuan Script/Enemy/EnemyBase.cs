@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using ATuan_Script.Extra;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
@@ -16,6 +17,7 @@ public abstract class EnemyBase : MonoBehaviour
     public float moveSpeed;
     public SoundFile titleSoundFile;
     public float repeatTime;
+    public CheckPoint thisLevelPoint;
 
     public bool Pass => levelController.Passing;
 
@@ -32,7 +34,11 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected abstract Vector3 TargetPosition { get; }
     protected abstract void OnHit();
-    protected abstract void OnPass();
+
+    protected virtual void OnPass(){
+        thisLevelPoint.levelControl = true;
+        CheckPointManager.instance.PassLevel();
+    }
 
     protected abstract void OnFail();
 

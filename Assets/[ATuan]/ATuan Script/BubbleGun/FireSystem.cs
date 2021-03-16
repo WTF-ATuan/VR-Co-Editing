@@ -57,10 +57,9 @@ public class FireSystem : ComponentSystem{
 	}
 
 	private void OpenFire(GunData data){
-		Instantiate(data.currentBullet.bulletObject, data.barrelPivot.position,
-			data.currentBullet.bulletObject.transform.rotation);
+		Instantiate(data.currentBullet.gameObject, data.barrelPivot.position,
+			data.currentBullet.gameObject.transform.rotation);
 		data.currentBullet.direction = data.barrelPivot.forward.normalized;
-		data.currentBullet.isFire = true;
 		data.currentBulletCount++;
 		data.needReload = true;
 		PlaySound(gunData.fireSound);
@@ -69,13 +68,13 @@ public class FireSystem : ComponentSystem{
 	private void ChangeBulletPlus(GunData data){
 		data.currentBulletCount++;
 		data.needReload = true;
-		PlaySound(data.currentBullet.soundFile);
+		PlaySound(data.currentBullet.bulletData.soundFile);
 	}
 
 	private void ChangeBulletMinus(GunData data){
 		data.currentBulletCount--;
 		data.needReload = true;
-		PlaySound(data.currentBullet.soundFile);
+		PlaySound(data.currentBullet.bulletData.soundFile);
 	}
 
 	private void PlaySound(SoundFile file){

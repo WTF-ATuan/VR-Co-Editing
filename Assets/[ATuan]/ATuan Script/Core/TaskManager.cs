@@ -7,14 +7,13 @@ namespace Atuan_Script.Core{
 		public List<EnemyBase> allEnemy;
 		public List<BulletSet> allBullets;
 
+		[SerializeField] private ReloadSystem bulletReload;
 		private ScenceData _scenceData;
 
-		public void Initialize(ScenceData data){
-			allEnemy = data.allEnemy;
-			allBullets = data.allBullets;
-			_scenceData = data;
+		private void Awake(){
+			bulletReload.currentBulletSet = allBullets[0];
 		}
-
+		
 		private int GetNotPassIndex(){
 			for(var i = 0; i < allEnemy.Count; i++){
 				if(!allEnemy[i].Pass) return i;
@@ -27,8 +26,6 @@ namespace Atuan_Script.Core{
 				_scenceData.pass?.Invoke(null);
 				Destroy(this);
 			}
-			_scenceData.currentEnemy = allEnemy[GetNotPassIndex()];
-			_scenceData.currentBulletSet = allBullets[GetNotPassIndex()];
 		}
 	}
 }

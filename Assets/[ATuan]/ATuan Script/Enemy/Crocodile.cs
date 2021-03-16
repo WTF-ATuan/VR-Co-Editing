@@ -14,8 +14,9 @@ public class Crocodile : EnemyBase
         
     }
 
-    protected override void OnPass()
-    {
+
+    protected override void OnPass(){
+        base.OnPass();
         EnemyAnimator.SetBool(IsDead, true);
         moveSpeed = 0;
     }
