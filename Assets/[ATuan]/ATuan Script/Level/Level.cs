@@ -12,12 +12,15 @@ public class Level : MonoBehaviour{
 	
 
 	public void OnTriggerEnter(Collider other){
-		var otherBullet = other.GetComponent<BulletData>();
-		if(otherBullet == bulletData){
-			isPass = true;
-			passWordObject.SetActive(true);
-			ScenceData.Data.soundManager.PlaySound(goodSound);
+		var otherBullet = other.GetComponent<Bullet>();
+		if(otherBullet != null){
+			if(otherBullet.bulletData == bulletData){
+				isPass = true;
+				passWordObject.SetActive(true);
+				ScenceData.Data.soundManager.PlaySound(goodSound);
+			}
 		}
+
 	}
 	
 }

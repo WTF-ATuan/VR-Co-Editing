@@ -37,25 +37,25 @@
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Other/ComicManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Extra.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Extra/CheckPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Extra/CheckPointManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSet.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelController.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/Level.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/GunData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletData.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/Bullet.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/FireSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSet.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BubbleGunUI.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/ScenceData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/ReloadSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Extra/CheckPointManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BubbleGunUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/Level.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Extra/CheckPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/TaskManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Man.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Crocodile.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Man.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/FireSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/Bullet.cs" />
       </list>
     </option>
   </component>
@@ -108,7 +108,7 @@
       <workItem from="1614871020911" duration="1711000" />
       <workItem from="1615294932644" duration="1070000" />
       <workItem from="1615386905887" duration="1067000" />
-      <workItem from="1615874998293" duration="9649000" />
+      <workItem from="1615874998293" duration="17847000" />
     </task>
     <servers />
   </component>

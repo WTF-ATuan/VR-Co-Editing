@@ -21,18 +21,15 @@ public abstract class EnemyBase : MonoBehaviour{
 		StartCoroutine(TitleSound(repeatTime, titleSoundFile));
 		EnemyAnimator = GetComponent<Animator>();
 		levelController = GetComponentInChildren<LevelController>();
-		UpdateEvent.AddUpdate(OnUpdate);
 	}
 
 
 	protected virtual void OnPass(){
-		thisLevelPoint.levelControl = true;
-		CheckPointManager.instance.PassLevel();
-		TaskManager.instance.LoadTask();
+		Destroy(this);
 	}
 
 
-	protected virtual void OnUpdate(){
+	private void Update(){
 		PassTrack();
 	}
 

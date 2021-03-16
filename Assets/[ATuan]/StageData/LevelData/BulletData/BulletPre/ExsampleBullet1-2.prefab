@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba06710ae18e86041bfa09be77fc91d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletData: {fileID: 0}
+  bulletData: {fileID: 11400000, guid: c07029d09c6c1e54e897d9e88a5d0956, type: 2}
   speed: 10
   direction: {x: 0, y: 0, z: 0}
 --- !u!1 &821922571443499760

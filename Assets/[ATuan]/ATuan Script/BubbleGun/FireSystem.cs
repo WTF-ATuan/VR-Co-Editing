@@ -54,8 +54,7 @@ public class FireSystem : ComponentSystem{
 
 	private void OpenFire(GunData data){
 		Instantiate(data.currentBullet.gameObject, data.barrelPivot.position,
-			data.currentBullet.gameObject.transform.rotation);
-		data.currentBullet.direction = data.barrelPivot.forward.normalized;
+			data.barrelPivot.rotation);
 		data.currentBulletCount++;
 		data.needReload = true;
 		PlaySound(gunData.fireSound);
