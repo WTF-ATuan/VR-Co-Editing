@@ -30,6 +30,7 @@
             <e p="Enemy" t="Include">
               <e p="Crocodile.cs" t="Include" />
               <e p="EnemyBase.cs" t="Include" />
+              <e p="Man.cs" t="Include" />
             </e>
             <e p="Extra" t="Include">
               <e p="CheckPoint.cs" t="Include" />

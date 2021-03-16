@@ -12,7 +12,7 @@ TagManager:
   - FxTemporaire
   - Magzine
   - Character
-  - Question
+  - Bullet
   layers:
   - Default
   - TransparentFX

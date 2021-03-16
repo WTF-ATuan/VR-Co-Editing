@@ -11,6 +11,11 @@ public class ReloadSystem : MonoBehaviour{
 	[SerializeField] private int currentBulletCount;
 
 	public void Start(){
+		UpdateEvent.AddUpdate(OnUpdate);
+	}
+
+	public void LoadBullet(BulletSet bulletSet){
+		currentBulletSet = bulletSet;
 		bulletData = new[]{
 			currentBulletSet.bullets[currentBulletSet.bullets.Count - 1],
 			currentBulletSet.bullets[0],
@@ -18,7 +23,7 @@ public class ReloadSystem : MonoBehaviour{
 		};
 		currentBulletCount = 1;
 		SetBulletData(bulletData);
-		UpdateEvent.AddUpdate(OnUpdate);
+
 	}
 
 	private void OnUpdate(){

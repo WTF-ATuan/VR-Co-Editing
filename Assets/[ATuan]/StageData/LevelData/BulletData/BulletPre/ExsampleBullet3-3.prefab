@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4429380009612973693}
   m_Layer: 0
   m_Name: ExsampleBullet3-3
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletData: {fileID: 0}
   speed: 10
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &821922571443499760
 GameObject:
   m_ObjectHideFlags: 0

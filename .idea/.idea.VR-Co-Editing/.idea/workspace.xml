@@ -39,8 +39,6 @@
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Extra.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Extra/CheckPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Extra/CheckPointManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Crocodile.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelSet.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Level/LevelController.cs" />
@@ -51,10 +49,13 @@
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/FireSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BulletSet.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/BubbleGunUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/TaskManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/ScenceData.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/ReloadSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/TaskManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Crocodile.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Man.cs" />
       </list>
     </option>
   </component>
@@ -107,7 +108,7 @@
       <workItem from="1614871020911" duration="1711000" />
       <workItem from="1615294932644" duration="1070000" />
       <workItem from="1615386905887" duration="1067000" />
-      <workItem from="1615874998293" duration="8124000" />
+      <workItem from="1615874998293" duration="9649000" />
     </task>
     <servers />
   </component>
@@ -120,6 +121,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="903" y="244" key="RiderGenerateDialog" timestamp="1615896804126">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="903" y="244" key="RiderGenerateDialog/0.0.2560.1440/-1920.353.1920.1080@0.0.2560.1440" timestamp="1615896804126" />
     <state x="501" y="44" key="SettingsEditor" timestamp="1609226573520">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
