@@ -52,10 +52,10 @@
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Extra/CheckPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Core/TaskManager.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Man.cs" />
-        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/Crocodile.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/FireSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/BubbleGun/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/[ATuan]/ATuan Script/Enemy/EnemyBase.cs" />
       </list>
     </option>
   </component>
@@ -108,7 +108,7 @@
       <workItem from="1614871020911" duration="1711000" />
       <workItem from="1615294932644" duration="1070000" />
       <workItem from="1615386905887" duration="1067000" />
-      <workItem from="1615874998293" duration="17847000" />
+      <workItem from="1615874998293" duration="20216000" />
     </task>
     <servers />
   </component>

@@ -18,11 +18,18 @@ public abstract class EnemyBase : MonoBehaviour{
 	public bool Pass => levelController.Passing;
 
 	private void Awake(){
-		StartCoroutine(TitleSound(repeatTime, titleSoundFile));
+		
 		EnemyAnimator = GetComponent<Animator>();
 		levelController = GetComponentInChildren<LevelController>();
 	}
 
+	private void OnEnable(){
+		StartCoroutine(TitleSound(repeatTime, titleSoundFile));
+	}
+
+	private void OnDisable(){
+		StopAllCoroutines();
+	}
 
 	protected virtual void OnPass(){
 		Destroy(this);
