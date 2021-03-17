@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class GunData : MonoBehaviour
 {
-    public BulletData previousBullet;
-    public BulletData currentBullet;
-    public BulletData nextBullet;
+    public Bullet previousBullet;
+    public Bullet currentBullet;
+    public Bullet nextBullet;
     public int currentBulletCount;
     public Transform barrelPivot;
     public float fireColdDownTime;

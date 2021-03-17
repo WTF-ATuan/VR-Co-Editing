@@ -9,15 +9,11 @@
       <e p="Assets" t="Include">
         <e p="[ATuan]" t="Include">
           <e p="ATuan Script" t="Include">
-            <e p="AutoCombindCustomEditor" t="Include">
-              <e p="AutoComBinding.cs" t="Include" />
-              <e p="AutoMeterials.cs" t="Include" />
-            </e>
             <e p="BubbleGun" t="Include">
               <e p="BubbleGunUI.cs" t="Include" />
+              <e p="Bullet.cs" t="Include" />
               <e p="BulletData.cs" t="Include" />
               <e p="BulletSet.cs" t="Include" />
-              <e p="BulletSystem.cs" t="Include" />
               <e p="FireSystem.cs" t="Include" />
               <e p="GunData.cs" t="Include" />
               <e p="ReloadSystem.cs" t="Include" />
@@ -34,16 +30,20 @@
             <e p="Enemy" t="Include">
               <e p="Crocodile.cs" t="Include" />
               <e p="EnemyBase.cs" t="Include" />
+              <e p="Man.cs" t="Include" />
+            </e>
+            <e p="Extra" t="Include">
+              <e p="CheckPoint.cs" t="Include" />
+              <e p="CheckPointManager.cs" t="Include" />
             </e>
             <e p="Filter(Interface)" t="Include">
               <e p="IData.cs" t="Include" />
               <e p="ISystemBehavior.cs" t="Include" />
             </e>
             <e p="Level" t="Include">
+              <e p="Level.cs" t="Include" />
               <e p="LevelController.cs" t="Include" />
-              <e p="LevelData.cs" t="Include" />
               <e p="LevelSet.cs" t="Include" />
-              <e p="LevelSystem.cs" t="Include" />
             </e>
             <e p="Other" t="Include">
               <e p="ComicManager.cs" t="Include" />

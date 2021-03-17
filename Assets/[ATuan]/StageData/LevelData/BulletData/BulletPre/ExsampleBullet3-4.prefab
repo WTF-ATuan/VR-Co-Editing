@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4429380009612973693}
   m_Layer: 0
   m_Name: ExsampleBullet3-4
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821922570736438998}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 1.853, y: -2.37, z: -18.86}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 821922571443499761}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
 --- !u!33 &821922570737341142
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba06710ae18e86041bfa09be77fc91d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletData: {fileID: 0}
+  bulletData: {fileID: 11400000, guid: d2df824f2b808f74e9bf08a1e9a174f4, type: 2}
   speed: 10
 --- !u!1 &821922571443499760
 GameObject:

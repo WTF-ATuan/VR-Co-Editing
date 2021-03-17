@@ -5,5 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class BulletSet : ScriptableObject
 {
-    public List<BulletData> bullets = new List<BulletData>();
+    public List<Bullet> bullets = new List<Bullet>();
 }
