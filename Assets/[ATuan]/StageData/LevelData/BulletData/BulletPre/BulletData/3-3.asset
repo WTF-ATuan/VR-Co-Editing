@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiMat: {fileID: 2100000, guid: ca5e1f668d128334b85c7c8014a87310, type: 2}
   soundFile:
-    Sound: {fileID: 8300000, guid: ead3e2bae935b5c458d3abf2f45053c5, type: 3}
+    Sound: {fileID: 8300000, guid: a30d546670d795143a023ea6b4f00091, type: 3}
